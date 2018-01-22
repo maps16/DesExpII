@@ -19,14 +19,16 @@ Program ActII
   !end do
 
   
-  !Incio de Contador
+  !Escritura de primeras partículas
   i=1
   neg = (sep*(-1)) / 2
   write(*,*) i,neg
   i=i+1
   pos = sep / 2
-  write(*,*) i,pos 
-  do while (i<=N-1)
+  write(*,*) i,pos
+
+  !
+  do while (i<N)
      i = i + 1
      neg = neg - sep    !Calculo de los puntos del lado negativo (impares) Posicion
      write(*,*) i,neg
@@ -36,5 +38,4 @@ Program ActII
      write(*,*) i,pos 
   end do
 
- ! write(*,*)  0**91 !DEBUG
 End Program ActII
