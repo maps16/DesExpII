@@ -43,6 +43,7 @@ Program ActII
      pos=((-1)**i)*((int((i-1)/2)*sep)+ (sep/2) )  !Calculo de Posicion
      write(*,*)i, pos
      i = i+1                                       !Avance contador
+
   end do
   
 
