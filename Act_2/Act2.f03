@@ -11,6 +11,8 @@ Program ActII
   
   !Separación entre partículas
   sep = real(l)/real(N)
+
+
   !i=1
   !do while (i<=N)
   !   pos=((-1)**i)*((int((i-1-mod(N,2))/2)*sep)+ (sep*mod(N,2)/2) )
@@ -20,21 +22,28 @@ Program ActII
 
   
   !Incio de Contador
-  i=1
-  neg = (sep*(-1)) / 2
-  write(*,*) i,neg
-  i=i+1
-  pos = sep / 2
-  write(*,*) i,pos 
-  do while (i<=N-1)
-     i = i + 1
-     neg = neg - sep    !Calculo de los puntos del lado negativo (impares) Posicion
-     write(*,*) i,neg
-     if (i==N) exit     !Salida de Emergencia para N impar
-     i = i + 1
-     pos = pos + sep    !Calculo de los puntos del lado positivo (pares) Posicion
-     write(*,*) i,pos 
-  end do
+  !i=1
+  !neg = (sep*(-1)) / 2  !Primera Posicion negativa
+  !write(*,*) i,neg
+  !i=i+1
+  !pos = sep / 2         !Primera Posision positiva
+  !write(*,*) i,pos 
+  !do while (i<=N-1)
+  !   i = i + 1
+  !   neg = neg - sep    !Calculo de los puntos del lado negativo (impares) Posicion
+  !   write(*,*) i,neg
+  !   if (i==N) exit     !Salida de Emergencia para N impar
+  !   i = i + 1
+  !   pos = pos + sep    !Calculo de los puntos del lado positivo (pares) Posicion
+  !   write(*,*) i,pos 
+  !end do
 
- ! write(*,*)  0**91 !DEBUG
+  i=1 !Inicio Contador de la particula
+  do while (i<=N)
+     pos=((-1)**i)*((int((i-1)/2)*sep)+ (sep/2) )  !Calculo de Posicion
+     write(*,*)i, pos
+     i = i+1                                       !Avance contador
+  end do
+  
+
 End Program ActII
