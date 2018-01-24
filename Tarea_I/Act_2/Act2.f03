@@ -27,6 +27,7 @@ Program ActII
 
 End Program ActII
 
+
 !======================================================================
 !============== EXTRAS / INTENTOS DIFERENTES ==========================
 !======================================================================
@@ -56,3 +57,4 @@ End Program ActII
   !   pos = pos + sep    !Calculo de los puntos del lado positivo (pares) Posicion
   !   write(*,*) i,pos 
   !end do
+

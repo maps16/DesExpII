@@ -1,9 +1,0 @@
-Program ActII
-  Implicit None
-  Real *8 :: sep, nlg
-  Integer :: N=50 , l=1 !Numero de particulas y Longitud
-
-  !Separación entre partículas
-  sep = N/l
-  
-End Program ActII
