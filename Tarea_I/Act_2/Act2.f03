@@ -1,7 +1,7 @@
 Program ActII
   Implicit None
-  Real *4 :: sep, pos , neg
-  Integer :: N, l, i !Numero de particulas y Longitud, Contador
+  Real *4 :: sep, pos, neg, l
+  Integer :: N, i !Numero de particulas , Contador
 
   !Datos de Entrada
   Write(*,*) "Ingrese el numero de puntos"
@@ -10,9 +10,28 @@ Program ActII
   Read(*,*) l
   
   !Separación entre partículas
-  sep = real(l)/real(N)
+  sep = l/real(N)
+	
+  Open(1, file="Out.dat")   !Abrir Archivo de Salida
 
 
+
+  i=1 !Inicio Contador de la particula
+  do while (i<=N)                                !Terminar al recorer cada particula
+     pos=((-1)**i)*((int((i-1)/2)*sep)+ (sep/2) )!Calculo de Posicion
+     write(1,*)i, pos                            !Escribir Valor En Archivo 1 (Out.dat)
+     i = i+1                                     !Avance contador
+
+  end do
+  close(1)
+
+End Program ActII
+
+!======================================================================
+!============== EXTRAS / INTENTOS DIFERENTES ==========================
+!======================================================================
+  
+  !INTENTO DE COLOCAR UNA PARTICULA CENTRAL !! NO SE LOGRO
   !i=1
   !do while (i<=N)
   !   pos=((-1)**i)*((int((i-1-mod(N,2))/2)*sep)+ (sep*mod(N,2)/2) )
@@ -20,7 +39,7 @@ Program ActII
   !   i = i+1
   !end do
 
-  
+  !PRIMER INTENTO SE LOGRO REDUCIR 
   !Incio de Contador
   !i=1
   !neg = (sep*(-1)) / 2  !Primera Posicion negativa
@@ -37,14 +56,3 @@ Program ActII
   !   pos = pos + sep    !Calculo de los puntos del lado positivo (pares) Posicion
   !   write(*,*) i,pos 
   !end do
-
-  i=1 !Inicio Contador de la particula
-  do while (i<=N)
-     pos=((-1)**i)*((int((i-1)/2)*sep)+ (sep/2) )  !Calculo de Posicion
-     write(*,*)i, pos
-     i = i+1                                       !Avance contador
-
-  end do
-  
-
-End Program ActII
