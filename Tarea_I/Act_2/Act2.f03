@@ -1,3 +1,8 @@
+!================================================================================
+! ActII es un codigo para colocar particulas sobre una recta alternando entre po-
+! sitvo y negativo segun la particula es par o impar.
+! Autor: Martin Alejandro Paredes Sosa
+!================================================================================
 Program ActII
   Implicit None
   Real *4 :: sep, pos, neg, l
