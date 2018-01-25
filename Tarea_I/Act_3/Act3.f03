@@ -22,8 +22,8 @@ Program ActIII
   Real *8 :: sep, l                              !Separacion, Longitud Malla
   Integer :: i, k, m                             !Contadores
   Integer :: N                                   !#Particulas 
-  Real *8 :: Pos                                 !Posiciones Posibles Temp
-  Real *8, Dimension (1:500) :: xPos, yPos       !Posiciones Posibles para X y Y
+!  Real *8 :: Pos                                 !Posiciones Posibles Temp
+  Real *8 :: xPos, yPos                          !Posiciones Posibles para X y Y
                                                  !Limitado a 500 Particulas
                                                  !Por Lado
   
@@ -36,16 +36,18 @@ Program ActIII
   !Calculo de la Separacion Entre Particulas
   sep = l/N
 
-  Do i=1, N
-     Call CalcPos(i, sep, Pos)         !Llama Subrutina Para Posibles Posiciones
-     xPos(i) = Pos                     !Guardando Valores para posiciones X
-     yPos(i) = Pos                     !Guardando Valores para posiciones Y
-  End Do
+!  Do i=1, N
+!     Call CalcPos(i, sep, Pos)         !Llama Subrutina Para Posibles Posiciones
+!     xPos(i) = Pos                     !Guardando Valores para posiciones X
+!     yPos(i) = Pos                     !Guardando Valores para posiciones Y
+!  End Do
   
   Open(1,File="SalidaGrafico.dat")     !Abriendo Archivo de Salida
   Do k=1, N
+     call CalcPos(k, sep, xPos)
      Do m=1, N
-        Write(1,*) xPos(k), yPos(m)    !Escribiendo Salida
+        call CalcPos(m, sep, yPos)
+        Write(1,*) xPos, yPos    !Escribiendo Salida
      End do
   End Do
   
