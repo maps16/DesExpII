@@ -1,0 +1,6 @@
+program test_random_number
+  REAL :: r(5,5)
+  Real :: z
+  CALL RANDOM_NUMBER(r)
+  Write(*,*) r
+end program
