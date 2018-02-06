@@ -5,7 +5,9 @@
 !=========================================================================================
 Module Cte
   Implicit None
-  integer :: m
+  Integer :: m
+  Real, Parameter :: Pi = 3.1415
+  Integer,Parameter :: Sav = 5
 End Module Cte
 !==========================================
 Subroutine InOutCircle(x, y )                  !Checar si se encuntra dentro del circulo unitario
@@ -22,20 +24,34 @@ End Subroutine InOutCircle
 Program CalcPi
   Use Cte
   Implicit None
-  Real :: xRan, yRan, PiCalc
-  Integer :: n, i, seed1, seed2
+  Real :: xRan, yRan, PiCalc, ErrorRel
+  Integer :: n, i, j, seed1, seed2
+  Real,allocatable :: ValTemp(:)
 
   seed1 = 1365
   seed2 = 6482
-  n = 1000000
-  m = 0
+  n = 1000
+  allocate(ValTemp(n/sav))
+  m=0
+  j=0 
   call srand(seed1)
   Do i=1, n, 1
      xran = ran()
      yran = ran()
      call inoutcircle(xran,yran)
-!     write(*,*) xran, yran
+
+     If (mod(real(n),real(sav))==0 ) Then
+        !Write(*,*) mod(n/sav)
+        j=j+1
+        Write(*,*) j
+     End If
+
+     
+
   end do
   PiCalc = 4*(real(m)/real(n))
+  ErrorRel =(Pi -PiCalc)/Pi *100
   Write(*,*) m, n, PiCalc
+!  Write(*,*) Valtemp
+  Write(*,*) ErrorRel , "%"
 End Program CalcPi
