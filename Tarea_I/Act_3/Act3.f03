@@ -14,7 +14,6 @@ subroutine CalcPos(i, Pos)
   Use Control
   Implicit None
   Integer :: i                                   !Contador
-!  Real *8 :: sep                                !Separacion de las particulas
   Real *8 :: Pos                                 !Posiciones
   If (Impar) Then
      Pos = ((-1)**i)*((int((i-1)/2)*sep)+ (sep) )
@@ -54,9 +53,9 @@ Program ActIII
      If (k==1 .AND. Impar) Then                  !Control Para N Impar
         xPos = 0                                 !Primera Posicion en el centro (x=0)
      Else If (K/=1 .AND. Impar) Then
-        call CalcPos(k-1, xPos)               !Calculando Posicion sobre X (Impar)
+        call CalcPos(k-1, xPos)                  !Calculando Posicion sobre X (Impar)
      Else
-        Call CalcPos(k, xPos)
+        Call CalcPos(k, xPos)                    !Calculando posicion sobre X
      End If
 
      Do while(m <= N)
@@ -64,18 +63,17 @@ Program ActIII
         If(m==1 .AND. Impar) Then                !Control Para N Impar
            yPos = 0                              !Primera Posicion en el centro (y=0)
         Else If (m/=1 .AND. Impar) Then
-           call CalcPos(m-1,  yPos)          !Calculando Posicion sobre Y (Impar)
+           call CalcPos(m-1,  yPos)              !Calculando Posicion sobre Y (Impar)
         Else
-           Call CalcPos(m, yPos)            !Calculando Posición Sobre Y
+           Call CalcPos(m, yPos)                 !Calculando Posición Sobre Y
         End If
 
         Write(1,*) xPos, yPos                    !Escribiendo en Salida
-!        Write(*,*) k, xPos, yPos                 !DEBUG Pantalla
-        m = m+1
+        m = m+1                                  !Avanzar Contador
      End Do
      
-     m=1
-     k = k+1
+     m=1                                         !Reiniciar el Contador
+     k = k+1                                     !Avanzar Contador
   End Do
   
   Close(1)
