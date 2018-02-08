@@ -31,7 +31,7 @@ Program ConfigIni
   Write(*,*) "LONGITUD DE LA CELDA:", BoxL
 
   Allocate( X(n),Y(n),z(n) )
-  Open (1, File = "PosPart.dat" ) 
+  Open (1, File = "PosPart.dat"git ) 
   
   Colocar: Do i=1, N           !BUSCAR LA POSICION ALEATORIA PARA LAS PARTICULAS
   2  Call Random_Number(xRan)  !VALOR ALEATORIO DE POSICION X \
