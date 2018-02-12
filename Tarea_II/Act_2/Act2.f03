@@ -47,13 +47,13 @@ Program ConfigIni
 
      Traslape: Do j=1 , i-1
         
-        xij = X(i) - X(j)
+        xij = X(i) - X(j)              !CALCULANDO LA DISTANCIA ENTRE PARTICULAS
         yij = Y(i) - Y(j)
         zij = Z(i) - Z(j)
         !Write(*,*) i,j,xij, yij, zij !DEBUG
         dist = xij*xij + yij*yij + zij*zij
         DectTras: If(dist .LE. sigma ) Then
-          Write(*,*) "TRASLAPE", i, j  !DEBUG 
+          !Write(*,*) "TRASLAPE", i, j  !DEBUG 
           GO TO 2
         End If DectTras
         
