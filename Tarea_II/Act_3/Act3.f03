@@ -40,8 +40,10 @@ Program ConfigIni
      !Write(*,*) xRan, yRan   !DEBUG
 
      !COLOCAR DENTRO DE LA CELDA
-     X(i) = (xRan-0.5)*BoxL                    !\
-     Y(i) = (yRan-0.5)*BoxL                    !/   [-BoxL/2 , BoxL/2]
+     !Rx = xRan - 0.5
+     
+     X(i) = (xRan-0.5)*(BoxL -1)                   !\
+     Y(i) = (yRan-0.5)*(BoxL -1)                   !/   [-BoxL/2 , BoxL/2]
     
      !Write(*,*) X(i), Y(i), Z(i)               !DEBUG
 
@@ -52,11 +54,16 @@ Program ConfigIni
         
         !Write(*,*) i,j,xij, yij, zij !DEBUG
         dist = xij*xij + yij*yij
+
         DectTras: If(dist .LE. sigma ) Then
-           !Write(*,*) "TRASLAPE", i, j   !DEBUG 
+
+           !Write(*,*) "TRASLAPE", i, j    !DEBUG 
            GO TO 2
+
         End If DectTras
-        Write (*,*) "Dist", i, j, Dist  !DEBUG
+
+        !Write (*,*) "DISTANCIA", i, j, sqrt(Dist)  !DEBUG
+
      End Do Traslape
      
      Write(1,*) X(i), Y(i) !GUARDANDO EN ARCHIVO LA POSICION
