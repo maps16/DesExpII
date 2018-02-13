@@ -42,8 +42,8 @@ Program ConfigIni
      !COLOCAR DENTRO DE LA CELDA
      !Rx = xRan - 0.5
      
-     X(i) = (xRan-0.5)*(BoxL -1)                   !\
-     Y(i) = (yRan-0.5)*(BoxL -1)                   !/   [-BoxL/2 , BoxL/2]
+     X(i) = (xRan-0.5)*(BoxL-1)                   !\
+     Y(i) = (yRan-0.5)*(BoxL-1)                   !/   [-(BoxL-1)/2 , (BoxL-1)/2]
     
      !Write(*,*) X(i), Y(i), Z(i)               !DEBUG
 

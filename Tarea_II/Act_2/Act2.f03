@@ -40,9 +40,9 @@ Program ConfigIni
      !Write(*,*) xRan, yRan, zRan   !DEBUG
 
      !COLOCAR DENTRO DE LA CELDA
-     X(i) = (xRan-0.5)*BoxL                    !\
-     Y(i) = (yRan-0.5)*BoxL                    !|   [-BoxL/2 , BoxlL/2]
-     Z(i) = (zRan-0.5)*BoxL                    !/
+     X(i) = (xRan-0.5)*(BoxL-1)                    !\
+     Y(i) = (yRan-0.5)*(BoxL-1)                    !|   [-(BoxL-1)/2 , (BoxL-1)/2]
+     Z(i) = (zRan-0.5)*(BoxL-1)                    !/
      !Write(*,*) X(i), Y(i), Z(i)               !DEBUG
 
      Traslape: Do j=1 , i-1
