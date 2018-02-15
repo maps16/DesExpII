@@ -10,28 +10,17 @@ Subroutine ConfigIni
   Real :: xRan, yRan,  xij, yij,  dist
   Integer :: i, j                              !CONTADOR
   
-  
-  !PEDIR DENSIDAD Y NUMERO DE PARTICULAS
-  !Write(*,*) "INGRESE EL NUMERO DE PARTICULAS"
-  !Read(*,*) N
-  !Write(*,*) "INGRESE CONCENTRACION REDUCIDA"
-  !Read(*,*) Dens
-
   !CALCULANDO DIMENSIONES DE LA CAJA
   BoxL = (1.0*N/Dens )**Dim
   Write(*,*) "LONGITUD DE LA CELDA:", BoxL
 
-  Allocate( X(n),Y(n) )
-  Open (1, File = "ConfigInicial.dat" ) 
+  Open (1, File = "ConIni.dat" ) 
   
   Colocar: Do i=1, N           !BUSCAR LA POSICION ALEATORIA PARA LAS PARTICULAS
   2  Call Random_Number(xRan)  !VALOR ALEATORIO DE POSICION X \
      Call Random_Number(yRan)  !VALOR ALEATORIO DE POSICION Y / TENTATIVO   
     
-     !Write(*,*) xRan, yRan   !DEBUG
-
      !COLOCAR DENTRO DE LA CELDA
-     !Rx = xRan - 0.5
      
      X(i) = (xRan-0.5)*(BoxL-1)                   !\
      Y(i) = (yRan-0.5)*(BoxL-1)                   !/   [-(BoxL-1)/2 , (BoxL-1)/2]
@@ -42,8 +31,7 @@ Subroutine ConfigIni
         
         xij = X(i) - X(j)              !CALCULANDO LA DISTANCIA ENTRE PARTICULAS
         yij = Y(i) - Y(j)
-        
-        !Write(*,*) i,j,xij, yij, zij !DEBUG
+        !Write(*,*) i,j,xij, yij, zij  !DEBUG
         dist = xij*xij + yij*yij
 
         DectTras: If(dist .LE. sigma ) Then
@@ -61,7 +49,6 @@ Subroutine ConfigIni
 
   End Do Colocar
 
-  Deallocate(X,Y)
   Close(1)
 
 
