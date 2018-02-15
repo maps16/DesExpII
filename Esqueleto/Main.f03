@@ -62,12 +62,12 @@ Program Main
         Call Random_Number(RanY)
 
         !MOVIMIENTO TENTATIVO
-        NewX = OldX + (2*RanX - 1)*dRMax
-        NewY = OldY + (2*RanY - 1)*dRMax
+        NewX = OldX + (2.0*RanX - 1.0)*dRMax
+        NewY = OldY + (2.0*RanY - 1.0)*dRMax
 
         !CONDICIONES PERIODICAS (MANTENER MISMA N EN TODA CONFIGURACION)
-        NewX = NewX - BoxL*Aint(NewX/BoxL)
-        NewY = Newy - BoxL*Aint(NewY/BoxL)
+        NewX = NewX - BoxL*Anint(NewX/BoxL)
+        NewY = Newy - BoxL*Anint(NewY/BoxL)
 
         !CALCULAR LA ENERGIA DE LA PARTICULA EN LA NUEVA POSICION
         Call EnergyPart(NewX, NewY, i, VNew)
