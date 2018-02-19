@@ -30,7 +30,7 @@
 *.aux
 *.out
 *.bak
-*.tex
+#*.tex
 
 # Backups Internos#
 ###################
