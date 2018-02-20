@@ -30,6 +30,8 @@
 *.aux
 *.out
 *.bak
+*.bbl
+*.blg
 #*.tex
 
 # Backups Internos#
