@@ -31,15 +31,15 @@ Subroutine ConfigIni
         
         xij = X(i) - X(j)              !CALCULANDO LA DISTANCIA ENTRE PARTICULAS
         yij = Y(i) - Y(j)
-        !Write(*,*) i,j,xij, yij, zij  !DEBUG
+        
         dist = xij*xij + yij*yij
 
-        DectTras: If(dist .LE. sigma ) Then
+        DectTraslape: If(dist .LE. sigma ) Then
 
            !Write(*,*) "TRASLAPE", i, j    !DEBUG 
            GO TO 2
 
-        End If DectTras
+        End If DectTraslape
 
         !Write (*,*) "DISTANCIA", i, j, sqrt(Dist)  !DEBUG
 
