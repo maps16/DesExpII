@@ -20,7 +20,7 @@ Subroutine GdrCalc
   
 
   Allocate( Histo(NNN) , STAT = istat1, ERRMSG = err_msg1)
-  
+  open(100, file="error.txt")
   Histo = 0
   !WRITE(*,*) NN
   
@@ -47,7 +47,7 @@ Subroutine GdrCalc
               xON = xON - BoxL*Anint( xON/BoxL )
               yON = yON - BoxL*Anint( yON/BoxL ) 
               rD = sqrt( (xON * xON) + (yON * yON) )
-              If (rd .LE. 1.0 ) write(*,*) rD, i,j,k
+              If (rd .LE. 1.0 ) write(100,*) rD, i, j , k
               
               !CERCANIA CINTA
               iBin =  Int( rD / delTar ) + 1
@@ -86,6 +86,7 @@ Subroutine GdrCalc
   End Do GdrCal
   
   Close(5)
+  close(100)
   
   Deallocate( Histo )
 

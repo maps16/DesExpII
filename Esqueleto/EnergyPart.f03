@@ -25,11 +25,13 @@ Subroutine EnergyPart(Rx1, Ry1, i, V)
 
         !INGRESANDO MODELO DE INTERACCON (DISCOS DUROS)
         Dist = sqrt( Rxd*Rxd + Ryd*Ryd  )
-
+        !If(Dist .LE. 1.0) Write(*,*) Dist, i,j
+        
         ChecarInter: If(Dist .LT. RCut)  Then
            
            ChecarCercania: If (Dist .LE. 1.0) Then
               VNew = 1.0E+10
+              !Write(*,*) "Ohh"
            Else
               VNew = 0
            End If ChecarCercania

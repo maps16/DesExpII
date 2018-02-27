@@ -73,11 +73,14 @@ Program Main
         OldY = Y(i)
         !CALCULAR LA ENERGIA DE LA i-PARTICULA
         Call EnergyPart(OldX, OldY, i, VOld)
-
+        !Write(*,*) IStep, VOld
+        !go to 111
+        
         !GENERAR VALORES ALEATORIOS PARA MOV TENTATIVOS
         Call Random_Number(RanX)
         Call Random_Number(RanY)
-
+        !Write(*,*) Ranx, Rany
+        
         !MOVIMIENTO TENTATIVO
         NewX = OldX + (2.0*RanX - 1.0)*dRMax
         NewY = OldY + (2.0*RanY - 1.0)*dRMax
@@ -86,13 +89,14 @@ Program Main
         NewX = NewX - BoxL*Anint(NewX/BoxL)
         NewY = Newy - BoxL*Anint(NewY/BoxL)
 
+               
         !CALCULAR LA ENERGIA DE LA PARTICULA EN LA NUEVA POSICION
         Call EnergyPart(NewX, NewY, i, VNew)
 
         !MONTECARLO (CRITERIO DE ACEPTACION O RECHAZO DE MOV)
         DV = VNew - VOld
         Call Random_Number(Dummy) !PARA CRITERIO ENTRE 0.0 Y 75.0
-
+        !Write(*,*) Dummy
         !MONTECARLO (ACEPTANDO MOVIMIENTOS POR CRITERIOS)
         MONTECARLO1: If(DV .LT. 75.0 ) Then
            
@@ -101,7 +105,7 @@ Program Main
               X(i) = NewX
               Y(i) = NewY
               MAcep = MAcep + 1.0 !MOVIMIENTO ACEPTADOS POR MONTECARLO
-
+             
            ElseIf( EXP(-DV) .GT. Dummy ) Then
               V = V + DV
               X(i) = NewX
@@ -126,7 +130,7 @@ Program Main
      NdR : If (Ctrl1) Then
         
         Ratio =  MAcep / Real( N * IRatio  )                      !RAZON DE ACEPTADOS 
-        Ctrl1A = Ratio .GT. 0.75                                  !CRITERIO DE ACEPTACION DE MOVIMIENTOS
+        Ctrl1A = Ratio .GT. 0.5                                  !CRITERIO DE ACEPTACION DE MOVIMIENTOS
 
         Criterio : If ( Ctrl1A ) Then
            dRMax = dRMax * 1.05                                   !CRECER DESPLAZAMIENTO 
@@ -142,7 +146,7 @@ Program Main
      Ctrl = Mod(IStep,IPrint) == 0                                !CADA QUE TANTO IMPRIMIR EN PANTALLA ENERGIA, DRMAX
      MonitoreoEne: If(Ctrl) Then
         
-        Write(*,*)  ISTEP, VN, dRMax
+        Write(*,*)  ISTEP, VN, Ratio , dRMax
         
      End If MonitoreoEne
 
@@ -150,7 +154,7 @@ Program Main
      Ctrl2 = ( Mod(IStep,ISave) == 0 ) .AND. ( IStep .GT. CEq )
      SAV: If (Ctrl2) Then
         k2 = k2 + 1
-        SAV1:Do k = 1 , NN
+        SAV1:Do k = 1 , N
            CX(k,k2) = X(k)
            CY(k,k2) = Y(k)
         End Do SAV1
@@ -182,5 +186,7 @@ Program Main
   Close(3)
   
   WRITE(*,*) "DONE"
+
+  111 continue
   
 End Program Main
