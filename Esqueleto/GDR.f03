@@ -11,8 +11,7 @@ Subroutine GdrCalc
   Implicit None
 
   Integer, Allocatable, Dimension(:) :: Histo
-  !Integer, Parameter :: NNN = 3500
-  Real, Parameter :: delTar = 0.01
+  Real, Parameter :: delTar = 0.05
   Integer :: MBin, iBin
   Integer :: i, j, k                                              !CONTADORES
   Real :: xO, yO, xN, yN, xON, yON, rD, rU, rL, rM, c1, c2, gdr
@@ -23,10 +22,10 @@ Subroutine GdrCalc
   Allocate( Histo(NNN) , STAT = istat1, ERRMSG = err_msg1)
   
   Histo = 0
-  WRITE(*,*) NN
+  !WRITE(*,*) NN
   
   MBin = Int( RCut / delTar )
-  WRITE(*,*) MBIN
+  !WRITE(*,*) MBIN
   PartiO : Do i = 1, N
      NextParti : Do j = 1, N
         NOTSAME : If (i /= j ) Then
@@ -41,21 +40,22 @@ Subroutine GdrCalc
               yN = CY( j , k )
               
               !DISTANCIA
-              xON = xO - xN
-              yON = yO - yN
+              xON = xN - xO
+              yON = yN - yO
               
               !CONDICION DE IMAGEN MINIMA
               xON = xON - BoxL*Anint( xON/BoxL )
               yON = yON - BoxL*Anint( yON/BoxL ) 
               rD = sqrt( (xON * xON) + (yON * yON) )
+              If (rd .LE. 1.0 ) write(*,*) rD, i,j,k
               
               !CERCANIA CINTA
-              iBin =  Int( rD / delTar )
+              iBin =  Int( rD / delTar ) + 1
               !Write(*,*) "Succes",i,j , ibin, k
               Guardar : If((iBin .LE. MBin)  ) Then
                  !Write(*,*) "Succes", ibin
                  Histo(iBin) = Histo(iBin) + 1
-                ! Write(*,*) "Succes",i,j,k
+                 !Write(*,*) "Succes",i,j,k
               End If Guardar
               
            End Do StepCnfg
@@ -63,7 +63,8 @@ Subroutine GdrCalc
         End If NOTSAME
      End Do NextParti
   End Do PartiO
-  
+
+  !Write(*,*) Histo
   
   c1 = PI * Dens
   
@@ -73,6 +74,7 @@ Subroutine GdrCalc
   GdrCal : Do ibin = 1 , MBin
      
      rL = Real(iBin - 1) * delTar
+
      rU = rL + delTar
      rM = rL + ( delTar/2.0 )
      
@@ -85,8 +87,8 @@ Subroutine GdrCalc
   
   Close(5)
   
-  Write(*,*) "GDR DONE, SAVE"
-  
   Deallocate( Histo )
+
+  Write(*,*) "GDR DONE, SAVE"
   
 End Subroutine GdrCalc

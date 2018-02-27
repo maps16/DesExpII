@@ -177,7 +177,7 @@ Program Main
   Call GdrCalc
   WRITE(*,*) "GDR DONE CALC" !DEBUG
   
-  Deallocate( CX, CY, STAT=istat1, ERRMSG = err_msg1 )
+ ! Deallocate( CX, CY )!, STAT=istat1, ERRMSG = err_msg1 )
   !Write(*,*) istat1, err_msg1 !DEBUG
   Close(3)
   

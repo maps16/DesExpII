@@ -20,8 +20,8 @@ Subroutine EnergyConfig(V)
         Ryd = Ry1 - Y(j)
 
         !CONDICION DE IMAGEN MINIMA (LOCALIZAR PARTICULAS EN CELDAS CERCANAS)
-        Rxd = Rxd - BoxL*Aint(Rxd/BoxL)
-        Ryd = Ryd - BoxL*Aint(Ryd/BoxL)
+        Rxd = Rxd - BoxL*Anint(Rxd/BoxL)
+        Ryd = Ryd - BoxL*Anint(Ryd/BoxL)
 
         !INGRESANDO MODELO DE INTERACCON (DISCOS DUROS)
         Dist = sqrt( Rxd*Rxd + Ryd*Ryd  )

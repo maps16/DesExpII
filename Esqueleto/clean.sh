@@ -1,4 +1,4 @@
 #!/bin/bash
 
-rm -i *dat
-rm -i cte.mod
+rm  *.dat
+rm  cte.mod

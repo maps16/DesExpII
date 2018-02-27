@@ -48,7 +48,7 @@ Program Main
         OldX = X(i)
         OldY = Y(i)
         !CALCULAR LA ENERGIA DE LA i-PARTICULA
-        Call EnergyPart(OldX, OldY, i, VOld)
+        !Call EnergyPart(OldX, OldY, i, VOld)
 
         !GENERAR VALORES ALEATORIOS PARA MOV TENTATIVOS
         Call Random_Number(RanX)
