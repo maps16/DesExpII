@@ -187,6 +187,5 @@ Program Main
   
   WRITE(*,*) "DONE"
 
-  111 continue
   
 End Program Main

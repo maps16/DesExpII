@@ -14,13 +14,15 @@ Subroutine GdrCalc
   Real, Parameter :: delTar = 0.05
   Integer :: MBin, iBin
   Integer :: i, j, k                                              !CONTADORES
-  Real :: xO, yO, xN, yN, xON, yON, rD, rU, rL, rM, c1, c2, gdr
+  Real :: xO, yO, xN, yN, xON, yON
+  Real :: rD, rU, rL, rM, c1, c2, gdr, gdrm, press
   Integer :: istat1
   Character (len=80) :: err_msg1
+  logical :: Ctrl1, Ctrl2
   
 
   Allocate( Histo(NNN) , STAT = istat1, ERRMSG = err_msg1)
-  open(100, file="error.txt")
+
   Histo = 0
   !WRITE(*,*) NN
   
@@ -71,22 +73,31 @@ Subroutine GdrCalc
   !ABRIENDO ARCHIVO PARA GDR
   Open( 5, file= "gdr.dat" )
   
-  GdrCal : Do ibin = 1 , MBin
+  GdrCal: Do ibin = 1 , MBin
      
      rL = Real(iBin - 1) * delTar
 
      rU = rL + delTar
      rM = rL + ( delTar/2.0 )
-     
+
      c2 = c1 * ((rU*rU) - (rL*rL))
+     gdrm =gdr
      gdr = Real( Histo(iBin) )/ Real(NN) / Real(N) / c2
-     
      Write(5,*) rM , gdr
+
+
+     Ctrl1 = gdrm == 0
+     Ctrl2 = gdr /= 0
+     PressCalc:If ( Ctrl1 .AND. Ctrl2 ) Then
+        Press = 1.0 + 0.5*PI*dens*gdr
+        !Write(*,*) gdrm, gdr, press
+     End If PressCalc
      
   End Do GdrCal
-  
+
+  Write(*,*) "Presion:",Press, "Concentracion:", dens
   Close(5)
-  close(100)
+  
   
   Deallocate( Histo )
 
