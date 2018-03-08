@@ -96,7 +96,6 @@ Subroutine GdrCalc
   End Do GdrCal
 
   Write(*,*) "Presion:",Press, "Concentracion:", dens
-  Write(120,*) Dens, Press
   Close(5)
   
   
