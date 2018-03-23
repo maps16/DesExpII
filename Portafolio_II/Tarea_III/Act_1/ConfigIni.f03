@@ -11,7 +11,7 @@ Subroutine ConfigIni
   Integer :: i, j                              !CONTADOR
   
   !CALCULANDO DIMENSIONES DE LA CAJA
-  BoxL = (1.0*N/Dens )**Dim
+  BoxL = (1.0*N/Dens )**(1.0/Dim)
   Write(*,*) "LONGITUD DE LA CELDA:", BoxL
 
   Open (1, File = "ConIni.dat" ) 
@@ -25,7 +25,7 @@ Subroutine ConfigIni
      X(i) = (xRan-0.5)*(BoxL-1)                   !\
      Y(i) = (yRan-0.5)*(BoxL-1)                   !/   [-(BoxL-1)/2 , (BoxL-1)/2]
     
-     !Write(*,*) X(i), Y(i), Z(i)               !DEBUG
+     !Write(*,*) X(i), Y(i)                       !DEBUG
 
      Traslape: Do j=1 , i-1
         
@@ -34,18 +34,15 @@ Subroutine ConfigIni
         !Write(*,*) i,j,xij, yij, zij  !DEBUG
         dist = xij*xij + yij*yij
 
-        DectTras: If(dist .LE. sigma ) Then
+        DectTras: If(dist .LE. sigma ) Then       !CHECAR SI EXISTE TRASLAPE
 
-           !Write(*,*) "TRASLAPE", i, j    !DEBUG 
-           GO TO 2
+           GO TO 2                                !VOLVER A CALCULAR UNA POSICION IR A LOS CALL_RANDOM_NUMBER
 
         End If DectTras
 
-        !Write (*,*) "DISTANCIA", i, j, sqrt(Dist)  !DEBUG
-
      End Do Traslape
      
-     Write(1,*) X(i), Y(i) !GUARDANDO EN ARCHIVO LA POSICION
+     Write(1,*) X(i), Y(i)                        !GUARDANDO EN ARCHIVO LA CONFIGURACION INICIAL
 
   End Do Colocar
 
