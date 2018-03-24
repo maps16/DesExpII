@@ -29,9 +29,9 @@ Program ConfigIni
   
   
   !CALCULANDO DIMENSIONES DE LA CAJA
-  Dim = 1.0/3.0
-  N2 =aint( N**(Dim) )
-  BoxL = (1.0*N/Dens )**Dim
+  Dim = 3.0
+  N2 =anint( N**(1.0/Dim) )
+  BoxL = (1.0*N/Dens )**(1.0/Dim)
   N3 = N2*N2*N2
   Write(*,*) "LONGITUD DE LA CELDA:", BoxL
   Write(*,*) "TOTAL DE PARTICULAS EN LA CELDA COLOCADAS:", N3
