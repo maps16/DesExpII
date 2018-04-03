@@ -1,7 +1,7 @@
 !========================================================================
 ! PROGRAMA PRINCIPAL DEL LA SIMULACION, LLAMA SUBRUTINAS PARA REALIZAR 
 ! LA SIMULACION
-!Autor: Martin Alejandro Paredes Sosa
+! Autor: Martin Alejandro Paredes Sosa
 !========================================================================
 Program Main
   Use cte
