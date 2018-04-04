@@ -8,9 +8,8 @@ Program Main
   Implicit None
   Integer :: i, j, IStep , k, k2,  ki                       !CONTADORES
   Real :: RanX, RanY, RanZ                                  !VALORES ALEATORIOS PARA POSICION
-  Real :: MAcep, Ratio                                      !VARIABLES DE CONTROL DE DRMAX
   Real :: phi                                               !VARIABLE TEMP FRACCION EN VOLUMEN
-  Logical :: Ctrl, Ctrl1, Ctrl1A, Ctrl2                     !CONTROL LOGICO
+  Logical :: Ctrl, Ctrl1, Ctrl2                     !CONTROL LOGICO
   Integer :: istat1, istat2
   Character (len=80) :: err_msg1, err_msg2
 
