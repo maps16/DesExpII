@@ -35,7 +35,7 @@ Program Main
 
   !PARAMETROS DE SIMULADOR
   N = 256
-  NStep =10000
+  NStep =50000
   ISave = 100                                            !G(r)
   ISave2 = 100                                           !W(t), D(t)
   iPrint = 1000
@@ -47,7 +47,7 @@ Program Main
   YukZk = 0.149
   YukA = YukA * Exp( YukZk )
   NN = ( NStep- CEq ) / ISave
-  Write(*,*) phi !DEBUG
+  !Write(*,*) phi !DEBUG
 
 
   !ALOJAR ESPACIO EN MEOMORIA PARA LOS ARREGLO DE POSICION DE PARTICULAS
