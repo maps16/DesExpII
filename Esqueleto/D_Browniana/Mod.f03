@@ -3,8 +3,8 @@ Module cte
   Real, Parameter :: sigma = 1.0                                   !DIAMETRO DE LAS PARTICULAS
   Real, Parameter :: PI=4*atan(1.0)                                !PI
   Real :: YukA, YukZk                                              !POTENCIAL YUKAWA
-  Integer, Parameter :: CEq = 10000                                !CONFIGURACION DE EQUILIBRIO
-  Integer, Parameter :: NNN = 200000
+  Integer, Parameter :: CEq = 11000                                !CONFIGURACION DE EQUILIBRIO
+  Integer, Parameter :: NNN = 200
   Real :: Dens, BoxL, RCut, dT                                     !PARAMETROS DE LA SIMULACION (REALES)
   Integer :: N, NStep, ISave, ISave2, IPrint, IRatio, NN           !PARAMETROS DE LA SIMULACION (ENTEROS)
   Real, Parameter :: Dim = 1.0/3.0                                 !Dimensiones (2D o 3D)

@@ -77,7 +77,7 @@ Subroutine GdrCalc
 
  
   
-  c1 = ( 4 / 3 ) * PI * Dens
+  c1 = ( 4.0 / 3.0 ) * PI * Dens
   
   !ABRIENDO ARCHIVO PARA GDR
   Open( 5, file= "gdr.dat" )
@@ -89,7 +89,7 @@ Subroutine GdrCalc
      rU = rL + delTar
      rM = rL + ( delTar/2.0 )
 
-     c2 = c1 * ( ( rU * rU * rU ) - ( rL * rL * rL ) )
+     c2 = c1 * ( ( rU**3 ) - ( rL**3 ) )
      gdr = Real( Histo(iBin) )/ Real(NN) / Real(N) / c2
      gdrm = gdr
 

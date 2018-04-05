@@ -35,7 +35,7 @@ Program Main
 
   !PARAMETROS DE SIMULADOR
   N = 256
-  NStep =50000
+  NStep =25000
   ISave = 100                                            !G(r)
   ISave2 = 100                                           !W(t), D(t)
   iPrint = 1000
