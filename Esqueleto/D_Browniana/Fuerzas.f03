@@ -8,9 +8,10 @@
 Subroutine Fuerza(L)
   Use cte
   Implicit None
-  Real :: EnePot, U, U2,                                           !ENERGIA
+  Real :: EnePot, U, U2                                            !ENERGIA
   Real :: FXI, FYI, FZI, fxij, fyij, fzij                          !FUERZAS TEMP
   Real :: xij, yij, zij, rij                                       !POSICIONES
+
   Integer :: i, j, L                                               !CONTADORES ("L" CONTADOR DE LA CONFIGURACION)
   Logical :: Ctrl1, Ctrl2
 
@@ -56,7 +57,7 @@ Subroutine Fuerza(L)
            
            U = Exp( -YukZk * rij )
            U2 = YukA * U  * (YukZk * rij + 1.0 ) / (rij**3)
-           EnePot = (A * U) / rij + EnePot
+           EnePot = (YukA * U) / rij + EnePot
 
            fxij = xij * U2
            fyij = yij * U2
@@ -82,8 +83,10 @@ Subroutine Fuerza(L)
   End Do Parti1
 
   !GUADANDO TERMALIZACION (ENERGIA POR PARTICULA)
-  Write(3,*) L, EnePot / Real(N)
-
+  Write(3,*) L , EnePot / Real(N)
+  If( mod(L , iPrint) == 0 ) Then
+     Write(*,*) L , EnePot / Real(N)
+  End If
 
 End Subroutine Fuerza
 

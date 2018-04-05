@@ -9,7 +9,9 @@ Program Main
   Integer :: i, j, IStep , k, k2,  ki                       !CONTADORES
   Real :: RanX, RanY, RanZ                                  !VALORES ALEATORIOS PARA POSICION
   Real :: phi                                               !VARIABLE TEMP FRACCION EN VOLUMEN
-  Logical :: Ctrl, Ctrl1, Ctrl2                     !CONTROL LOGICO
+  Real :: Var
+  Logical :: Ctrl, Ctrl1, Ctrl2                             !CONTROL LOGICO
+
   Integer :: istat1, istat2
   Character (len=80) :: err_msg1, err_msg2
 
@@ -32,10 +34,11 @@ Program Main
   Write(*,*) "============================================================================="
 
   !PARAMETROS DE SIMULADOR
-  N = 800
-  NStep = 415000
+  N = 256
+  NStep =10000
   ISave = 100                                            !G(r)
   ISave2 = 100                                           !W(t), D(t)
+  iPrint = 1000
   dt = 0.0004
 
   phi = 4.4D-4
@@ -43,15 +46,17 @@ Program Main
   YukA = 556.0
   YukZk = 0.149
   YukA = YukA * Exp( YukZk )
-
+  NN = ( NStep- CEq ) / ISave
   Write(*,*) phi !DEBUG
 
 
   !ALOJAR ESPACIO EN MEOMORIA PARA LOS ARREGLO DE POSICION DE PARTICULAS
   Allocate( X(N), Y(N), Z(N), STAT= istat1 , ERRMSG=err_msg1  )
   Allocate( XR(N), YR(N), ZR(N) )
+
   !ALOJAR ESPACIO EN MEMORIA PARA LAS FUERZAS DE INTERACCION
-  Allocate( FX(N), FY(N), Z(N) )
+  Allocate( FX(N), FY(N), FZ(N) )
+
   !ALOJAR ESPACIO EN MEOMORIA PARA LOS ARREGLOS DE CONFIGURACION
   Allocate( CX(N,NN), CY(N,NN), CZ(N,NN), STAT= istat2 , ERRMSG=err_msg2 )
   Allocate( CXD(N,NN), CYD(N,NN), CZD(N,NN) )
@@ -66,7 +71,7 @@ Program Main
   Var = sqrt(2.0*dt)
   k2 = 0                                                                  !G(r)
   ki = 0                                                                  !W(t), D(t)
-  NN = ( NStep- CEq ) / ISave
+ 
 
   !CALCULO DE FUERZAS DE LA CONFIGURACION INICIAL
   Open(3, File="Terma.dat" )
@@ -95,11 +100,11 @@ Program Main
 
         X(i) = X(i) + FX(i) * dt + Var * RanX
         Y(i) = Y(i) + FY(i) * dt + Var * RanY
-        Z(i) = Z(i) * FZ(i) * dt + Var * RanZ
+        Z(i) = Z(i) + FZ(i) * dt + Var * RanZ
 
         XR(i) = XR(i) + FX(i) * dt + Var * RanX
         YR(i) = YR(i) + FY(i) * dt + Var * RanY
-        ZR(i) = ZR(i) * FZ(i) * dt + Var * RanZ
+        ZR(i) = ZR(i) + FZ(i) * dt + Var * RanZ
                      
         !CONDICIONES PERIODICAS (MANTENER MISMA N EN TODA CONFIGURACION)
         X(i) = X(i) - BoxL*Anint( X(i) / BoxL )
@@ -112,7 +117,7 @@ Program Main
      
      !ALMACENANDO CONFIGURACIONES DE EQUILIBRIO CX, CY, CZ PARA LA G(R)
      Ctrl1 =  Mod( iStep, iSave) == 0
-     Ctrl2 = L .GT. CEq
+     Ctrl2 = iStep .GT. CEq
      Ctrl = Ctrl1 .AND. Ctrl2
  
      ConfigGR: If (Ctrl) Then
@@ -123,6 +128,7 @@ Program Main
            CX(k,k2) = X(k)
            CY(k,k2) = Y(k)
            CZ(k,k2) = Z(k)
+           !Write(*,*) "ENTRO"
            
         End Do SAV
         
@@ -130,20 +136,20 @@ Program Main
 
      !ALMACENANDO CONFIGURACIONES DE EQUILIBRIO CXD, CYD, CZD PARA W(t) Y D(t)
      Ctrl1 =  Mod( iStep, iSave2) == 0
-     Ctrl2 = L .GT. CEq
+     Ctrl2 = iStep .GT. CEq
      Ctrl = Ctrl1 .AND. Ctrl2
  
      ConfigWt: If (Ctrl) Then
 
         ki = ki + 1
 
-        SAV:Do k = 1 , N
+        SAV1:Do k = 1 , N
 
            CXD(k,ki) = XR(k)
            CYD(k,ki) = YR(k)
            CZD(k,ki) = ZR(k)
 
-        End Do SAV
+        End Do SAV1
 
      End If ConfigWt
 
