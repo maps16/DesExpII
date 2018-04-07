@@ -1,8 +1,8 @@
 !============================================================================
 ! EL PROGRAMA REALIZA EL CALCULO DE LA GDR APARTIR DE LAS DIFERENTES 
-! CONFIGURACIONES REALIZADAS EN EL PROGRAMA PRINCIPAL
+! CONFIGURACIONES REALIZADAS EN EL PROGRAMA PRINCIPAL (3D)
 !
-! AUTOR: Martin Alejandro Paredes Sosa
+! AUTOR: MARTIN ALEJANDRO PAREDES SOSA
 !============================================================================
 
 Subroutine GdrCalc
@@ -14,7 +14,7 @@ Subroutine GdrCalc
   Real, Parameter :: delTar = 0.05
   Integer :: MBin, iBin
   Integer :: i, j, k                                              !CONTADORES
-  Real :: xO, yO, xN, yN, xON, yON
+  Real :: xO, yO, zO, xN, yN, zN, xON, yON, zON
   Real :: rD, rU, rL, rM, c1, c2, gdr, gdrm, press
   Integer :: istat1
   Character (len=80) :: err_msg1
@@ -24,9 +24,9 @@ Subroutine GdrCalc
   Allocate( Histo(NNN) , STAT = istat1, ERRMSG = err_msg1)
 
   Histo = 0
-    
-  MBin = Int( RCut / delTar )
   
+  MBin = Int( RCut / delTar )
+
   PartiO : Do i = 1, N
      
      NextParti : Do j = 1, N
@@ -38,11 +38,12 @@ Subroutine GdrCalc
               !PARTICULA i ORIGEN
               xO = CX( i , k )
               yO = CY( i , k )
-              zO = CZ (i , k )
+              zO = CZ( i , k )
+              
               !PARTICUAL j CERCANA
               xN = CX( j , k )
               yN = CY( j , k )
-              zN = CZ) j , k )
+              zN = CZ( j , k )
               
               !DISTANCIA
               xON = xN - xO
@@ -51,30 +52,32 @@ Subroutine GdrCalc
               
               !CONDICION DE IMAGEN MINIMA
               xON = xON - BoxL*Anint( xON/BoxL )
-              yON = yON - BoxL*Anint( yON/BoxL )
+              yON = yON - BoxL*Anint( yON/BoxL ) 
               zON = zON - BoxL*Anint( zON/BoxL )
 
-              !DISTANCIA
-              rD = sqrt( (xON * xON) + (yON * yON) +  (zON * zON) )
-                            
+              !DISTANCIA ENTRE LAS PARTICULAS
+              rD = sqrt( (xON * xON) + (yON * yON) + (zON*zON) )
+              
               !CERCANIA CINTA
               iBin =  Int( rD / delTar ) + 1
               
               Guardar : If((iBin .LE. MBin)  ) Then
-              
+
                  Histo(iBin) = Histo(iBin) + 1
-              
+                 
               End If Guardar
               
            End Do StepCnfg
            
         End If NOTSAME
+        
      End Do NextParti
+     
   End Do PartiO
 
-  !Write(*,*) Histo
+ 
   
-  c1 = (4.0/3.0)* PI * Dens
+  c1 = ( 4.0 / 3.0 ) * PI * Dens
   
   !ABRIENDO ARCHIVO PARA GDR
   Open( 5, file= "gdr.dat" )
@@ -86,25 +89,23 @@ Subroutine GdrCalc
      rU = rL + delTar
      rM = rL + ( delTar/2.0 )
 
-     c2 = c1 * ((rU*rU) - (rL*rL))
+     c2 = c1 * ( ( rU**3 ) - ( rL**3 ) )
      gdr = Real( Histo(iBin) )/ Real(NN) / Real(N) / c2
+     gdrm = gdr
+
      Write(5,*) rM , gdr
 
 
-     !Ctrl1 = gdrm == 0
+     !Ctrl1 = gdrm == 0                                        !CALCULO DE GDR ESFERA DURA
      !Ctrl2 = gdr /= 0
      !PressCalc:If ( Ctrl1 .AND. Ctrl2 ) Then
-
-        !Press = 1.0 + 0.5*PI*dens*gdr
-        
+     !   Press = 1.0 + 0.5*PI*dens*gdr
+     !   !Write(*,*) gdrm, gdr, press
      !End If PressCalc
      
   End Do GdrCal
 
-  !Write(*,*) "Presion:",Press, "Concentracion:", dens
-  !Write(120,*) Dens, Press
   Close(5)
-  
   
   Deallocate( Histo )
 

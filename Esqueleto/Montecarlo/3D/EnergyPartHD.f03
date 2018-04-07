@@ -4,14 +4,13 @@
 ! Autor: Martin Alejandro Paredes Sosa
 !============================================================================
 
-Subroutine EnergyPart(Rx1, Ry1, Rz1, i, V)
+Subroutine EnergyPart(Rx1, Ry1, i, V)
   Use cte
   Implicit None
-  Integer :: i, j                                                     !CONTADORES
-  Real :: U, U2
-  Real ::  V, Rx1, Rxd, Ry1, Ryd, Rz1, Rzd, Dist, VNew                !PARAMTROS DE CALCULO DE ENERGIA
-  Real, Parameter :: YukA = 556.0                                     !PARAMETROS DE YUKAWA
-  Real, Parameter :: YukZ = 0.149                                     !PARAMETROS DE YUKAWA
+  Real :: V, VNew, Dist, Rx1, Rxd, Ry1, Rz1, Rzd, Ryd
+  Integer :: i, j
+  !INICIAR ENERGIA EN 0
+  V = 0
 
   BuscarPart: Do j=1, N
 
@@ -19,22 +18,29 @@ Subroutine EnergyPart(Rx1, Ry1, Rz1, i, V)
 
         Rxd = Rx1 - X(j)
         Ryd = Ry1 - Y(j)
-        Rzd = Rz1 - Z(j)
+	Rzd = Rz1 - Z(j)
 
         !CONDICION DE IMAGEN MINIMA (LOCALIZAR PARTICULAS EN CELDAS CERCANAS)
         Rxd = Rxd - BoxL*Anint(Rxd/BoxL)
         Ryd = Ryd - BoxL*Anint(Ryd/BoxL)
-        Rzd = Rzd - BoxL*Anint(Rzd/BoxL)
-        
+	Rzd = Rzd - BoxL*Anint(Rzd/BoxL)
+
         !INGRESANDO MODELO DE INTERACCON (DISCOS DUROS)
         Dist = sqrt( Rxd*Rxd + Ryd*Ryd + Rzd*Rzd )
-                
+        !If(Dist .LE. 1.0) Write(*,*) Dist, i,j
+        
         ChecarInter: If(Dist .LT. RCut)  Then
            
-           U = Exp(-YukZ * Dist)
-           V = (YukA * U) * Dist + V
+           ChecarCercania: If (Dist .LE. 1.0) Then
+              VNew = 1.0E+10
+              !Write(*,*) "Ohh"
+           Else
+              VNew = 0
+           End If ChecarCercania
            
+           V = V + VNew
         End If ChecarInter
+
         
      End If NoLaMisma
      

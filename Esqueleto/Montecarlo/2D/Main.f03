@@ -35,9 +35,8 @@ Program Main
   
   
   !ALOJAR ESPACIO EN MEOMORIA PARA LOS ARREGLO DE POSICION DE PARTICULAS
-  Allocate( X(N), Y(N), Z(N), STAT= istat1 , ERRMSG=err_msg1  )
+  Allocate( X(N), Y(N), STAT= istat1 , ERRMSG=err_msg1  )
   
-  !Concentracion:  Do While( Dens <= 0.6 )
   
   !GENERAR LA CONFIGURACION INICIAL
   Call ConfigIni
@@ -51,7 +50,7 @@ Program Main
   NN = ( NStep- CEq ) / ISave
   
   !ALOJAR ESPACIO EN MEOMORIA PARA LOS ARREGLOS DE CONFIGURACION
-  Allocate( CX(N,NN), CY(N,NN), CZ(N,NN), STAT= istat2 , ERRMSG=err_msg2 )
+  Allocate( CX(N,NN), CY(N,NN), STAT= istat2 , ERRMSG=err_msg2 )
   
   
   !CORRECCION DE LARGO ALCANCE
@@ -74,27 +73,24 @@ Program Main
         
         OldX = X(i)
         OldY = Y(i)
-        OldZ = Z(i)
+
         !CALCULAR LA ENERGIA DE LA i-PARTICULA
-        Call EnergyPart(OldX, OldY, OldZ, i, VOld)
+        Call EnergyPart(OldX, OldY, i, VOld)
         
         !GENERAR VALORES ALEATORIOS PARA MOV TENTATIVOS
         Call Random_Number(RanX)
         Call Random_Number(RanY)
-        Call Random_Number(RanZ)
-        
+                
         !MOVIMIENTO TENTATIVO
         NewX = OldX + (2.0*RanX - 1.0)*dRMax
         NewY = OldY + (2.0*RanY - 1.0)*dRMax
-        NewZ = OldZ + (2.0*RanZ - 1.0)*dRMax
-        
+                
         !CONDICIONES PERIODICAS (MANTENER MISMA N EN TODA CONFIGURACION)
         NewX = NewX - BoxL*Anint(NewX/BoxL)
         NewY = NewY - BoxL*Anint(NewY/BoxL)
-        NewZ = NewZ - BoxL*Anint(NewZ/BoxL)
-        
+                
         !CALCULAR LA ENERGIA DE LA PARTICULA EN LA NUEVA POSICION
-        Call EnergyPart(NewX, NewY, NewZ, i, VNew)
+        Call EnergyPart(NewX, NewY, i, VNew)
         
         !MONTECARLO (CRITERIO DE ACEPTACION O RECHAZO DE MOV)
         DV = VNew - VOld
@@ -107,14 +103,14 @@ Program Main
               V = V + DV
               X(i) = NewX
               Y(i) = NewY
-              Z(i) = NewZ
+
               MAcep = MAcep + 1.0 !MOVIMIENTO ACEPTADOS POR MONTECARLO
               
            ElseIf( EXP(-DV) .GT. Dummy ) Then
               V = V + DV
               X(i) = NewX
               Y(i) = NewY
-              Z(i) = NewZ
+              
               MAcep = MAcep + 1.0 !MOVIMIENTOS ACEPTADOS POR MONTECARLO 
               
            End If MONTECARLO2
@@ -159,15 +155,18 @@ Program Main
      !GUARDANDO CONFIGURACION (EN EQUILIBRIO)
      Ctrl2 = ( Mod(IStep,ISave) == 0 ) .AND. ( IStep .GT. CEq )
      SAV: If (Ctrl2) Then
+        
         k2 = k2 + 1
+        
         SAV1:Do k = 1 , N
+           
            CX(k,k2) = X(k)
            CY(k,k2) = Y(k)
-           CZ(k,K2) = Z(k)
+           
         End Do SAV1
+        
+        
      End If SAV
-     
-     !Write(*,*) "SAVE CONFIG: ", IStep                            !DEBUG
      
   End Do Configuracion
   
@@ -176,20 +175,20 @@ Program Main
   !GUARDAR CONFIG FINAL
   ConfigFin: Do i=1, N
      
-     Write(2,*) X(i), Y(i), X(i)
+     Write(2,*) X(i), Y(i)
      
   End Do ConfigFin
   Close (2)
   WRITE(*,*) "DONE SAVING CONFIG FINAL"
   
-  Deallocate( X, Y, Z )
+  Deallocate( X, Y )
   WRITE(*,*) "CLEAR MEMORY" !DEBUG
   
   Call GdrCalc
   WRITE(*,*) "GDR DONE CALC" !DEBUG
   
-  Deallocate( CX, CY, CZ )!, STAT=istat1, ERRMSG = err_msg1 )
-  !Write(*,*) istat1, err_msg1 !DEBUG
+  Deallocate( CX, CY )
+  
   Close(3)
   
   WRITE(*,*) "DONE"
