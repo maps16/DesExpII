@@ -11,6 +11,7 @@ Subroutine Fuerza(L)
   Real :: EnePot, U, U2                                            !ENERGIA
   Real :: FXI, FYI, FZI, fxij, fyij, fzij                          !FUERZAS TEMP
   Real :: xij, yij, zij, rij                                       !POSICIONES
+  Real :: Pres, Pres1
 
   Integer :: i, j, L                                               !CONTADORES ("L" CONTADOR DE LA CONFIGURACION)
   Logical :: Ctrl1, Ctrl2
@@ -21,6 +22,7 @@ Subroutine Fuerza(L)
   FY = 0.0
   FZ = 0.0
 
+  Pres1 = 0.0
 
   Parti1: Do i = 1, N - 1
 
@@ -70,9 +72,12 @@ Subroutine Fuerza(L)
            FX(j) = FX(j) - fxij
            FY(j) = FY(j) - fyij
            FZ(j) = FZ(j) - fzij
-           
+
+           !PRECALCULO DE PRESION
+           Pres1 = Pres1 + rij * U2 
+
         End If Potencial
-        
+        !Pres1 = Pres1 + rij * U2
      End Do Parti2
 
      !GUARDANDO FUERZA
@@ -82,10 +87,16 @@ Subroutine Fuerza(L)
      
   End Do Parti1
 
+  !CALCULO DE PRESION
+  Pres = dens - (dens / (3.0 * real(N) ) ) * Pres1
+
+
+
   !GUADANDO TERMALIZACION (ENERGIA POR PARTICULA)
-  Write(3,*) L , EnePot / Real(N)
+  Write(3,*) L , EnePot / Real(N), Pres
+  
   If( mod(L , iPrint) == 0 ) Then
-     Write(*,*) L , EnePot / Real(N)
+     Write(*,*) L , EnePot / Real(N) , Pres                           !MONITOREO EN PANTALLA
   End If
 
 End Subroutine Fuerza
