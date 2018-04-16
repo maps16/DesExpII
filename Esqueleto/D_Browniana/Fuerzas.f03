@@ -8,7 +8,7 @@
 Subroutine Fuerza(L)
   Use cte
   Implicit None
-  Real :: EnePot, U, U2                                            !ENERGIA
+  Real :: EnePot, U, U2, U3                                            !ENERGIA
   Real :: FXI, FYI, FZI, fxij, fyij, fzij                          !FUERZAS TEMP
   Real :: xij, yij, zij, rij                                       !POSICIONES
   Real :: Pres, Pres1
@@ -59,6 +59,7 @@ Subroutine Fuerza(L)
            
            U = Exp( -YukZk * rij )
            U2 = YukA * U  * (YukZk * rij + 1.0 ) / (rij**3)
+           U3 = U2 * rij * rij
            EnePot = (YukA * U) / rij + EnePot
 
            fxij = xij * U2
@@ -74,10 +75,10 @@ Subroutine Fuerza(L)
            FZ(j) = FZ(j) - fzij
 
            !PRECALCULO DE PRESION
-           Pres1 = Pres1 + rij * U2 
+           Pres1 = Pres1 + U3 
 
         End If Potencial
-        !Pres1 = Pres1 + rij * U2
+        
      End Do Parti2
 
      !GUARDANDO FUERZA
@@ -88,7 +89,7 @@ Subroutine Fuerza(L)
   End Do Parti1
 
   !CALCULO DE PRESION
-  Pres = dens - (dens / (3.0 * real(N) ) ) * Pres1
+  Pres = dens + (dens / (3.0 * real(N) ) ) * Pres1
 
 
 
