@@ -1,6 +1,6 @@
 !============================================================================
 ! CALCULO DE LA ENERGIA DE UNA DE LA CONFIGURACION DE LA CELDA
-! POZO CUADRADO (SW)
+! ESFERA DURA (HD)
 !
 ! Autor: Martin Alejandro Paredes Sosa
 !============================================================================
@@ -32,15 +32,18 @@ Subroutine EnergyConfig(V)
         
         ChecarInter: If(Dist .LT. RCut)  Then
            
-           ChecarCercania: If (Dist .LE. 1.0) Then                   ! DESPUES DEL POZO
+           ChecarCercania: If (Dist .LE. 1.0) Then
+              
               VNew = 1.0E+10
-           Else If( (Dist .GT. 1.0) .AND. (Dist .LT. Lambda)  ) Then ! ZONA DEL POZO
-              VNew = -1.0 / TP
-           Else                                                      ! ANTES DEL POZO
+              
+           Else
+              
               VNew = 0
+              
            End If ChecarCercania
 
            V = V + VNew
+           
         End If ChecarInter
 
      End Do IterPart2

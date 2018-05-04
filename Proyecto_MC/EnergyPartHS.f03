@@ -1,26 +1,25 @@
 !============================================================================
-! CALCULO DE LA ENERGIA DE UNA DE LA CONFIGURACION DE LA CELDA
-! POZO CUADRADO (SW)
+! CALCULO DE LA ENERGIA DE UNA DE LAS PARTICULAS DE LA CELDA
+! ESFERA DURA (HS)
 !
 ! Autor: Martin Alejandro Paredes Sosa
 !============================================================================
 
-Subroutine EnergyConfig(V)
+Subroutine EnergyPart(Rx1, Ry1, i, V)
   Use cte
   Implicit None
-  Real ::  V, Rx1, Rxd, Ry1, Ryd, Rz1, Rzd, Dist, VNew
+  Real :: V, VNew, Dist, Rx1, Rxd, Ry1, Rz1, Rzd, Ryd
   Integer :: i, j
+  !INICIAR ENERGIA EN 0
   V = 0
-  IterPart: Do i=1, N-1
 
-     Rx1 = X(i)
-     Ry1 = Y(i)
-     Rz1 = Z(i)
+  BuscarPart: Do j=1, N
 
-     IterPart2: Do j = i+1, N 
+     NoLaMisma: If(i .NE. j) Then
+
         Rxd = Rx1 - X(j)
         Ryd = Ry1 - Y(j)
-        Rzd = Rz1 - Z(j)
+	Rzd = Rz1 - Z(j)
 
         !CONDICION DE IMAGEN MINIMA (LOCALIZAR PARTICULAS EN CELDAS CERCANAS)
         Rxd = Rxd - BoxL*Anint(Rxd/BoxL)
@@ -29,21 +28,21 @@ Subroutine EnergyConfig(V)
 
         !INGRESANDO MODELO DE INTERACCON (DISCOS DUROS)
         Dist = sqrt( Rxd*Rxd + Ryd*Ryd + Rzd*Rzd )
+        !If(Dist .LE. 1.0) Write(*,*) Dist, i,j
         
         ChecarInter: If(Dist .LT. RCut)  Then
            
-           ChecarCercania: If (Dist .LE. 1.0) Then                   ! DESPUES DEL POZO
+           ChecarCercania: If (Dist .LE. 1.0) Then
               VNew = 1.0E+10
-           Else If( (Dist .GT. 1.0) .AND. (Dist .LT. Lambda)  ) Then ! ZONA DEL POZO
-              VNew = -1.0 / TP
-           Else                                                      ! ANTES DEL POZO
+           Else
               VNew = 0
            End If ChecarCercania
-
            V = V + VNew
         End If ChecarInter
 
-     End Do IterPart2
-  End Do IterPart
-
-End Subroutine EnergyConfig
+        
+     End If NoLaMisma
+     
+  End Do BuscarPart
+  
+End Subroutine EnergyPart

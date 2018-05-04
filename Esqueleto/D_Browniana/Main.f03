@@ -34,7 +34,7 @@ Program Main
   Write(*,*) "============================================================================="
 
   !PARAMETROS DE SIMULADOR
-  N = 400
+  N = 800
   NStep =25000
   ISave = 100                                            !G(r)
   ISave2 = 100                                           !W(t), D(t)

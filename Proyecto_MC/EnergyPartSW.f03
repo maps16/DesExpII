@@ -32,11 +32,11 @@ Subroutine EnergyPart(Rx1, Ry1, i, V)
         
         ChecarInter: If(Dist .LT. RCut)  Then
            
-           ChecarCercania: If (Dist .LE. 1.0) Then
+           ChecarCercania: If (Dist .LE. 1.0) Then                    ! DESPUES DEL POZO
               VNew = 1.0E+10
-           Else If( (Dist .GT. 1.0) .AND. (Dist .LT. Lambda)  ) Then
+           Else If( (Dist .GT. 1.0) .AND. (Dist .LT. Lambda)  ) Then  ! EL POZO
               VNew = -1.0 / TP
-           Else
+           Else                                                       ! ANTES DEL POZO
               VNew = 0
            End If ChecarCercania
            V = V + VNew
