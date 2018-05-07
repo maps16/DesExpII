@@ -5,7 +5,7 @@ Module cte
   Real, Parameter :: Lambda =  1.25                                !TAMANO DEL POZO
   Real, Parameter :: TP = 1.0                                         !TEMPERATURA REDUCIDA
   Integer, Parameter :: CEq = 1000                                 !CONFIG DE EQUILIBRIO
-  !Integer, Parameter :: NNN = 2000
+!  Integer, Parameter :: NNN = 2000
   Real :: Dens, BoxL, RCut, dRMax
   Integer :: N, NStep, ISave, IPrint, IRatio, NN
   Real, Parameter :: Dim = 1.0/3.0                                 !DIMENSIONES (3D)

@@ -5,11 +5,14 @@
 ! Autor: Martin Alejandro Paredes Sosa
 !============================================================================
 
-Subroutine EnergyPart(Rx1, Ry1, i, V)
+Subroutine EnergyPart(Rx1, Ry1, Rz1, i, V)
   Use cte
   Implicit None
-  Real :: V, VNew, Dist, Rx1, Rxd, Ry1, Rz1, Rzd, Ryd
-  Integer :: i, j
+  Real :: VNew, Dist, Rxd, Rzd, Ryd
+  Real, Intent(In) :: Rx1, Ry1, Rz1
+  Real, Intent(Out) :: V
+  Integer, Intent(In) :: i
+  Integer :: j
   !INICIAR ENERGIA EN 0
   V = 0
 

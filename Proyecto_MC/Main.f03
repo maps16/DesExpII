@@ -35,9 +35,9 @@ Program Main
   
   
   !ALOJAR ESPACIO EN MEOMORIA PARA LOS ARREGLO DE POSICION DE PARTICULAS
-  Allocate( X(N), Y(N), Z(N), STAT= istat1 , ERRMSG=err_msg1  )
+  Allocate( X(N), Y(N), Z(N))!, STAT= istat1 , ERRMSG=err_msg1  )
   
-  !Concentracion:  Do While( Dens <= 0.6 )
+ 
   
   !GENERAR LA CONFIGURACION INICIAL
   Call ConfigIni
@@ -51,7 +51,7 @@ Program Main
   NN = ( NStep- CEq ) / ISave
   
   !ALOJAR ESPACIO EN MEOMORIA PARA LOS ARREGLOS DE CONFIGURACION
-  Allocate( CX(N,NN), CY(N,NN), CZ(N,NN), STAT= istat2 , ERRMSG=err_msg2 )
+  Allocate( CX(N,NN), CY(N,NN), CZ(N,NN))!, STAT= istat2 , ERRMSG=err_msg2 )
   
   
   !CORRECCION DE LARGO ALCANCE
@@ -67,17 +67,17 @@ Program Main
   Open(3, File="Terma.dat" )
   !MOVIMIENTO DE PARTICULAS ALEATORIA
   
-  
   Configuracion: Do iStep = 1, NStep
-     
+
      Particula: Do i = 1, N
-        
+
         OldX = X(i)
         OldY = Y(i)
         OldZ = Z(i)
+
         !CALCULAR LA ENERGIA DE LA i-PARTICULA
         Call EnergyPart(OldX, OldY, OldZ, i, VOld)
-        
+
         !GENERAR VALORES ALEATORIOS PARA MOV TENTATIVOS
         Call Random_Number(RanX)
         Call Random_Number(RanY)
@@ -99,10 +99,10 @@ Program Main
         !MONTECARLO (CRITERIO DE ACEPTACION O RECHAZO DE MOV)
         DV = VNew - VOld
         Call Random_Number(Dummy) !PARA CRITERIO ENTRE 0.0 Y 75.0
-        
+
         !MONTECARLO (ACEPTANDO MOVIMIENTOS POR CRITERIOS)
         MONTECARLO1: If(DV .LT. 75.0 ) Then
-           
+
            MONTECARLO2: If(DV .LE. 0.0 ) Then
               V = V + DV
               X(i) = NewX
@@ -118,17 +118,18 @@ Program Main
               MAcep = MAcep + 1.0 !MOVIMIENTOS ACEPTADOS POR MONTECARLO 
               
            End If MONTECARLO2
-           
+
         End If MONTECARLO1
-        
+
         !ENERGIA POR PARTICULA
         VN = (V+VLRC)/Real(N)
-           
+
+        
      End Do Particula
      
      !GUARDANDO LA TERMALIZACION DE CADA CONFIGURACION DEL SISTEMA 
      Write(3,*) IStep, VN
-     
+
      
      
      !AJUSTE DE DESPLAZAMIENTO DRMAX
@@ -136,7 +137,7 @@ Program Main
      NdR : If (Ctrl1) Then
         
         Ratio =  MAcep / Real( N * IRatio  )                      !RAZON DE ACEPTADOS 
-        Ctrl1A = Ratio .GT. 0.5                                  !CRITERIO DE ACEPTACION DE MOVIMIENTOS
+        Ctrl1A = Ratio .GT. 0.95                                  !CRITERIO DE ACEPTACION DE MOVIMIENTOS
         
         Criterio : If ( Ctrl1A ) Then
            dRMax = dRMax * 1.05                                   !CRECER DESPLAZAMIENTO 
@@ -171,7 +172,7 @@ Program Main
         End Do SAV1
         
      End If SAV
-     
+
          
   End Do Configuracion
   
