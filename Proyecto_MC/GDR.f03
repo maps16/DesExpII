@@ -91,18 +91,20 @@ Subroutine GdrCalc
      rM = rL + ( delTar/2.0 )
 
      c2 = c1 * ( ( rU**3 ) - ( rL**3 ) )
-     gdr = Real( Histo(iBin) )/ Real(NN) / Real(N) / c2
      gdrm = gdr
-
+     gdr = Real( Histo(iBin) )/ Real(NN) / Real(N) / c2
+     
      Write(5,*) rM , gdr
 
 
-     !Ctrl1 = gdrm == 0                                        !CALCULO DE GDR ESFERA DURA
-     !Ctrl2 = gdr /= 0
-     !PressCalc:If ( Ctrl1 .AND. Ctrl2 ) Then
-     !   Press = 1.0 + 0.5*PI*dens*gdr
-     !   !Write(*,*) gdrm, gdr, press
-     !End If PressCalc
+     Ctrl1 = gdrm == 0                                        !CALCULO DE GDR ESFERA DURA
+     Ctrl2 = gdr /= 0
+     PressCalc:If ( Ctrl1 .AND. Ctrl2 ) Then
+
+        Press = 1.0 + 0.5*PI*dens*gdr
+        Write(*,*) gdrm, gdr, press
+        
+     End If PressCalc
      
   End Do GdrCal
 
