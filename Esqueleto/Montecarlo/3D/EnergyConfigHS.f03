@@ -1,24 +1,26 @@
 !============================================================================
-! CALCULO DE LA ENERGIA DE UNA DE LAS PARTICULAS DE LA CELDA
+! CALCULO DE LA ENERGIA DE UNA DE LA CONFIGURACION DE LA CELDA
+! ESFERA DURA (HD)
 !
 ! Autor: Martin Alejandro Paredes Sosa
 !============================================================================
 
-Subroutine EnergyPart(Rx1, Ry1, i, V)
+Subroutine EnergyConfig(V)
   Use cte
   Implicit None
-  Real :: V, VNew, Dist, Rx1, Rxd, Ry1, Rz1, Rzd, Ryd
+  Real ::  V, Rx1, Rxd, Ry1, Ryd, Rz1, Rzd, Dist, VNew
   Integer :: i, j
-  !INICIAR ENERGIA EN 0
   V = 0
+  IterPart: Do i=1, N-1
 
-  BuscarPart: Do j=1, N
+     Rx1 = X(i)
+     Ry1 = Y(i)
+     Rz1 = Z(i)
 
-     NoLaMisma: If(i .NE. j) Then
-
+     IterPart2: Do j = i+1, N 
         Rxd = Rx1 - X(j)
         Ryd = Ry1 - Y(j)
-	Rzd = Rz1 - Z(j)
+        Rzd = Rz1 - Z(j)
 
         !CONDICION DE IMAGEN MINIMA (LOCALIZAR PARTICULAS EN CELDAS CERCANAS)
         Rxd = Rxd - BoxL*Anint(Rxd/BoxL)
@@ -27,23 +29,24 @@ Subroutine EnergyPart(Rx1, Ry1, i, V)
 
         !INGRESANDO MODELO DE INTERACCON (DISCOS DUROS)
         Dist = sqrt( Rxd*Rxd + Ryd*Ryd + Rzd*Rzd )
-        !If(Dist .LE. 1.0) Write(*,*) Dist, i,j
         
         ChecarInter: If(Dist .LT. RCut)  Then
            
            ChecarCercania: If (Dist .LE. 1.0) Then
+              
               VNew = 1.0E+10
-              !Write(*,*) "Ohh"
+              
            Else
+              
               VNew = 0
+              
            End If ChecarCercania
-           
+
            V = V + VNew
+           
         End If ChecarInter
 
-        
-     End If NoLaMisma
-     
-  End Do BuscarPart
-  
-End Subroutine EnergyPart
+     End Do IterPart2
+  End Do IterPart
+
+End Subroutine EnergyConfig
