@@ -10,5 +10,14 @@ Module cte
   Integer :: N, NStep, ISave, IPrint, IRatio, NN
   Real, Parameter :: Dim = 1.0/3.0                                 !DIMENSIONES (3D)
   Real, Allocatable, Dimension(:) :: X, Y, Z                       !POSICIONES DE LAS PARTICULAS
-  Real, Allocatable, Dimension(:,:) :: CX, CY, CZ                  !MATRICES DE CONFIGURACION 
+  Real, Allocatable, Dimension(:,:) :: CX, CY, CZ                  !MATRICES DE CONFIGURACION
+
+  !VARIABLES DE SIMULACION
+  Integer , Parameter :: N = 250
+  Integer, Parameter :: NStep = 100000
+  Integer, Parameter :: IPrint = 1000
+  Integer, Parameter :: ISave = 100
+  Integer, Parameter :: IRatio = 100
+  Real, Parameter :: Dens =0.2
+  
 End Module cte
