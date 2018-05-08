@@ -42,7 +42,7 @@
 
 # Salida con Datos #
 ####################
-*.dat
+#*.dat
 
 #Imagenes#
 ##########
