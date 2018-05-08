@@ -13,10 +13,10 @@ Module cte
   Real, Allocatable, Dimension(:,:) :: CX, CY, CZ                  !MATRICES DE CONFIGURACION
 
   !VARIABLES DE SIMULACION
-  Integer , Parameter :: N = 250
+  Integer , Parameter :: N = 216
   Integer, Parameter :: NStep = 100000
   Integer, Parameter :: IPrint = 1000
   Integer, Parameter :: ISave = 100
   Integer, Parameter :: IRatio = 100
-  Real, Parameter :: Dens =0.8  
+  Real, Parameter :: Dens =0.7  
 End Module cte

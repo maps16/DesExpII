@@ -21,7 +21,7 @@ Subroutine ConfigIni
 
   N3 = N2**(1.0/Dim)
   !N = N3
-  BoxL = (1.0*N3/Dens )**(Dim)
+  BoxL = (1.0*N/Dens )**(Dim)
   
   Write(*,*) "LONGITUD DE LA CELDA:", BoxL
   Write(*,*) "TOTAL DE PARTICULAS COLOCADAS EN LA CELDA:", N3
