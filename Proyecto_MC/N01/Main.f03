@@ -20,17 +20,17 @@ Program Main
 
   !PEDIR DENSIDAD Y NUMERO DE PARTICULAS
   Write(*,*) "NUMERO DE PARTICULAS"
-  Read(*,*) N
+  Write(*,*) N
   Write(*,*) "CONCENTRACION REDUCIDA"
-  Read(*,*) Dens
+  Write(*,*) Dens
   Write(*,*) "NUMERO DE CICLOS"
-  Read(*,*) NStep
+  Write(*,*) NStep
   Write(*,*) "MONITOREO EN PANTALLA (CADA CAUNTOS CICLOS)"
-  Read(*,*) IPrint
+  Write(*,*) IPrint
   Write(*,*) "NUMERO DE PASOS PARA GUARDAR CONFIGURACION"
-  Read(*,*) ISave
+  Write(*,*) ISave
   Write(*,*) "FRECUENCIA DE CORRECCION EN DESPLAZAMIENTO"
-  Read(*,*) IRatio
+  Write(*,*) IRatio
   Write(*,*) "============================================================================="
   
   
@@ -61,6 +61,9 @@ Program Main
   Call EnergyConfig(V)
   VI = V + VLRC
   Write(*,*) "ENERGIA DE LA CONFIGURACION INICIAL:",  VI
+
+  Write(*,*) "============================================================================="
+  Write(*,*) "|CONFIG||ENERGIA PARTICULA||RATIO||DR|"
   
   !ABRIENDO ARCHIVOS PARA GUARDAR INFO DEL SISTEMA
   Open(2, File="ConFin.dat")
