@@ -65,4 +65,4 @@ Subroutine ConfigIni
   Close(1)
 
 
-End Subroutine ConfigIniReg
+End Subroutine ConfigIni
