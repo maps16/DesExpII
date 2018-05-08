@@ -20,17 +20,17 @@ Program Main
 
   !PEDIR DENSIDAD Y NUMERO DE PARTICULAS
   Write(*,*) "NUMERO DE PARTICULAS"
-  Read(*,*) N
+  Write(*,*) N
   Write(*,*) "CONCENTRACION REDUCIDA"
-  Read(*,*) Dens
+  Write(*,*) Dens
   Write(*,*) "NUMERO DE CICLOS"
-  Read(*,*) NStep
+  Write(*,*) NStep
   Write(*,*) "MONITOREO EN PANTALLA (CADA CAUNTOS CICLOS)"
-  Read(*,*) IPrint
+  Write(*,*) IPrint
   Write(*,*) "NUMERO DE PASOS PARA GUARDAR CONFIGURACION"
-  Read(*,*) ISave
+  Write(*,*) ISave
   Write(*,*) "FRECUENCIA DE CORRECCION EN DESPLAZAMIENTO"
-  Read(*,*) IRatio
+  Write(*,*) IRatio
   Write(*,*) "============================================================================="
   
   
@@ -61,6 +61,9 @@ Program Main
   Call EnergyConfig(V)
   VI = V + VLRC
   Write(*,*) "ENERGIA DE LA CONFIGURACION INICIAL:",  VI
+
+  Write(*,*) "============================================================================="
+  Write(*,*) "|CONFIG||ENERGIA PARTICULA||RATIO||DR|"
   
   !ABRIENDO ARCHIVOS PARA GUARDAR INFO DEL SISTEMA
   Open(2, File="ConFin.dat")
@@ -137,7 +140,7 @@ Program Main
      NdR : If (Ctrl1) Then
         
         Ratio =  MAcep / Real( N * IRatio  )                      !RAZON DE ACEPTADOS 
-        Ctrl1A = Ratio .GT. 0.5                                  !CRITERIO DE ACEPTACION DE MOVIMIENTOS
+        Ctrl1A = Ratio .GT. 0.95                                  !CRITERIO DE ACEPTACION DE MOVIMIENTOS
         
         Criterio : If ( Ctrl1A ) Then
            dRMax = dRMax * 1.05                                   !CRECER DESPLAZAMIENTO 
