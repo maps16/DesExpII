@@ -18,6 +18,5 @@ Module cte
   Integer, Parameter :: IPrint = 1000
   Integer, Parameter :: ISave = 100
   Integer, Parameter :: IRatio = 100
-  Real, Parameter :: Dens =0.1
-  
+  Real, Parameter :: Dens =0.7  
 End Module cte
