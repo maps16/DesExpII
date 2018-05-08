@@ -14,7 +14,7 @@ Subroutine EnergyPart(Rx1, Ry1, Rz1, i, V)
   Integer, Intent(In) :: i
   Integer :: j
   !INICIAR ENERGIA EN 0
-  V = 0
+  V = 0.0
 
   BuscarPart: Do j=1, N
 
