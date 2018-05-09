@@ -213,8 +213,8 @@ Program Main
      !Write(*,*) istat1, err_msg1 !DEBUG
      Close(3)
 
-     WRITE(*,*) "DONE", Dens
-     
+     WRITE(*,*) "DONE"
+     WRITE(*,*) "==================================================================="
   End Do DENSI
   
 End Program Main
