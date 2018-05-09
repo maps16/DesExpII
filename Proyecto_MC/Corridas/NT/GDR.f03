@@ -19,7 +19,7 @@ Subroutine GdrCalc(l)
   Real :: rD, rU, rL, rM, c1, c2, gdr, gdrm, press, b
   Integer :: istat1
   Character (len=80) :: err_msg1
-  Character (:), Allocatable :: Filename, chardens
+  Character (len = 10) :: Filename, chardens
   Logical :: Ctrl1, Ctrl2
 
 1234 Format(I2.2)
@@ -84,10 +84,10 @@ Subroutine GdrCalc(l)
   
   c1 = ( 4.0 / 3.0 ) * PI * Dens
   Write(chardens,1234) l
-  Filename = "gdr"//chardens//".dat"
+  Filename = "gdr"//Trim(chardens)//".dat"
   
   !ABRIENDO ARCHIVO PARA GDR
-  Open( 5, file= filename )
+  Open( 5, file= Trim(filename) )
   
   GdrCal: Do ibin = 1 , MBin
      
