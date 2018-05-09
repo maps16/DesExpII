@@ -22,7 +22,7 @@ Subroutine GdrCalc(l)
   Character (:), Allocatable :: Filename, chardens
   Logical :: Ctrl1, Ctrl2
 
-1234 I2.2
+1234 Format(I2.2)
   
   MBin = Int( RCut / delTar )
   NNN = Mbin + 1
