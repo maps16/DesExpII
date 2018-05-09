@@ -6,7 +6,7 @@
 Program Main
   Use cte
   Implicit None
-  Integer :: i, j, IStep , k, k2                            !CONTADORES
+  Integer :: i, j, k, IStep , k, k2                            !CONTADORES
   Real :: VLRC, VI, V, VOld, VNew, DV, VN                   !ENERGIAS
   Real :: OldX, OldY, OldZ, NewX, NewY, NewZ                !VALORES TEMP DE POSC
   Real :: RanX, RanY, RanZ, Dummy                                 !VALORES ALEATORIOS
@@ -17,7 +17,7 @@ Program Main
 
   Open(27, File="Presion.dat")
   
-  DENS: Do i = 1, 3
+  DENS: Do k = 1, 3
      Dens = Real(i) * 0.1
      !PEDIR DENSIDAD Y NUMERO DE PARTICULAS
      Write(*,*) "NUMERO DE PARTICULAS"
@@ -149,11 +149,11 @@ Program Main
         NdR : If (Ctrl1) Then
 
            Ratio =  MAcep / Real( N * IRatio  )                      !RAZON DE ACEPTADOS
-           Ratio:If (Dens .LT. 0.3) Then
+           Ratios:If (Dens .LT. 0.3) Then
               Ctrl1A = Ratio .GT. 0.95                               !CRITERIO DE ACEPTACION DE MOVIMIENTOS
            Else
               Ctrl1A = Ratio .GT. 0.5
-           End If Ratio
+           End If Ratios
 
            Criterio : If ( Ctrl1A ) Then
               dRMax = dRMax * 1.05                                   !CRECER DESPLAZAMIENTO 
