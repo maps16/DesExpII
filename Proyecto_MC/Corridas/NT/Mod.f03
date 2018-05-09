@@ -4,7 +4,7 @@ Module cte
   Real, Parameter :: PI=4.0*atan(1.0)
   Real, Parameter :: Lambda =  1.25                                !TAMANO DEL POZO
   Real, Parameter :: TP = 1.0                                      !TEMPERATURA REDUCIDA
-  Integer, Parameter :: CEq = 1000                                 !CONFIG DE EQUILIBRIO
+  Integer, Parameter :: CEq = 10000                                 !CONFIG DE EQUILIBRIO
 !  Integer, Parameter :: NNN = 2000
   Real ::  BoxL, RCut, dRMax
   Integer :: NN
@@ -14,10 +14,10 @@ Module cte
 
   !VARIABLES DE SIMULACION
   Integer , Parameter :: N = 216
-  Integer, Parameter :: NStep = 101000                              !NSTEP - CEq CONFIG DE EQUILIBRIO
+  Integer, Parameter :: NStep = 210000                              !NSTEP - CEq CONFIG DE EQUILIBRIO
   Integer, Parameter :: IPrint = 1000
   Integer, Parameter :: ISave = 100
   Integer, Parameter :: IRatio = 100
-  Real :: Dens
+  Real, Parameter :: Dens = 0.7
    
 End Module cte

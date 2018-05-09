@@ -16,7 +16,7 @@ Program Main
   Character (len=80) :: err_msg1, err_msg2
   Character (len = 12) :: Filename, chardens
 
-  Open(27, File="Presion.dat")
+  Open(27, File=Filename)
   
   DENSi: Do l = 1, 9
      Dens = Real(l) * 0.1
@@ -78,7 +78,7 @@ Program Main
 
      !ABRIENDO ARCHIVOS PARA GUARDAR INFO DEL SISTEMA
      !Open(2, File="ConFin.dat")
-     Write(chardens,4321) l
+     Write(chardens,4321) int( 10.0 * dens )
      Filename = "Terma"//Trim(chardens)//".dat"
      Open(3, File=Trim(Filename) )
      !MOVIMIENTO DE PARTICULAS ALEATORIA
