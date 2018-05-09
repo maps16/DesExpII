@@ -83,7 +83,7 @@ Subroutine GdrCalc(l)
  
   
   c1 = ( 4.0 / 3.0 ) * PI * Dens
-  Write(chardens,1234) l
+  Write(chardens,1234) int(dens*10)
   Filename = "gdr"//Trim(chardens)//".dat"
   
   !ABRIENDO ARCHIVO PARA GDR
