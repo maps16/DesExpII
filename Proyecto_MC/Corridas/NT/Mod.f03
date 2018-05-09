@@ -13,7 +13,7 @@ Module cte
   Real, Allocatable, Dimension(:,:) :: CX, CY, CZ                  !MATRICES DE CONFIGURACION
 
   !VARIABLES DE SIMULACION
-  Integer , Parameter :: N = 512
+  Integer , Parameter :: N = 64
   Integer, Parameter :: NStep = 1000                              !NSTEP - CEq CONFIG DE EQUILIBRIO
   Integer, Parameter :: IPrint = 1000
   Integer, Parameter :: ISave = 100
