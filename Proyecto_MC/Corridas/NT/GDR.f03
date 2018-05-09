@@ -10,6 +10,7 @@ Subroutine GdrCalc(l)
   Use cte
   Implicit None
 
+  Integer,intent(in) :: l
   Integer, Allocatable, Dimension(:) :: Histo
   Real, Parameter :: delTar = 0.05
   Integer :: MBin, iBin, NNN
@@ -20,6 +21,8 @@ Subroutine GdrCalc(l)
   Character (len=80) :: err_msg1
   Character (:), Allocatable :: Filename, chardens
   Logical :: Ctrl1, Ctrl2
+
+1234 I2.2
   
   MBin = Int( RCut / delTar )
   NNN = Mbin + 1
@@ -80,7 +83,7 @@ Subroutine GdrCalc(l)
  
   
   c1 = ( 4.0 / 3.0 ) * PI * Dens
-  Write(chardens,I2.2) l
+  Write(chardens,1234) l
   Filename = "gdr"//chardens//".dat"
   
   !ABRIENDO ARCHIVO PARA GDR
