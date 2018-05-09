@@ -206,7 +206,7 @@ Program Main
      Deallocate( X, Y, Z )
      WRITE(*,*) "CLEAR MEMORY" !DEBUG
 
-     Call GdrCalc
+     Call GdrCalc(l)
      WRITE(*,*) "GDR DONE CALC" !DEBUG
 
      Deallocate( CX, CY, CZ )!, STAT=istat1, ERRMSG = err_msg1 )

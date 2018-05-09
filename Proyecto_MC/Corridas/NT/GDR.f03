@@ -5,7 +5,7 @@
 ! AUTOR: MARTIN ALEJANDRO PAREDES SOSA
 !============================================================================
 
-Subroutine GdrCalc
+Subroutine GdrCalc(l)
 
   Use cte
   Implicit None
@@ -80,7 +80,7 @@ Subroutine GdrCalc
  
   
   c1 = ( 4.0 / 3.0 ) * PI * Dens
-  Write(chardens,*) Dens
+  Write(chardens,I2.2) l
   Filename = "gdr"//chardens//".dat"
   
   !ABRIENDO ARCHIVO PARA GDR
