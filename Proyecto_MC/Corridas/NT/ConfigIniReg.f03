@@ -40,7 +40,7 @@ Subroutine ConfigIniReg
   End Do GEN
 
   !ESCRIBIENDO EN ARCHIVO
-  Open (1, File = "ConIni.dat" ) 
+  !Open (1, File = "ConIni.dat" ) 
   l = 0 
   EscribirX: Do i = 1, N2
      
@@ -61,9 +61,9 @@ Subroutine ConfigIniReg
   
   !Write(*,*) l !DEBUG
 
-  Do i=1, N3
-     Write(1,*) X(i), Y(i), Z(i)
-  End Do
+  !Do i=1, N3
+  !   Write(1,*) X(i), Y(i), Z(i)
+  !End Do
    
 
   Deallocate(nX, nY, nZ)

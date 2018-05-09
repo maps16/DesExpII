@@ -17,9 +17,10 @@ Program Main
 
   Open(27, File="Presion.dat")
   
-  DENSi: Do l = 1, 3
+  DENSi: Do l = 1, 9
      Dens = Real(l) * 0.1
      !PEDIR DENSIDAD Y NUMERO DE PARTICULAS
+     Write(*,*) "============================================================================="
      Write(*,*) "NUMERO DE PARTICULAS"
      Write(*,*) N
      Write(*,*) "CONCENTRACION REDUCIDA"
@@ -33,7 +34,7 @@ Program Main
      Write(*,*) "FRECUENCIA DE CORRECCION EN DESPLAZAMIENTO"
      Write(*,*) IRatio
      Write(*,*) "============================================================================="
-
+4321 Format(I2.2)
 
      !ALOJAR ESPACIO EN MEOMORIA PARA LOS ARREGLO DE POSICION DE PARTICULAS
      Allocate( X(N), Y(N), Z(N))!, STAT= istat1 , ERRMSG=err_msg1  )
@@ -75,8 +76,10 @@ Program Main
      Write(*,*) "|CONFIG||ENERGIA PARTICULA||RATIO||DR|"
 
      !ABRIENDO ARCHIVOS PARA GUARDAR INFO DEL SISTEMA
-     Open(2, File="ConFin.dat")
-     Open(3, File="Terma.dat" )
+     !Open(2, File="ConFin.dat")
+     Write(chardens,4321) l
+     Filename = "Terma"//Trim(chardens)//".dat"
+     Open(3, File=Trim(Filename) )
      !MOVIMIENTO DE PARTICULAS ALEATORIA
 
      Configuracion: Do iStep = 1, NStep
@@ -195,12 +198,12 @@ Program Main
      Write(*,*) "DONE ALL CONFIGURATIONS"
 
      !GUARDAR CONFIG FINAL
-     ConfigFin: Do i=1, N
+     !ConfigFin: Do i=1, N
 
-        Write(2,*) X(i), Y(i), Z(i)
+     !   Write(2,*) X(i), Y(i), Z(i)
 
-     End Do ConfigFin
-     Close (2)
+     !End Do ConfigFin
+     !Close (2)
      WRITE(*,*) "DONE SAVING CONFIG FINAL"
 
      Deallocate( X, Y, Z )
@@ -216,5 +219,7 @@ Program Main
      WRITE(*,*) "DONE"
      WRITE(*,*) "==================================================================="
   End Do DENSI
-  
+
+
+
 End Program Main

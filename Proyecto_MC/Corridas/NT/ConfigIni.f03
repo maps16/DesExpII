@@ -14,7 +14,7 @@ Subroutine ConfigIni
   BoxL = (1.0*N/Dens )**Dim
   Write(*,*) "LONGITUD DE LA CELDA:", BoxL
 
-  Open (1, File = "ConIni.dat" ) 
+  !Open (1, File = "ConIni.dat" ) 
   
   Colocar: Do i=1, N           !BUSCAR LA POSICION ALEATORIA PARA LAS PARTICULAS
   2  Call Random_Number(xRan)  !VALOR ALEATORIO DE POSICION X \
@@ -44,7 +44,7 @@ Subroutine ConfigIni
 
      End Do Traslape
      
-     Write(1,*) X(i), Y(i), Z(i)           !GUARDANDO EN ARCHIVO LA POSICION
+     !Write(1,*) X(i), Y(i), Z(i)           !GUARDANDO EN ARCHIVO LA POSICION
 
   End Do Colocar
 
