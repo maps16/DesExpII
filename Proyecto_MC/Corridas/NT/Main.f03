@@ -18,7 +18,7 @@ Program Main
   Open(27, File="Presion.dat")
   
   DENSi: Do l = 1, 3
-     Dens = Real(i) * 0.1
+     Dens = Real(l) * 0.1
      !PEDIR DENSIDAD Y NUMERO DE PARTICULAS
      Write(*,*) "NUMERO DE PARTICULAS"
      Write(*,*) N
