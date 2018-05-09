@@ -6,7 +6,7 @@
 Program Main
   Use cte
   Implicit None
-  Integer :: i, j, k, IStep , k, k2                            !CONTADORES
+  Integer :: i, j, l, IStep , k, k2                            !CONTADORES
   Real :: VLRC, VI, V, VOld, VNew, DV, VN                   !ENERGIAS
   Real :: OldX, OldY, OldZ, NewX, NewY, NewZ                !VALORES TEMP DE POSC
   Real :: RanX, RanY, RanZ, Dummy                                 !VALORES ALEATORIOS
@@ -17,7 +17,7 @@ Program Main
 
   Open(27, File="Presion.dat")
   
-  DENS: Do k = 1, 3
+  DENS: Do l = 1, 3
      Dens = Real(i) * 0.1
      !PEDIR DENSIDAD Y NUMERO DE PARTICULAS
      Write(*,*) "NUMERO DE PARTICULAS"
