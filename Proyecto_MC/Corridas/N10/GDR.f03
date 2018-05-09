@@ -99,7 +99,7 @@ Subroutine GdrCalc
 
      Ctrl1 = gdrm == 0                                        !CALCULO DE GDR ESFERA DURA
      Ctrl2 = gdr /= 0
-     PressCalc:If ( Ctrl1 .AND. Ctrl2 .AND. (rm .GT. 1.0) ) Then
+     PressCalc:If ( Ctrl1 .AND. Ctrl2 ) Then
 
         Press = 1.0 + 0.5*PI*dens*gdr
         Write(*,*) gdrm, gdr, press
