@@ -14,6 +14,7 @@ Program Main
   Logical :: Ctrl, Ctrl1, Ctrl1A, Ctrl2                     !CONTROL LOGICO
   Integer :: istat1, istat2
   Character (len=80) :: err_msg1, err_msg2
+  Character (len = 10) :: Filename, chardens
 
   Open(27, File="Presion.dat")
   
