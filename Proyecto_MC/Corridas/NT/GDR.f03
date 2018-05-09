@@ -102,6 +102,7 @@ Subroutine GdrCalc
      PressCalc:If ( Ctrl1 .AND. Ctrl2 ) Then
         b = 2.0*pi/3.0*gdr                                    !PARAMETRO DE VAN DER WAALS
         Press = dens(1.0 + dens*b)                            !PRESION DISCO DURO
+        Write(27,*)  dens, press
         Write(*,*)  dens, press
         
      End If PressCalc
