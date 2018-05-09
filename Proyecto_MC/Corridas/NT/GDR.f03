@@ -18,6 +18,7 @@ Subroutine GdrCalc
   Real :: rD, rU, rL, rM, c1, c2, gdr, gdrm, press, b
   Integer :: istat1
   Character (len=80) :: err_msg1
+  Character, (:), Allocatable :: Filename, chardens
   Logical :: Ctrl1, Ctrl2
   
   MBin = Int( RCut / delTar )
@@ -79,9 +80,11 @@ Subroutine GdrCalc
  
   
   c1 = ( 4.0 / 3.0 ) * PI * Dens
+  Write(chardens,*) Dens
+  Filename = "gdr"//chardens//".dat"
   
   !ABRIENDO ARCHIVO PARA GDR
-  Open( 5, file= "gdr.dat" )
+  Open( 5, file= filename )
   
   GdrCal: Do ibin = 1 , MBin
      
