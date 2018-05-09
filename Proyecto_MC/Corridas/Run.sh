@@ -12,6 +12,6 @@ IFS=":"
 LIST="01:02:03:04:05:06:07:08:09"
 
 for i in $LIST ; do
-    /usr/bin/time ./SimularHS$i >&Salida$i&
+    /usr/bin/time ./SimularHS$i >&Salida$i &
     /bin/sleep 2
 done
