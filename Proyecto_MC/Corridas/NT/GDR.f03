@@ -18,7 +18,7 @@ Subroutine GdrCalc
   Real :: rD, rU, rL, rM, c1, c2, gdr, gdrm, press, b
   Integer :: istat1
   Character (len=80) :: err_msg1
-  Character, (:), Allocatable :: Filename, chardens
+  Character (:), Allocatable :: Filename, chardens
   Logical :: Ctrl1, Ctrl2
   
   MBin = Int( RCut / delTar )
