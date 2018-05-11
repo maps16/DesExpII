@@ -57,11 +57,10 @@ Program Waals
 
   Locate: Do i = 1, k
      
-     j = j+1
      If (R(i) .GE. 1.0) Exit
           
   End Do Locate
-  Write(*,*)  G
+  Write(*,*) i, R(i), G(i)
 
   
 512 Format (I5.5)
