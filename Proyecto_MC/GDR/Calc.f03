@@ -73,7 +73,7 @@ Program Waals
   End Do IntegrandoA
   !  Write(*,*) j, R(j) !DEBU LINE
   Intg = Intg + 0.5*R(j)*R(j)*G(j)
-  Write(*,*) "a*= ", Intg
+  Write(*,*) "a*= ", Intg*delta*cte
 
   
 512 Format (I5.5)
