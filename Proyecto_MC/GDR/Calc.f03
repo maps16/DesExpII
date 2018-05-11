@@ -63,6 +63,7 @@ Program Waals
   End Do Locate
   !  Write(*,*) i, R(i), G(i)     !DEBUG LINE
 
+  ! ALGORITMO DE INTEGRACION POR TRAPECIO
   Intg = R(i)*R(i)*G(i)*0.5
   IntegrandoA: Do j = i+1 ,k
 
@@ -72,7 +73,7 @@ Program Waals
   End Do IntegrandoA
   !  Write(*,*) j, R(j) !DEBU LINE
   Intg = Intg + 0.5*R(j)*R(j)*G(j)
-  Write(*,*) Intg
+  Write(*,*) "a*= "Intg
 
   
 512 Format (I5.5)
