@@ -5,15 +5,6 @@
 ! AUTOR : MARTIN ALEJANDRO PAREDES SOSA
 !==============================================================================
 
-Module Basic
-
-  Implicit None
-  
-
-End Module
-
-Program Waals
-
 !DECLARACION DE VARIABLES
   Use Basic
   Implicit None
@@ -33,6 +24,7 @@ Program Waals
   !TAMANO DEL ARCHIVO POR LEER
   Write(Cons,256) Dens
   Filename = start//trim(Cons)//En
+  Write(*,*) Filename
   Open( 1, File = Trim(Filename) )
 
   Sizes: Do
