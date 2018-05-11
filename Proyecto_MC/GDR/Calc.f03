@@ -6,6 +6,7 @@
 !==============================================================================
 
 !DECLARACION DE VARIABLES
+Program Waals
   Use Basic
   Implicit None
   Integer :: DENS
