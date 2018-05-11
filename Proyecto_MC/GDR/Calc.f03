@@ -70,7 +70,9 @@ Program Waals
      Intg = Intg + R(j)*R(j) * G(j)
      
   End Do IntegrandoA
-  Write(*,*) j, R(j)
+  !  Write(*,*) j, R(j) !DEBU LINE
+  Intg = Intg + 0.5*R(j)*R(j)*G(j)
+  Write(*,*) Intg
 
   
 512 Format (I5.5)
