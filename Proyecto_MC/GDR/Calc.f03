@@ -44,7 +44,7 @@ Program Waals
   !SAVING FILE DATA
   Saves : Do i = 1, k+1
 
-     Read( 1,*, iostat = state  ) R , G
+     Read( 1,*, iostat = state  ) R(i), G(i)
      If ( state .LT. 0 ) Exit
 
   End Do Saves
