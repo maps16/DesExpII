@@ -61,7 +61,7 @@ Program Waals
      If (R(i) .GE. 1.0) Exit
           
   End Do Locate
-  Write(*,*)  R
+  Write(*,*)  G
 
   
 512 Format (I5.5)
