@@ -1,6 +1,6 @@
 !==============================================================================
 ! CALCULO DE LOS COEFICIENTES DE VAN DER WAALS A PARTIR DE LOS ARCHIVOS DE
-! LOS ARCHIVOS DE LA G(r) OBTENIDOS DE LA SIMULACION
+! LOS ARCHIVOS DE LA G(r) OBTENIDOS DE LA SIMULACION CON POTENCIAL SW 
 !
 ! AUTOR : MARTIN ALEJANDRO PAREDES SOSA
 !==============================================================================
@@ -17,7 +17,7 @@ Program Waals
   Character (len=10):: Filename, cons             ! NOMBRE DE ARCHIVO
   Real, Parameter :: PI = 4.0 * ATAN(1.0)         ! VALOR DE PI
   Real, Parameter :: TP = 1.0                     ! TEMPERATURA REDUCIDA
-  Real, Parameter :: Lambda = 1.25
+  Real, Parameter :: Lambda = 1.25                ! FIN POZO
   Real, Dimension(:),Allocatable ::  R , G        ! RADIO | DISTRIBUCION RADIAL
 
   Write(*,*) " ESCRIBE LA DENSIDAD *10 (DOS DIGITOS EJ: 01) !VALOR ENTERO  "
@@ -50,7 +50,17 @@ Program Waals
 
   Write(*,*) "DATOS GUARDADOS EN MEMORIA"
   
+  !CALC DE a VAN DER WAALS
+  Cte = -(2.0*Pi) / TP
+  Delta = 0.05
 
+  Locate: Do i = 1, k
+     
+     r1 = R(i)
+     If (r1 .GT. 1.0) Exit
+     
+  End Do Locate
+  Write(*,*) i, R(i)
 
   
 512 Format (I5.5)
