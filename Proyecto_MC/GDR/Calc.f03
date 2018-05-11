@@ -9,8 +9,8 @@
 Program Waals
   Use Basic
   Implicit None
-  Integer :: DENS
-  Integer :: State
+  Integer :: DENS                                 ! PARA NOMBRE DE ARCHIVO
+  Integer :: State                                ! ESTADO DE LECTURA
   Integer :: k, i, j                              ! CONTADOR
   Character (len=3), Parameter :: Start = "gdr"
   Character (len=4), Parameter :: En = ".dat"
@@ -19,7 +19,8 @@ Program Waals
   Real, Parameter :: TP = 1.0                     ! TEMPERATURA REDUCIDA
   Real, Parameter :: Lambda = 1.25                ! FIN POZO
   Real, Dimension(:),Allocatable ::  R , G        ! RADIO | DISTRIBUCION RADIAL
-  Real :: cte, delta                         
+  Real :: cte, delta                              ! VALORES PARA CALCULO DE a VAN DER WAALS
+  Real :: Intg                                    ! ACUMULADOR PARA INTEGRACION
 
   Write(*,*) " ESCRIBE LA DENSIDAD *10 (DOS DIGITOS EJ: 01) !VALOR ENTERO  "
   Read(*,*) DENS
@@ -60,7 +61,16 @@ Program Waals
      If (R(i) .GE. 1.0) Exit
           
   End Do Locate
-  Write(*,*) i, R(i), G(i)
+  !  Write(*,*) i, R(i), G(i)     !DEBUG LINE
+
+  Intg = R(i)*R(i)*G(i)*0.5
+  IntegrandoA: Do j = i+1 ,k
+
+     If ( R(j+1) .GT. lambda) Exit
+     Intg = Intg + R(j)*R(j) * G(j)
+     
+  End Do IntegrandoA
+  Write(*,*) j, R(j)
 
   
 512 Format (I5.5)
