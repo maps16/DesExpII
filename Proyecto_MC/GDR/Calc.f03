@@ -35,7 +35,7 @@ Program Waals
      k = k + 1
      If ( state .LT. 0 ) Exit
   End Do Sizes
-  Write(*,512) "Tiene", k, "Renglones" !DEBUG LINE (SIZE OF FILE)
+  Write(*,*) "Tiene", k, "Renglones" !DEBUG LINE (SIZE OF FILE)
 
   Rewind 1
   Allocate ( R(k), G(k) )
