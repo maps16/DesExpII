@@ -11,7 +11,7 @@ Program Waals
   Implicit None
   Integer :: DENS
   Integer :: State
-  Integer :: k, i                                 ! CONTADOR
+  Integer :: k, i, j                              ! CONTADOR
   Character (len=3), Parameter :: Start = "gdr"
   Character (len=4), Parameter :: En = ".dat"
   Character (len=10):: Filename, cons             ! NOMBRE DE ARCHIVO
@@ -57,10 +57,11 @@ Program Waals
 
   Locate: Do i = 1, k
      
-     If (R(i) .GT. 1.0) Exit
-     
+     j = j+1
+     If (R(i) .GE. 1.0) Exit
+          
   End Do Locate
-  Write(*,*) i, R(i), G(i)
+  Write(*,*) j, R(j), G(j)
 
   
 512 Format (I5.5)
