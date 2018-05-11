@@ -12,7 +12,7 @@ Program Waals
   Integer :: DENS
   Integer :: State
   Integer :: k                                    ! CONTADOR
-  Character (len=4), Parameter :: Start = "gdr"
+  Character (len=3), Parameter :: Start = "gdr"
   Character (len=4), Parameter :: En = ".dat"
   Character (len=10):: Filename, cons             ! NOMBRE DE ARCHIVO
   Real, Parameter :: PI = 4.0 * ATAN(1.0)         ! VALOR DE PI
