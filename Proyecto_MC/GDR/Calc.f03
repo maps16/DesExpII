@@ -19,6 +19,7 @@ Program Waals
   Real, Parameter :: TP = 1.0                     ! TEMPERATURA REDUCIDA
   Real, Parameter :: Lambda = 1.25                ! FIN POZO
   Real, Dimension(:),Allocatable ::  R , G        ! RADIO | DISTRIBUCION RADIAL
+  Real :: cte, delta                         
 
   Write(*,*) " ESCRIBE LA DENSIDAD *10 (DOS DIGITOS EJ: 01) !VALOR ENTERO  "
   Read(*,*) DENS
@@ -56,11 +57,10 @@ Program Waals
 
   Locate: Do i = 1, k
      
-     r1 = R(i)
-     If (r1 .GT. 1.0) Exit
+     If (R(i) .GT. 1.0) Exit
      
   End Do Locate
-  Write(*,*) i, R(i)
+  Write(*,*) i, R(i), G(i)
 
   
 512 Format (I5.5)
