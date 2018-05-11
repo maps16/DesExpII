@@ -11,13 +11,14 @@ Program Waals
   Implicit None
   Integer :: DENS
   Integer :: State
-  Integer :: k                                    ! CONTADOR
+  Integer :: k, i                                 ! CONTADOR
   Character (len=3), Parameter :: Start = "gdr"
   Character (len=4), Parameter :: En = ".dat"
   Character (len=10):: Filename, cons             ! NOMBRE DE ARCHIVO
   Real, Parameter :: PI = 4.0 * ATAN(1.0)         ! VALOR DE PI
   Real, Parameter :: TP = 1.0                     ! TEMPERATURA REDUCIDA
   Real, Parameter :: Lambda = 1.25
+  Real, Dimension(:),Allocatable ::  R , G        ! RADIO | DISTRIBUCION RADIAL
 
   Write(*,*) " ESCRIBE LA DENSIDAD *10 (DOS DIGITOS EJ: 01) !VALOR ENTERO  "
   Read(*,*) DENS
@@ -26,14 +27,31 @@ Program Waals
   Write(Cons,256) Dens
   Filename = start//trim(Cons)//En
   Write(*,*) Filename
-  Open( 1, File = Trim(Filename) )
+  Open( 1, File = Trim(Filename), action= "read" )
 
   Sizes: Do
      Read( 1,*, iostat = state  )
      k = k + 1
      If ( state .LT. 0 ) Exit
   End Do Sizes
-  Write(*,*) k
+ !  Write(*,*) k !DEBUG LINE (SIZE OF FILE)
+
+  Rewind 1
+  Allocate ( R(k), G(k) )
+
+  !SAVING FILE DATA
+  Saves : Do i = 1, k+1
+
+     Read( 1,*, iostat = state  ) R
+     If ( state .LT. 0 ) Exit
+
+  End Do Saves
+
+ 
+  
+
+
+  
 
 256 Format (I2.2)
 End Program Waals
