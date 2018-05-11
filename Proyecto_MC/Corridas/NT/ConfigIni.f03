@@ -44,7 +44,7 @@ Subroutine ConfigIni
 
      End Do Traslape
      
-     !Write(1,*) X(i), Y(i), Z(i)           !GUARDANDO EN ARCHIVO LA POSICION
+     Write(1,*) X(i), Y(i), Z(i)           !GUARDANDO EN ARCHIVO LA POSICION
 
   End Do Colocar
 

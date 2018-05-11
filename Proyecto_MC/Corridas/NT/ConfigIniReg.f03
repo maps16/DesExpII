@@ -61,9 +61,9 @@ Subroutine ConfigIniReg
   
   !Write(*,*) l !DEBUG
 
-  !Do i=1, N3
-  !   Write(1,*) X(i), Y(i), Z(i)
-  !End Do
+  Do i=1, N3
+     Write(1,*) X(i), Y(i), Z(i)
+  End Do
    
 
   Deallocate(nX, nY, nZ)

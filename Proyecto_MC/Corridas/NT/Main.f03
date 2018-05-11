@@ -16,9 +16,7 @@ Program Main
   Character (len=80) :: err_msg1, err_msg2
   Character (len = 12) :: Filename, chardens
 
-  Write(chardens,4321) int( 10.0 * dens )
-  Filename = "pres"//Trim(chardens)//".dat"
-  Open(27, File=Trim(Filename) )
+  
 
   !PEDIR DENSIDAD Y NUMERO DE PARTICULAS
   Write(*,*) "============================================================================="
@@ -41,7 +39,8 @@ Program Main
   Allocate( X(N), Y(N), Z(N))!, STAT= istat1 , ERRMSG=err_msg1  )
 
 
-
+  Open(1, File="ConfigIni.dat")
+  
   !GENERAR LA CONFIGURACION INICIAL
   ConIni: If( Dens .LT. 0.7) Then
 
@@ -77,10 +76,13 @@ Program Main
   Write(*,*) "|CONFIG||ENERGIA PARTICULA||RATIO||DR|"
 
   !ABRIENDO ARCHIVOS PARA GUARDAR INFO DEL SISTEMA
-  !Open(2, File="ConFin.dat")
-  Write(chardens,4321) int( 10.0 * dens )
+  Open(2, File="ConCeq.dat")
+  
+  Write(chardens,4321) int( 10.0 * dens+1.0 )
   Filename = "Terma"//Trim(chardens)//".dat"
   Open(3, File=Trim(Filename) )
+
+
   !MOVIMIENTO DE PARTICULAS ALEATORIA
 
   Configuracion: Do iStep = 1, NStep
@@ -177,6 +179,18 @@ Program Main
 
      End If MonitoreoEne
 
+
+     !GUARDANDO CONFIG DE EQUILIBRIO
+     CEQI: IF (IStep == CEq) Then
+        Do l = 1 , N
+           Write(2,*) X(l), Y(l), Z(l)
+        End Do
+        Write(*,*) "Configuracion CEq"
+        Close(2)
+     End IF CEQI
+
+
+     
      !GUARDANDO CONFIGURACION (EN EQUILIBRIO)
      Ctrl2 = ( Mod(IStep,ISave) == 0 ) .AND. ( IStep .GT. CEq )
      SAV: If (Ctrl2) Then
@@ -205,10 +219,18 @@ Program Main
 
   !End Do ConfigFin
   !Close (2)
+
+
   WRITE(*,*) "DONE SAVING CONFIG FINAL"
 
   Deallocate( X, Y, Z )
   WRITE(*,*) "CLEAR MEMORY" !DEBUG
+
+
+  Write(chardens,4321) int( 10.0 * dens )
+  Filename = "pres"//Trim(chardens)//".dat"
+  Open(27, File=Trim(Filename) )
+  
 
   Call GdrCalc(l)
   WRITE(*,*) "GDR DONE CALC" !DEBUG
