@@ -26,7 +26,8 @@ Program Waals
   !TAMANO DEL ARCHIVO POR LEER
   Write(Cons,256) Dens
   Filename = start//trim(Cons)//En
-  Write(*,*) Filename
+  Write(*,*) "Archivo: ",Filename
+  
   Open( 1, File = Trim(Filename), action= "read" )
 
   Sizes: Do
@@ -34,7 +35,7 @@ Program Waals
      k = k + 1
      If ( state .LT. 0 ) Exit
   End Do Sizes
- !  Write(*,*) k !DEBUG LINE (SIZE OF FILE)
+  Write(*,*) "Tiene", k, "Renglones" !DEBUG LINE (SIZE OF FILE)
 
   Rewind 1
   Allocate ( R(k), G(k) )
@@ -42,12 +43,12 @@ Program Waals
   !SAVING FILE DATA
   Saves : Do i = 1, k+1
 
-     Read( 1,*, iostat = state  ) R
+     Read( 1,*, iostat = state  ) R , G
      If ( state .LT. 0 ) Exit
 
   End Do Saves
 
- 
+  Write(*,*) "DATOS GUARDADOS EN MEMORIA"
   
 
 
