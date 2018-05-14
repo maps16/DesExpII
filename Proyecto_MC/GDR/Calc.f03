@@ -23,9 +23,6 @@ Program Waals
   Real :: ctea , cteb, delta , gr1                ! PARAMETROS PARA CALCULO DE a Y b VAN DER WAALS
   Real :: Intg                                    ! ACUMULADOR PARA INTEGRACION
 
-  !Write(*,*) " ESCRIBE LA DENSIDAD *10 (DOS DIGITOS EJ: 01) !VALOR ENTERO  "
-  !Read(*,*) DENS
-
   Write(*,*) "========================"
   Open(8, File = "a_starT1.dat", Action= "write") !ARCHIVO DE SALIDA
   
