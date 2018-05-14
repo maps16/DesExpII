@@ -7,13 +7,13 @@
 
 !DECLARACION DE VARIABLES
 Program Waals
-  Use Basic
+  !Use Basic
   Implicit None
   Integer :: DENS                                 ! PARA NOMBRE DE ARCHIVO
   Integer :: State                                ! ESTADO DE LECTURA
   Integer :: k, i, j                              ! CONTADOR
-  Character (len=3), Parameter :: Start = "gdr"
-  Character (len=4), Parameter :: En = ".dat"
+  Character (len=3), Parameter :: Start = "gdr"   ! NOMBRE DE ARCHIVO DE ENTRADA
+  Character (len=4), Parameter :: En = ".dat"     ! EXTENSION ARCHIVO DE ENTRADA
   Character (len=10):: Filename, cons             ! NOMBRE DE ARCHIVO
   Real, Parameter :: PI = 4.0 * ATAN(1.0)         ! VALOR DE PI
   Real, Parameter :: TP = 1.0                     ! TEMPERATURA REDUCIDA
@@ -23,64 +23,76 @@ Program Waals
   Real :: ctea , cteb, delta , gr1                ! PARAMETROS PARA CALCULO DE a Y b VAN DER WAALS
   Real :: Intg                                    ! ACUMULADOR PARA INTEGRACION
 
-  Write(*,*) " ESCRIBE LA DENSIDAD *10 (DOS DIGITOS EJ: 01) !VALOR ENTERO  "
-  Read(*,*) DENS
+  !Write(*,*) " ESCRIBE LA DENSIDAD *10 (DOS DIGITOS EJ: 01) !VALOR ENTERO  "
+  !Read(*,*) DENS
 
-  !TAMANO DEL ARCHIVO POR LEER
-  Write(Cons,256) Dens
-  Filename = start//trim(Cons)//En
-  Write(*,*) "Archivo: ",Filename
+  Write(*,*) "========================"
+  Open(8, File = "a_starT1.dat", Action= "write") !ARCHIVO DE SALIDA
   
-  Open( 1, File = Trim(Filename), action= "read", Status ="old" )
+  Archivo:  Do Dens = 1, 10
+     !TAMANO DEL ARCHIVO POR LEER
+     Write(Cons,256) Dens
+     Filename = start//trim(Cons)//En
+     Write(*,*) "Archivo: ",Filename
 
-  Sizes: Do
-     Read( 1,*, iostat = state  )
-     k = k + 1
-     If ( state .LT. 0 ) Exit
-  End Do Sizes
-  Write(*,*) "Tiene", k, "Renglones" !DEBUG LINE (SIZE OF FILE)
-
-  Rewind 1
-  Allocate ( R(k), G(k) )
-
-  !SAVING FILE DATA
-  Saves : Do i = 1, k+1
-
-     Read( 1,*, iostat = state  ) R(i), G(i)
-     If ( state .LT. 0 ) Exit
-
-  End Do Saves
-
-  Write(*,*) "DATOS GUARDADOS EN MEMORIA"
-  
-  !CALC DE a VAN DER WAALS
-  Ctea = -(2.0*Pi) / TP
-  Cteb = (2.0/3.0)*PI
-  Delta = 0.05
-
-  Locate: Do i = 1, k
+     Open( 1, File = Trim(Filename), action= "read", Status ="old" ) !ARCHIVO DE ENTRADA
+     k = 0 !REINICIA CONTADOR
+     Sizes: Do                         !BUSCANDO TAMAÑO DE ARCHIVO (RENGLONES QUE QUE TIENE)
+        
+        Read( 1,*, iostat = state  )
+        k = k + 1
+        If ( state .LT. 0 ) Exit
+        
+     End Do Sizes
      
-     If (R(i) .GE. 1.0) Exit
+     Write(*,*) "Tiene", k, "Renglones" !DEBUG LINE (SIZE OF FILE)
+
+     Rewind 1 !REINICIAR ARCHIVO DE ENTRADA
+     Allocate ( R(k), G(k) )
+
+     !SAVING FILE DATA
+     Saves : Do i = 1, k+1
+
+        Read( 1,*, iostat = state  ) R(i), G(i)
+        If ( state .LT. 0 ) Exit
+
+     End Do Saves
+
+     Write(*,*) "DATOS GUARDADOS EN MEMORIA"
+
+     !CALC DE a VAN DER WAALS
+     Ctea = -(2.0*Pi) / TP
+     Cteb = (2.0/3.0)*PI
+     Delta = 0.05                  ! CAMBIAR SEGUN EL ARCHIVO
+
+     Locate: Do i = 1, k           ! BUSCANDO EL PRIMER DATO .GE. 1.0
+
+        If (R(i) .GE. 1.0) Exit
+
+     End Do Locate
+
+     gr1 = G(i)                    ! Ghd(1+)
+     b = cteb*gr1                  ! b DE VAN DER WAALS
+     
+     ! ALGORITMO DE INTEGRACION POR TRAPECIO
+     Intg = R(i)*R(i)*G(i)*0.5
+     IntegrandoA: Do j = i+1 ,k
+
+        If ( R(j+1) .GT. lambda) Exit
+        Intg = Intg + R(j)*R(j) * G(j)
+
+     End Do IntegrandoA
           
-  End Do Locate
+     Intg = Intg + 0.5*R(j)*R(j)*G(j)
 
-  gr1 = G(i)
-  b = cteb*gr1
-  !  Write(*,*) i, R(i), G(i)     !DEBUG LINE
+     a = Intg*delta*ctea         ! a DE VAN DER WAALS
+     Write(*,*) "a*= ", a
+     Write(*,*) "b*= ", b
+     Write(8,*) Dens*0.1, a, b
 
-  ! ALGORITMO DE INTEGRACION POR TRAPECIO
-  Intg = R(i)*R(i)*G(i)*0.5
-  IntegrandoA: Do j = i+1 ,k
-
-     If ( R(j+1) .GT. lambda) Exit
-     Intg = Intg + R(j)*R(j) * G(j)
-     
-  End Do IntegrandoA
-  !  Write(*,*) j, R(j) !DEBU LINE
-  Intg = Intg + 0.5*R(j)*R(j)*G(j)
-  a = Intg*delta*ctea
-  Write(*,*) "a*= ", a
-  Write(*,*) "b*= ", b
+     Deallocate(R,G)
+     Write(*,*) "========================"
+  End Do Archivo
   
 512 Format (I5.5)
 256 Format (I2.2)
