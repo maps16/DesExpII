@@ -88,8 +88,9 @@ Program Waals
      Write(*,*) "a*= ", a
       Write(*,*) "a74*= ", a74
      Write(*,*) "b*= ", b
-     Write(8,*) Dens*0.1, a, a74, b
-
+     Write(8,*) Dens*0.1, a  , b
+     Write(9,*) Dens*0.1, a74, b
+     
      Deallocate(R,G)
      Write(*,*) "========================"
   End Do Archivo
