@@ -19,13 +19,13 @@ Program Waals
   Real, Parameter :: TP = 1.0                     ! TEMPERATURA REDUCIDA
   Real, Parameter :: Lambda = 1.25                ! FIN POZO
   Real, Dimension(:),Allocatable ::  R , G        ! RADIO | DISTRIBUCION RADIAL
-  Real :: a, b                                    ! PARAMETROS VAN DER WAALS
-  Real :: ctea , cteb, delta , gr1                ! PARAMETROS PARA CALCULO DE a Y b VAN DER WAALS
+  Real :: a, b, a74                               ! PARAMETROS VAN DER WAALS
+  Real :: ctea, ctea74, cteb, delta , gr1         ! PARAMETROS PARA CALCULO DE a Y b VAN DER WAALS
   Real :: Intg                                    ! ACUMULADOR PARA INTEGRACION
 
   Write(*,*) "========================"
-  Open(8, File = "a_starT1.dat", Action= "write") !ARCHIVO DE SALIDA
-  
+  Open(8, File = "a_starT1.dat", Action= "write") !ARCHIVO DE SALIDA T*=1.0
+  Open(9, File = "a_starT74.dat", Action= "write") !ARCHIVO DE SALIDA T*=0.74
   Archivo:  Do Dens = 1, 10
      !TAMANO DEL ARCHIVO POR LEER
      Write(Cons,256) Dens
@@ -59,6 +59,7 @@ Program Waals
 
      !CALC DE a VAN DER WAALS
      Ctea = (2.0*Pi) / TP
+     Ctea74 = (2.0*Pi)/ 0.74
      Cteb = (2.0/3.0)*PI
      Delta = 0.05                  ! CAMBIAR SEGUN EL ARCHIVO
 
@@ -83,9 +84,11 @@ Program Waals
      Intg = Intg + 0.5*R(j)*R(j)*G(j)
 
      a = Intg*delta*ctea         ! a DE VAN DER WAALS
+     a74 = Intg*delta*ctea74
      Write(*,*) "a*= ", a
+      Write(*,*) "a74*= ", a74
      Write(*,*) "b*= ", b
-     Write(8,*) Dens*0.1, a, b
+     Write(8,*) Dens*0.1, a, a74, b
 
      Deallocate(R,G)
      Write(*,*) "========================"
