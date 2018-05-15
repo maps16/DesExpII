@@ -58,7 +58,7 @@ Program Waals
      Write(*,*) "DATOS GUARDADOS EN MEMORIA"
 
      !CALC DE a VAN DER WAALS
-     Ctea = -(2.0*Pi) / TP
+     Ctea = (2.0*Pi) / TP
      Cteb = (2.0/3.0)*PI
      Delta = 0.05                  ! CAMBIAR SEGUN EL ARCHIVO
 
