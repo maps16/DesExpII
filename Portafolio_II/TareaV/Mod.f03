@@ -11,7 +11,7 @@ Module cte
   Real, Allocatable, Dimension(:,:) :: CX, CY
 
 
-  Integer, Parameter :: N = 400
+  Integer, Parameter :: N = 200
   Integer, Parameter :: NStep = 30000
   Integer, Parameter :: Iprint = 1000
   Integer, Parameter :: IRatio = 50 
