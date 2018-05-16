@@ -142,7 +142,7 @@ Empezando para la configuración aleatoria sin traslapes, llegamos a lo siguient
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1.20\linewidth]{aleatoria.png}
+	\includegraphics[width=0.5\linewidth]{aleatoria.png}
 	\caption{Termalización  de simulación Monte Carlo con configuración Inicial Aleatoria para concentraciones de 0.1 y 0.5}
 	\label{TermaAleatoria}
 \end{figure}
@@ -152,7 +152,7 @@ Para la configuración regular, llegamos a lo siguiente:
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1.20\linewidth]{regular.png}
+	\includegraphics[width=0.5\linewidth]{regular.png}
 	\caption{Termalización  de simulación Monte Carlo con configuración Inicial Regular para concentraciones de 0.1 y 0.5}
 	\label{TermaReg}
 \end{figure}
@@ -164,7 +164,7 @@ Para la configuración aleatoria con traslapes es otra historia, ya que al permi
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1.20\linewidth]{traslapes.png}
+	\includegraphics[width=0.50\linewidth]{traslapes.png}
 	\caption{Termalización  de simulación Monte Carlo con configuración Inicial Aleatoria con Traslapes para concentraciones de 0.1 y 0.5}
 	\label{TermaTras}
 \end{figure}
@@ -175,8 +175,38 @@ Para la configuración aleatoria con traslapes es otra historia, ya que al permi
  \pagebreak
 
 \section*{Tarea V: Propiedades	Estructurales	de	un	Sistema	de	Discos	Duros}
+Esta tarea consistió en observar las gráficas de las G(r) y como se altera con los diferente parámetros en la simulación.
 
+\subsection*{Actividad 8: G(r) bajo diferentes parámetros}
+Lo primero que  se realizó fue realizar una simulación con diferentes configuraciones iniciales. Estas se realizaron para concentraciones de $n^*=0.5$ y con  $30,000$ configuraciones y 100 partículas.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.50\linewidth]{gdrCNF.png}
+	\caption{Distribución Radial para diferentes configuraciones iniciales}
+	\label{GDR_Config}
+\end{figure}
+
+Luego se realizó variando el numero de partículas bajo las misma condiciones.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.50\linewidth]{gdrPart.png}
+	\caption{Distribución Radial para diferente numero de partículas}
+	\label{GDR_Particulas}
+\end{figure}
+
+Finalmente se realizó para un deltar diferente y mismas condiciones que al principio.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.50\linewidth]{gdrDeltar.png}
+	\caption{Distribución Radial para deltar diferentes}
+	\label{GDR_Deltar}
+\end{figure}
+ En figura \ref{GDR_Config} nos muestra que la configuración aleatoria tiene mejor comportamiento, esto se debe a que la regular no ha olvidado la configuración inicial. La figura \ref{GDR_Particulas} se observa que entre más partículas, existen mas datos para realizar el calculo de la distribución radial. La figura \ref{GDR_Deltar} nos muestra que un deltar pequeño puede llegar a generar mas ruido y es mas recomendable que no se ni muy pequeño ni muy grande.
+ 
+ \subsection*{Actividad 9: Densidad	local de partículas}
 
 \end{document}
 
