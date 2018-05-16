@@ -10,7 +10,7 @@ Program Waals
   !Use Basic
   Implicit None
   Integer,Parameter :: Part = 200                 ! PARA NOMBRE DE ARCHIVO
-  Integer, Parameter :: Dens = 0.5                ! CONCENTRACION
+  Real, Parameter :: Dens = 0.5                ! CONCENTRACION
   Integer :: State                                ! ESTADO DE LECTURA
   Integer :: k, i, j                              ! CONTADOR
   Character (len=3), Parameter :: Start = "gdr"   ! NOMBRE DE ARCHIVO DE ENTRADA
