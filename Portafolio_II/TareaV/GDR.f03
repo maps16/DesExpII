@@ -11,7 +11,7 @@ Subroutine GdrCalc
   Implicit None
 
   Integer, Allocatable, Dimension(:) :: Histo
-  Real, Parameter :: delTar = 0.05
+  Real, Parameter :: delTar = 0.01
   Integer :: MBin, iBin
   Integer :: i, j, k                                              !CONTADORES
   Real :: xO, yO, xN, yN, xON, yON
@@ -71,7 +71,7 @@ Subroutine GdrCalc
   c1 = PI * Dens
   
   !ABRIENDO ARCHIVO PARA GDR
-  Open( 5, file= "gdr.dat" )
+  Open( 5, file= "gdr01.dat" )
   
   GdrCal: Do ibin = 1 , MBin
      
