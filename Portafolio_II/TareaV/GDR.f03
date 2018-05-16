@@ -11,7 +11,7 @@ Subroutine GdrCalc
   Implicit None
 
   Integer, Allocatable, Dimension(:) :: Histo
-  Real, Parameter :: delTar = 0.01
+  Real, Parameter :: delTar = 0.1
   Integer :: MBin, iBin
   Integer :: i, j, k                                              !CONTADORES
   Real :: xO, yO, xN, yN, xON, yON
