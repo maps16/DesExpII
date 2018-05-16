@@ -20,13 +20,13 @@ Program Main
 
   !PEDIR DENSIDAD Y NUMERO DE PARTICULAS
   Write(*,*) "NUMERO DE PARTICULAS"
-  Read(*,*) N
+  Write(*,*) N
   Write(*,*) "CONCENTRACION REDUCIDA"
-  Read(*,*) Dens
+  Write(*,*) Dens
   Write(*,*) "NUMERO DE CICLOS"
-  Read(*,*) NStep
+  Write(*,*) NStep
   Write(*,*) "MONITOREO EN PANTALLA (CADA CAUNTOS CICLOS)"
-  Read(*,*) IPrint
+  Write(*,*) IPrint
 !  Write(*,*) "NUMERO DE PASOS PARA GUARDAR CONFIGURACION"
 !  Read(*,*) ISave
 !  Write(*,*) "FRECUENCIA DE CORRECCION EN DESPLAZAMIENTO"
