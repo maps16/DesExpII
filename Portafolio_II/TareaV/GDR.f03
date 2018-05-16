@@ -71,7 +71,7 @@ Subroutine GdrCalc
   c1 = PI * Dens
   
   !ABRIENDO ARCHIVO PARA GDR
-  Open( 5, file= "gdr.dat" )
+  Open( 5, file= "gdr400.dat" )
   
   GdrCal: Do ibin = 1 , MBin
      
