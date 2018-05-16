@@ -27,10 +27,10 @@ Program Main
   Read(*,*) NStep
   Write(*,*) "MONITOREO EN PANTALLA (CADA CAUNTOS CICLOS)"
   Read(*,*) IPrint
-  Write(*,*) "NUMERO DE PASOS PARA GUARDAR CONFIGURACION"
-  Read(*,*) ISave
-  Write(*,*) "FRECUENCIA DE CORRECCION EN DESPLAZAMIENTO"
-  Read(*,*) IRatio
+!  Write(*,*) "NUMERO DE PASOS PARA GUARDAR CONFIGURACION"
+!  Read(*,*) ISave
+!  Write(*,*) "FRECUENCIA DE CORRECCION EN DESPLAZAMIENTO"
+!  Read(*,*) IRatio
   Write(*,*) "============================================================================="
 
 
@@ -44,6 +44,7 @@ Program Main
   Write(*,*) "OPCIONES SON:"
   Write(*,*) "a) Reg - b) Tras -  c) Al"
   Read (*,*) Selc
+  Write(*,*) "============================================================================="
   
   SELECT CASE (Selc)
   CASE ("c")
@@ -67,29 +68,6 @@ Program Main
      go to 1024
      
   END SELECT
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
