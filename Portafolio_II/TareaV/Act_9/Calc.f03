@@ -26,7 +26,7 @@ Program Waals
   Write(*,*) "========================"
   
   !TAMANO DEL ARCHIVO POR LEER
-  Write(Cons,256) Part
+  Write(Cons,512) Part
   Filename = start//trim(Cons)//En
   Write(*,*) "Archivo: ",Filename
 
@@ -72,7 +72,7 @@ Program Waals
 
   Intg = Intg + 0.5*R(j)*G(j)
 
-  a = Intg*delta*ctea         ! TOTAL DE INTEGRACION
+  a = Intg*delta*cte         ! TOTAL DE INTEGRACION
  
   Write(*,*) "a*= ", a
   !Write(8,*) Dens*0.1, a  , b
