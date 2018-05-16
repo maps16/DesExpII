@@ -121,7 +121,7 @@ Program Main
 
         !MONTECARLO (CRITERIO DE ACEPTACION O RECHAZO DE MOV)
         DV = VNew - VOld
-        If( mod(Istep,100) ) Write(*,*)"DV= " DV
+        If( mod(Istep,100) ) Write(*,*)"DV= ", DV
         Call Random_Number(Dummy) !PARA CRITERIO ENTRE 0.0 Y 75.0
 
         !MONTECARLO (ACEPTANDO MOVIMIENTOS POR CRITERIOS)
