@@ -5,7 +5,7 @@ Module cte
   Integer, Parameter :: CEq = 1000
   Integer, Parameter :: NNN = 2000
   Real ::  BoxL, RCut, dRMax !,  Dens
-!  Integer :: N, NStep, ISave, IPrint, IRatio,
+  Integer :: NN!, N, NStep, ISave, IPrint, IRatio,
   Real, Parameter :: Dim = 1.0/2.0         !Dimensiones (2D o 3D)
   Real, Allocatable, Dimension(:) :: X, Y
 
