@@ -20,7 +20,7 @@ Subroutine ConfigIniReg
   !BoxL = (1.0*N/Dens )**(Dim)
 
   N3 = N2**(1.0/Dim)
-  N = N3
+  !N = N3
   BoxL = (1.0*N/Dens )**(Dim)
   
   Write(*,*) "LONGITUD DE LA CELDA:", BoxL
