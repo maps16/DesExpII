@@ -26,7 +26,7 @@ Program Waals
   Write(*,*) "========================"
   
   !TAMANO DEL ARCHIVO POR LEER
-  Write(Cons,512) Part
+  Write(Cons,256) Part
   Filename = start//trim(Cons)//En
   Write(*,*) "Archivo: ",Filename
 
@@ -83,5 +83,5 @@ Program Waals
 
 
 512 Format (I5.5)
-!256 Format (I3.3)
+256 Format (I3.3)
 End Program
