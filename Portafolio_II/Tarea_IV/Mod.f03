@@ -12,6 +12,6 @@ Module cte
 
   Integer, Parameter :: N = 100
   Integer, Parameter :: NStep = 10000
-  Integer, Parameter :: Iprint = 100
+  Integer, Parameter :: Iprint = 1000
   Real, Parameter :: Dens=0.1
 End Module cte
