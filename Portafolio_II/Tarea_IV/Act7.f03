@@ -76,7 +76,7 @@ Program Main
   dRMax = 0.1
   MAcep = 0.0
   k2 = 0
-  NN = ( NStep- CEq ) / ISave
+  !NN = ( NStep- CEq ) / ISave
 
 
 
