@@ -9,7 +9,7 @@
 Program Waals
   !Use Basic
   Implicit None
-  Integer,Parameter :: Part = 200                 ! PARA NOMBRE DE ARCHIVO
+  Integer,Parameter :: Part = 600                 ! PARA NOMBRE DE ARCHIVO
   Real, Parameter :: Dens = 0.5                ! CONCENTRACION
   Integer :: State                                ! ESTADO DE LECTURA
   Integer :: k, i, j                              ! CONTADOR
@@ -17,7 +17,7 @@ Program Waals
   Character (len=4), Parameter :: En = ".dat"     ! EXTENSION ARCHIVO DE ENTRADA
   Character (len=10):: Filename, cons             ! NOMBRE DE ARCHIVO
   Real, Parameter :: PI = 4.0 * ATAN(1.0)         ! VALOR DE PI
-  Real, Parameter :: Rc = 10.0                    ! RADIO DE CORTE
+  Real, Parameter :: Rc = 17.3205090              ! RADIO DE CORTE
   Real, Dimension(:),Allocatable ::  R , G        ! RADIO | DISTRIBUCION RADIAL
   Real :: a                                       ! TOTAL
   Real :: cte, delta                              ! PARAMETROS PARA CALCULO CTE
