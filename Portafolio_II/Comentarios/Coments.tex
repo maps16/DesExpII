@@ -131,20 +131,50 @@ Se observa las configuraciones inicial y final de un arreglo en 3D. Las trazas d
 	\end{figure}
 	Como es el potencial de discos duro, todas las configuraciones tuvieron energía 0 como era de esperarse.
 \pagebreak
-\section*{Tarea IV}
+\section*{Tarea IV: Ejecución de Código Monte Carlo }
 La tarea 4 consiste de una actividad, en la cual se implementó el código de Montecarlo.
 \subsection*{Actividad 7}
+Lo que se realizó en la actividad fue generar lo archivos que nos permiten observar como se va comportando la energía conforme pasan las configuraciones. El objetivo de este observar cuando un sistema se termaliza, es decir, cuando este alcanza un estado de equilibrio.
+
+Se realizaron corridas de la simulación de Monte Carlo para las concentraciones de $n^* = 0.1$ y para la de $n^* = 0.5$, con $10,000$ configuraciones y $100$ partículas. Se escogieron estas ya que se nos pide realizar estas corridas para configuraciones  iniciales diferentes, pero para altas concentraciones la configuración aleatoria sin traslapes, suele tomar mucho tiempo o no se puede llegar a una que cumpla con las condiciones.
+
+Empezando para la configuración aleatoria sin traslapes, llegamos a lo siguiente:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.20\linewidth]{aleatoria.png}
+	\caption{Termalización  de simulación Monte Carlo con configuración Inicial Aleatoria para concentraciones de 0.1 y 0.5}
+	\label{TermaAleatoria}
+\end{figure}
 
 
+Para la configuración aleatoria regular, llegamos a lo siguiente:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.20\linewidth]{regular.png}
+	\caption{Termalización  de simulación Monte Carlo con configuración Inicial Regular para concentraciones de 0.1 y 0.5}
+	\label{TermaReg}
+\end{figure}
 
 
+Podemos apreciar que la energía en ambas siempre es cero como es de esperarse, ya que para que la energía aumente en el sistema, la partículas  se deberían encontrar traslapadas, es decir que estas al colisionar no fueran duras.
 
+Para la configuración aleatoria con traslapes es otra historia, ya que al permitir que estas se encuentre encimadas, el sistema comienza con mucha energía. Lo obtenido fue lo siguiente.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.20\linewidth]{traslapes.png}
+	\caption{Termalización  de simulación Monte Carlo con configuración Inicial Aleatoria con Traslapes para concentraciones de 0.1 y 0.5}
+	\label{TermaTras}
+\end{figure}
+ Se aprecia que gracias al Monte Carlo la energía disminuye, pero se observo que ambos casos la energía nunca que llego a cero que para el caso de $n^*=0.5$ la energía por partícula se estabilizó en $-184.320007$ , mientras que para $n^*=0.1$ se estabilizó en $143.360001$.
+ 
+ Esto me permite decir que las configuraciones que inician con traslapes no son tan confiables para este caso de estudió.
 
+ \pagebreak
 
-
-
-
+\section*{Tarea V: Propiedades	Estructurales	de	un	Sistema	de	Discos	Duros}
 
 
 
