@@ -13,7 +13,7 @@ Module cte
 
   Integer, Parameter :: N = 100
   Integer, Parameter :: NStep = 30000
-  Integer, Parameter :: Iprint = 100
+  Integer, Parameter :: Iprint = 1000
   Integer, Parameter :: IRatio = 50 
   Integer, Parameter :: ISave = 50 
   Integer, Parameter :: cnf = 1
