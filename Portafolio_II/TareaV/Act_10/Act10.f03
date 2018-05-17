@@ -143,7 +143,7 @@ Program Main
            If (Dens .GT. 0.2) Then
               Ctrl1A = Ratio .GT. 0.5                                  !CRITERIO DE ACEPTACION DE MOVIMIENTOS
            Else
-              Ctrl1A = Ratio .GT. 0.95
+              Ctrl1A = Ratio .GT. 0.99
            End If
            Criterio : If ( Ctrl1A ) Then
               dRMax = dRMax * 1.05                                   !CRECER DESPLAZAMIENTO 
