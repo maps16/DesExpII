@@ -140,8 +140,12 @@ Program Main
         NdR : If (Ctrl1) Then
 
            Ratio =  MAcep / Real( N * IRatio  )                      !RAZON DE ACEPTADOS 
-           Ctrl1A = Ratio .GT. 0.5                                  !CRITERIO DE ACEPTACION DE MOVIMIENTOS
-
+           If (Dens .GT. 0.2) Then
+              Ctrl1A = Ratio .GT. 0.5                                  !CRITERIO DE ACEPTACION DE MOVIMIENTOS
+           Else
+              Ctrl1A = Ratio .GT. 0.95
+           End If
+           
            Criterio : If ( Ctrl1A ) Then
               dRMax = dRMax * 1.05                                   !CRECER DESPLAZAMIENTO 
            Else
