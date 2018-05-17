@@ -60,7 +60,7 @@ Program Calc
 
      Locate: Do i = 1, k           ! BUSCANDO EL PRIMER DATO .GE. 1.0
 
-        If (G(i) .GE. 0.0) Exit
+        If (G(i) .GT. 0.0) Exit
 
      End Do Locate
 
