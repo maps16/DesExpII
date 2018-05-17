@@ -13,7 +13,7 @@ Module cte
   Integer, Parameter :: N = 100
   Integer, Parameter :: NStep = 10000
   Integer, Parameter :: Iprint = 1000
-  Real, Parameter :: Dens=0.01
+  Real, Parameter :: Dens=0.999
   Integer, Parameter :: ISave = 10
   Integer, Parameter :: IRatio = 10
 End Module cte
