@@ -14,9 +14,9 @@ Program Main
   Logical :: Ctrl, Ctrl1, Ctrl1A, Ctrl2                     !CONTROL LOGICO
   Integer :: istat1, istat2
   Character (len=80) :: err_msg1, err_msg2
-  Character (len=12):: Filename, cons             ! NOMBRE DE ARCHIVO
-  !Dens = 0.1
-  !CONCE: Do While(Dens .LT. 1.0)
+  Character (len=10):: Filename, cons             ! NOMBRE DE ARCHIVO
+  Dens = 0.1
+  CONCE: Do While(Dens .LT. 1.0)
 
      !PEDIR DENSIDAD Y NUMERO DE PARTICULAS
      Write(*,*) "NUMERO DE PARTICULAS"
@@ -33,7 +33,7 @@ Program Main
      Write(*,*) IRatio
      Write(*,*) "============================================================================="
 
-
+     Do while (Dens .LT.1.0)
      !ALOJAR ESPACIO EN MEOMORIA PARA LOS ARREGLO DE POSICION DE PARTICULAS
      Allocate( X(N), Y(N), STAT= istat1 , ERRMSG=err_msg1  )
 
@@ -145,7 +145,6 @@ Program Main
            Else
               Ctrl1A = Ratio .GT. 0.95
            End If
-           
            Criterio : If ( Ctrl1A ) Then
               dRMax = dRMax * 1.05                                   !CRECER DESPLAZAMIENTO 
            Else
@@ -202,8 +201,8 @@ Program Main
      Deallocate( CX, CY )
 
      Close(3)
-     
-  !End Do CONCE
+     Dens = Dens + 0.1
+  End Do
   
   WRITE(*,*) "DONE"
 
