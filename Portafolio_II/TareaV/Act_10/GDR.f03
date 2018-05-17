@@ -19,7 +19,7 @@ Subroutine GdrCalc
   Integer :: istat1
   Character (len=80) :: err_msg1
   logical :: Ctrl1, Ctrl2
-  Character (len=10):: Filename, cons                            ! NOMBRE DE ARCHIVO
+  Character (len=12):: Filename, cons                            ! NOMBRE DE ARCHIVO
 
   Allocate( Histo(NNN) , STAT = istat1, ERRMSG = err_msg1)
 
@@ -73,7 +73,7 @@ Subroutine GdrCalc
   !ABRIENDO ARCHIVO PARA GDR
   Write(Cons,256) Int(100.0 * Dens)
      Filename = "gdr"//trim(Cons)//".dat"
-  Open( 5, file= "gdr.dat" )
+  Open( 5, file= Filename )
   
   GdrCal: Do ibin = 1 , MBin
      

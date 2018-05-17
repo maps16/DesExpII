@@ -14,7 +14,7 @@ Program Main
   Logical :: Ctrl, Ctrl1, Ctrl1A, Ctrl2                     !CONTROL LOGICO
   Integer :: istat1, istat2
   Character (len=80) :: err_msg1, err_msg2
-  Character (len=10):: Filename, cons             ! NOMBRE DE ARCHIVO
+  Character (len=12):: Filename, cons             ! NOMBRE DE ARCHIVO
   Dens = 0.1
   CONCE: Do While(Dens .LT. 1.0)
 
