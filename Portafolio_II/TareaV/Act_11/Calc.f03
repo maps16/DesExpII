@@ -65,7 +65,7 @@ Program Calc
      End Do Locate
 
      gr1 = G(i)                    ! Ghd(1+)
-     Des = Real(Dens)*0.01
+     Des = Real(Dens)*0.1
      Press = 1.0 + 0.5*Pi*Des*gr1
 
      Write(9,*) Des , press
