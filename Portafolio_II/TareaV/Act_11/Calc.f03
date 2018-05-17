@@ -68,7 +68,7 @@ Program Calc
      Des = Real(Dens)*0.01
      Press = 1.0 + 0.5*Pi*Des*gr1
 
-     Write(9,*) Des * press
+     Write(9,*) Des , press
      
      Deallocate(R,G)
      Write(*,*) "========================"
