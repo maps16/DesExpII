@@ -14,7 +14,7 @@ Program Main
   Logical :: Ctrl, Ctrl1, Ctrl1A, Ctrl2                     !CONTROL LOGICO
   Integer :: istat1, istat2
   Character (len=80) :: err_msg1, err_msg2
-
+  Character (len=10):: Filename, cons             ! NOMBRE DE ARCHIVO
   Dens = 0.1
   CONCE: Do While(Dens .LT. 1.0)
 
@@ -67,7 +67,11 @@ Program Main
 
      !ABRIENDO ARCHIVOS PARA GUARDAR INFO DEL SISTEMA
      Open(2, File="ConFin.dat")
-     Open(3, File="Terma.dat" )
+
+     Write(Cons,256) Dens
+     Filename = start"Terma"//trim(Cons)//".dat"
+     
+     Open(3, File=Trim(Filename) )
      !MOVIMIENTO DE PARTICULAS ALEATORIA
 
 
@@ -198,5 +202,7 @@ Program Main
   End Do CONCE
   
   WRITE(*,*) "DONE"
+
+256 Format (I2.2)
 
 End Program Main

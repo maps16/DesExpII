@@ -19,7 +19,7 @@ Subroutine GdrCalc
   Integer :: istat1
   Character (len=80) :: err_msg1
   logical :: Ctrl1, Ctrl2
-  
+  Character (len=10):: Filename, cons                            ! NOMBRE DE ARCHIVO
 
   Allocate( Histo(NNN) , STAT = istat1, ERRMSG = err_msg1)
 
@@ -71,6 +71,8 @@ Subroutine GdrCalc
   c1 = PI * Dens
   
   !ABRIENDO ARCHIVO PARA GDR
+  Write(Cons,256) Dens
+     Filename = start"Terma"//trim(Cons)//".dat"
   Open( 5, file= "gdr.dat" )
   
   GdrCal: Do ibin = 1 , MBin
@@ -84,24 +86,15 @@ Subroutine GdrCalc
      gdrm =gdr
      gdr = Real( Histo(iBin) )/ Real(NN) / Real(N) / c2
      Write(5,*) rM , gdr
-
-
-     Ctrl1 = gdrm == 0
-     Ctrl2 = gdr /= 0
-     PressCalc:If ( Ctrl1 .AND. Ctrl2 ) Then
-        Press = 1.0 + 0.5*PI*dens*gdr
-        !Write(*,*) gdrm, gdr, press
-     End If PressCalc
      
   End Do GdrCal
 
-  Write(*,*) "Presion:",Press, "Concentracion:", dens
-  Write(120,*) Dens, Press
   Close(5)
-  
-  
+    
   Deallocate( Histo )
 
   Write(*,*) "GDR DONE, SAVE"
-  
+
+256 Format (I2.2)
+
 End Subroutine GdrCalc
