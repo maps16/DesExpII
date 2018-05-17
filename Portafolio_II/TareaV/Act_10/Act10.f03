@@ -33,7 +33,7 @@ Program Main
      Write(*,*) IRatio
      Write(*,*) "============================================================================="
 
-     Do while (Dens .LT.1.0)
+     !CONC:Do while (Dens .LT.1.0)
      !ALOJAR ESPACIO EN MEOMORIA PARA LOS ARREGLO DE POSICION DE PARTICULAS
      Allocate( X(N), Y(N), STAT= istat1 , ERRMSG=err_msg1  )
 
@@ -202,7 +202,7 @@ Program Main
 
      Close(3)
      Dens = Dens + 0.1
-  End Do
+  End Do CONCE
   
   WRITE(*,*) "DONE"
 
