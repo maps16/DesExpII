@@ -72,7 +72,7 @@ Subroutine GdrCalc
   
   !ABRIENDO ARCHIVO PARA GDR
   Write(Cons,256) Dens
-     Filename = start"Terma"//trim(Cons)//".dat"
+     Filename = "Terma"//trim(Cons)//".dat"
   Open( 5, file= "gdr.dat" )
   
   GdrCal: Do ibin = 1 , MBin

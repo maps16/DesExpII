@@ -69,7 +69,7 @@ Program Main
      Open(2, File="ConFin.dat")
 
      Write(Cons,256) Dens
-     Filename = start"Terma"//trim(Cons)//".dat"
+     Filename = "Terma"//trim(Cons)//".dat"
      
      Open(3, File=Trim(Filename) )
      !MOVIMIENTO DE PARTICULAS ALEATORIA
