@@ -6,7 +6,7 @@
 !==============================================================================
 
 !DECLARACION DE VARIABLES
-Program Waals
+Program Calc
   !Use Basic
   Implicit None
   Integer :: DENS                                 ! PARA NOMBRE DE ARCHIVO
@@ -18,9 +18,8 @@ Program Waals
   Real, Parameter :: PI = 4.0 * ATAN(1.0)         ! VALOR DE PI
   Real :: Des                                     ! CONCENTRACION
   Real, Dimension(:),Allocatable ::  R , G        ! RADIO | DISTRIBUCION RADIAL
-  Real :: a, b, a74                               ! PARAMETROS VAN DER WAALS
-  Real :: ctea, ctea74, cteb, delta , gr1         ! PARAMETROS PARA CALCULO DE a Y b VAN DER WAALS
-  Real :: Intg                                    ! ACUMULADOR PARA INTEGRACION
+  Real :: gr1                                     ! PARAMETROS PARA CALCULO DE a Y b VAN DER WAALS
+  Real :: Press                                   ! ACUMULADOR PARA INTEGRACION
 
   Write(*,*) "========================"
   !Open(8, File = "a_starT1.dat", Action= "write") 
@@ -58,14 +57,10 @@ Program Waals
      Write(*,*) "DATOS GUARDADOS EN MEMORIA"
 
      !CALC DE a VAN DER WAALS
-     Ctea = (2.0*Pi) / TP
-     Ctea74 = (2.0*Pi)/ 0.74
-     Cteb = (2.0/3.0)*PI
-     Delta = 0.05                  ! CAMBIAR SEGUN EL ARCHIVO
 
      Locate: Do i = 1, k           ! BUSCANDO EL PRIMER DATO .GE. 1.0
 
-        If (R(i) .GE. 1.0) Exit
+        If (G(i) .GE. 0.0) Exit
 
      End Do Locate
 
@@ -73,7 +68,7 @@ Program Waals
      Des = Real(Dens)*0.01
      Press = 1.0 + 0.5*Pi*Des*gr1
 
-     Write(9,*) Des * pres
+     Write(9,*) Des * press
      
      Deallocate(R,G)
      Write(*,*) "========================"
@@ -81,4 +76,4 @@ Program Waals
   
 512 Format (I5.5)
 256 Format (I2.2)
-End Program Waals
+End Program Calc
