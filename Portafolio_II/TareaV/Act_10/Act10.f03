@@ -15,8 +15,8 @@ Program Main
   Integer :: istat1, istat2
   Character (len=80) :: err_msg1, err_msg2
   Character (len=10):: Filename, cons             ! NOMBRE DE ARCHIVO
-  Dens = 0.1
-  CONCE: Do While(Dens .LT. 1.0)
+  !Dens = 0.1
+  !CONCE: Do While(Dens .LT. 1.0)
 
      !PEDIR DENSIDAD Y NUMERO DE PARTICULAS
      Write(*,*) "NUMERO DE PARTICULAS"
@@ -202,7 +202,7 @@ Program Main
 
      Close(3)
      Dens = Dens + 0.1
-  End Do CONCE
+ ! End Do CONCE
   
   WRITE(*,*) "DONE"
 
