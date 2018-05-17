@@ -201,7 +201,7 @@ Program Main
      Deallocate( CX, CY )
 
      Close(3)
-     Dens = Dens + 0.1
+     !Dens = Dens + 0.1
  ! End Do CONCE
   
   WRITE(*,*) "DONE"
