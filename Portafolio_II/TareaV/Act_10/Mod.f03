@@ -8,7 +8,7 @@ Module cte
   Integer :: NN!, N, NStep, ISave, IPrint, IRatio,
   Real, Parameter :: Dim = 1.0/2.0         !Dimensiones (2D o 3D)
   Real, Allocatable, Dimension(:) :: X, Y
-  Real, Allocatable, Dimension(:) :: CX, CY
+  Real, Allocatable, Dimension(:,:) :: CX, CY
 
   Integer, Parameter :: N = 100
   Integer, Parameter :: NStep = 10000
