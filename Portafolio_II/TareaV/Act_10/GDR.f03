@@ -71,7 +71,7 @@ Subroutine GdrCalc
   c1 = PI * Dens
   
   !ABRIENDO ARCHIVO PARA GDR
-  Write(Cons,256) Dens
+  Write(Cons,256) Int(100.0 * Dens)
      Filename = "Terma"//trim(Cons)//".dat"
   Open( 5, file= "gdr.dat" )
   

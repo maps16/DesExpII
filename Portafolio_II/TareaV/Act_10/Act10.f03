@@ -68,7 +68,7 @@ Program Main
      !ABRIENDO ARCHIVOS PARA GUARDAR INFO DEL SISTEMA
      Open(2, File="ConFin.dat")
 
-     Write(Cons,256) Dens
+     Write(Cons,256) Int(100.0*Dens)
      Filename = "Terma"//trim(Cons)//".dat"
      
      Open(3, File=Trim(Filename) )
@@ -203,6 +203,6 @@ Program Main
   
   WRITE(*,*) "DONE"
 
-256 Format (I2.2)
+256 Format (I3.3)
 
 End Program Main
