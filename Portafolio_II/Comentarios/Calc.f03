@@ -36,7 +36,7 @@ Program Calc
 
      k = 0  !REINICIA CONTADOR PARA NUEVO ARCHIVO (RECUENTO DE FILAS)
      
-     Sizes: Do                         !BUSCANDO TAMAÑO DE ARCHIVO (RENGLONES QUE QUE TIENE)
+     Sizes: Do                         !BUSCANDO TAMANO DE ARCHIVO (RENGLONES QUE QUE TIENE)
         
         Read( 1,*, iostat = state  )
         k = k + 1

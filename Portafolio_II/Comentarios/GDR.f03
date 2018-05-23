@@ -51,11 +51,11 @@ Subroutine GdrCalc
               
               !CERCANIA CINTA
               iBin =  Int( rD / delTar ) + 1
-              !Write(*,*) "Succes",i,j , ibin, k
+
               Guardar : If((iBin .LE. MBin)  ) Then
-                 !Write(*,*) "Succes", ibin
-                 Histo(iBin) = Histo(iBin) + 1
-                 !Write(*,*) "Succes",i,j,k
+ 
+                 Histo(iBin) = Histo(iBin) + 1 !ACUMULANDO  PARTICULAS EN CINTAS
+ 
               End If Guardar
               
            End Do StepCnfg
@@ -64,7 +64,6 @@ Subroutine GdrCalc
      End Do NextParti
   End Do PartiO
 
-  !Write(*,*) Histo
   
   c1 = PI * Dens
   
@@ -75,14 +74,13 @@ Subroutine GdrCalc
   
   GdrCal: Do ibin = 1 , MBin
      
-     rL = Real(iBin - 1) * delTar
+     rL = Real(iBin - 1) * delTar       !CINTA INFERIOR
 
-     rU = rL + delTar
-     rM = rL + ( delTar/2.0 )
+     rU = rL + delTar                   !CINTA SUPERIOR
+     rM = rL + ( delTar/2.0 )           !CINTA INTERMEDIA
 
-     c2 = c1 * ((rU*rU) - (rL*rL))
-     gdrm =gdr
-     gdr = Real( Histo(iBin) )/ Real(NN) / Real(N) / c2
+     c2 = c1 * ((rU*rU) - (rL*rL))      !PRECALCULO G(r)
+     gdr = Real( Histo(iBin) )/ Real(NN) / Real(N) / c2 !CALCULANDO G(r)
      Write(5,*) rM , gdr
      
   End Do GdrCal
