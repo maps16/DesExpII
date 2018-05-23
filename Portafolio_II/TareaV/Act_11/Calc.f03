@@ -1,6 +1,6 @@
 !==============================================================================
-! CALCULO DE LOS COEFICIENTES DE VAN DER WAALS A PARTIR DE LOS ARCHIVOS DE
-! LOS ARCHIVOS DE LA G(r) OBTENIDOS DE LA SIMULACION CON POTENCIAL SW 
+! CALCULO DE LA PRESION PARA EL CASO DE DE DISCOS DUROS CON LOS ARCHIVOS DE 
+! DE LA G(r) OBTENIDOS DE LA SIMULACION
 !
 ! AUTOR : MARTIN ALEJANDRO PAREDES SOSA
 !==============================================================================
@@ -26,51 +26,54 @@ Program Calc
   Open(9, File = "Pres.dat", Action= "write") !ARCHIVO DE SALIDA 
 
   Archivo:  Do Dens = 1, 9
+
      !TAMANO DEL ARCHIVO POR LEER
-     Write(Cons,256) Dens*10
-     Filename = start//trim(Cons)//En
-     Write(*,*) "Archivo: ",Filename
+     Write(Cons,256) Dens*10             ! SELECCION DEL ARCHIVO PARA LEER 
+     Filename = start//trim(Cons)//En    ! VARIAR SEGUN  NOMBRO EL ARCHIVO; Start Y En TAMBIEN CAMBIAR
+     Write(*,*) "Archivo: ",Filename     ! CHECAR QUE ARCHIVO VA A LEER (SI NO ES EL MISMO NOMBRE FALLA LA CORRIDA)
 
      Open( 1, File = Trim(Filename), action= "read", Status ="old" ) !ARCHIVO DE ENTRADA
-     k = 0 !REINICIA CONTADOR
+
+     k = 0  !REINICIA CONTADOR PARA NUEVO ARCHIVO (RECUENTO DE FILAS)
+     
      Sizes: Do                         !BUSCANDO TAMAÑO DE ARCHIVO (RENGLONES QUE QUE TIENE)
         
         Read( 1,*, iostat = state  )
         k = k + 1
-        If ( state .LT. 0 ) Exit
+        If ( state .LT. 0 ) Exit       !CONDICION DE SALIDA (YA NO HAY MAS REGLONES EN EL ARCHIVO)
         
      End Do Sizes
      
      Write(*,*) "Tiene", k, "Renglones" !DEBUG LINE (SIZE OF FILE)
 
      Rewind 1 !REINICIAR ARCHIVO DE ENTRADA
-     Allocate ( R(k), G(k) )
+     Allocate ( R(k), G(k) ) !ALOJAR ESPACIO EN MEMORIA
 
      !SAVING FILE DATA
      Saves : Do i = 1, k+1
 
-        Read( 1,*, iostat = state  ) R(i), G(i)
-        If ( state .LT. 0 ) Exit
+        Read( 1,*, iostat = state  ) R(i), G(i)   ! CONSIDERAR EL NUMERO DE COLUMNAS
+        If ( state .LT. 0 ) Exit                  ! CONDICION DE SALIDA (YA NO HAY MAS REGLONES EN EL ARCHIVO) POR SEGURIDAD
 
      End Do Saves
 
      Write(*,*) "DATOS GUARDADOS EN MEMORIA"
 
-     !CALC DE a VAN DER WAALS
+     !CALC DE PRESION HD
 
-     Locate: Do i = 1, k           ! BUSCANDO EL PRIMER DATO .GE. 1.0
+     Locate: Do i = 1, k           ! BUSCANDO EL PRIMER DATO .GE. 0
 
         If (G(i) .GT. 0.0) Exit
 
      End Do Locate
 
      gr1 = G(i)                    ! Ghd(1+)
-     Des = Real(Dens)*0.1
-     Press = 1.0 + 0.5*Pi*Des*gr1
+     Des = Real(Dens)*0.1          ! CONCENTRACION A PARTIR DEL NOMBRE DEL ARCHIVO
+     Press = 1.0 + 0.5*Pi*Des*gr1  ! CALCULO PRESION HD
 
-     Write(9,*) Des , press
+     Write(9,*) Des , press        ! ESCRITURA EN ARCHIVO DE SALIDA
      
-     Deallocate(R,G)
+     Deallocate(R,G)               ! LIBERANDO MEMORIA PARA SIGUIENTE ARCHIVO O FINAL
      Write(*,*) "========================"
   End Do Archivo
   

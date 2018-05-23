@@ -20,14 +20,11 @@ Subroutine GdrCalc
   Character (len=80) :: err_msg1
   logical :: Ctrl1, Ctrl2
   
+  MBin = Int( RCut / delTar ) ! CINTA MAXIMA
 
-  Allocate( Histo(NNN) , STAT = istat1, ERRMSG = err_msg1)
+  Allocate( Histo(MBin+1) , STAT = istat1, ERRMSG = err_msg1)
+  Histo = 0 ! ESTABLECER TODO EL ARREGLO EN 0
 
-  Histo = 0
-  !WRITE(*,*) NN
-  
-  MBin = Int( RCut / delTar )
-  !WRITE(*,*) MBIN
   PartiO : Do i = 1, N
      NextParti : Do j = 1, N
         NOTSAME : If (i /= j ) Then
