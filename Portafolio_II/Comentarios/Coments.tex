@@ -1,7 +1,7 @@
-\documentclass[12pt,letterpaper]{article}
+	\documentclass[12pt,letterpaper]{article}
 
 \usepackage[spanish, es-tabla, es-nodecimaldot]{babel}
-\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 
 \usepackage{hyperref}
@@ -24,6 +24,44 @@
 \usepackage{wrapfig}
 \usepackage{caption}
 \usepackage{subcaption}
+
+\usepackage{listings}
+\usepackage{color}
+%\usepackage[usenames,dvipsnames]{color}
+	\definecolor{ocre}{RGB}{42,105,21}
+	\definecolor{ocre2}{RGB}{0,102,0}%47,109,130}
+	\definecolor{gray2}{gray}{0.95}
+	\lstset{
+		language={[03]Fortran},
+		backgroundcolor=\color{gray2},
+		basicstyle=\color{black}\small\ttfamily, 
+		breakatwhitespace=false,         
+		breaklines=true,                 
+		captionpos=b,                    
+		columns=flexible,
+		commentstyle=\color{ocre2}\ttfamily, 
+		deletekeywords={...},            
+		escapeinside={\%*}{*)},          
+		extendedchars=true,             
+		frame=single,	                 
+		keepspaces=true,                 
+		keywordstyle=\color{blue}\bfseries,       
+		otherkeywords={*,...},          
+		numbers=left,                    
+		numbersep=5pt,                   
+		numberstyle=\small, 
+		rulecolor=\color{black},         
+		showspaces=false,                
+		showstringspaces=false,          
+		showtabs=false,                  
+		stepnumber=1,                    
+		stringstyle=\normalfont\color{ocre},     
+		tabsize=2,	                     
+		title=\lstname                  
+		}
+\definecolor{labelcolor}{RGB}{100,0,0}
+
+
 
 \setmarginsrb{2.0cm}{1.0cm}{2.0cm}{2.5cm}{0.5cm}{1cm}{1 cm}{1 cm} %{izq}{up}{der}{down}{Encabezado}
 
@@ -258,6 +296,9 @@ Los resultados fueron los siguientes
 \end{figure}
 
 
+\section*{Código Utilizado}
+\lstinputlisting[caption={Codigo del Modulo de Variables Globales}]{Mod.f03}
+%caption={Código ErrorRe.py}
 
 \end{document}
 
