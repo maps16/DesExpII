@@ -20,11 +20,11 @@ Subroutine WDT(k)
   !TIEMPO ENTRE CONFIGURACIONES
   Ti = Real(iSave2) * dt                                 
 
-  !BARRIDO TEMPORAL  (TIEMPO 1)
+  !BARRIDO TEMPORAL
   TEMPO: Do i = 1 , k-1
 
      nmax = k - i
-     !INICIALIZAR EN 0 EL DESPLAZAMIENTO
+
      Wtx = 0.0
      Wty = 0.0
      Wtz = 0.0
@@ -33,7 +33,7 @@ Subroutine WDT(k)
      !BARRIMIENTO DE PARTICULAS
      BPart: Do p = 1, N
 
-        !BARRIDO EN TIEMPO (CON EL TIEMPO 2)
+        !BARRIDO EN TIEMPO
         Tiempo: Do j = 1, nmax
            
            Wtx = Wtx + ( CXD(p,i+j) - CXD(p,j)  ) * ( CXD(p,i+j) - CXD(p,j)  )
