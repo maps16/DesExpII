@@ -16,26 +16,9 @@ Program Main
   Character (len=80) :: err_msg1, err_msg2
 
 
-  
-
-  !PEDIR DENSIDAD Y NUMERO DE PARTICULAS
-  Write(*,*) "NUMERO DE PARTICULAS"
-  !Read(*,*) N
-  Write(*,*) "CONCENTRACION REDUCIDA"
-  !Read(*,*) Dens
-  Write(*,*) "NUMERO DE CICLOS"
-  !Read(*,*) NStep
-  Write(*,*) "MONITOREO EN PANTALLA (CADA CAUNTOS CICLOS)"
-  !Read(*,*) IPrint
-  Write(*,*) "NUMERO DE PASOS PARA GUARDAR CONFIGURACION"
-  !Read(*,*) ISave
-  Write(*,*) "FRECUENCIA DE CORRECCION EN DESPLAZAMIENTO"
-  !Read(*,*) IRatio
-  Write(*,*) "============================================================================="
-
   !PARAMETROS DE SIMULADOR
   N = 800
-  NStep =25000
+  NStep =100000
   ISave = 100                                            !G(r)
   ISave2 = 100                                           !W(t), D(t)
   iPrint = 1000
@@ -49,6 +32,22 @@ Program Main
   NN = ( NStep- CEq ) / ISave
   !Write(*,*) phi !DEBUG
 
+  !PEDIR DENSIDAD Y NUMERO DE PARTICULAS
+  Write(*,*) "NUMERO DE PARTICULAS"
+  Write(*,*) N
+  Write(*,*) "CONCENTRACION REDUCIDA"
+  Write(*,*) Dens
+  Write(*,*) "NUMERO DE CICLOS"
+  Write(*,*) NStep
+  Write(*,*) "MONITOREO EN PANTALLA (CADA CAUNTOS CICLOS)"
+  write(*,*) IPrint
+  Write(*,*) "NUMERO DE PASOS PARA GUARDAR CONFIGURACION ( G(r) )"
+  write(*,*) ISave
+  Write(*,*) "NUMERO DE PASOS PARA GUARDAR CONFIGURACION ( W(t),D(t)  )"
+  write(*,*) ISave2
+  Write(*,*) "PASO DE TIEMPO"
+  write(*,*) DT
+  Write(*,*) "============================================================================="
 
   !ALOJAR ESPACIO EN MEOMORIA PARA LOS ARREGLO DE POSICION DE PARTICULAS
   Allocate( X(N), Y(N), Z(N), STAT= istat1 , ERRMSG=err_msg1  )
@@ -164,7 +163,7 @@ Program Main
   !GUARDAR CONFIG FINAL
   ConfigFin: Do i=1, N
      
-     Write(2,*) X(i), Y(i)
+     Write(2,*) X(i), Y(i), Z(i)
      
   End Do ConfigFin
   Close (2)
