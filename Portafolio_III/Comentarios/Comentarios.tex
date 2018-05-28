@@ -150,11 +150,28 @@ En este caso se pudo monitorear la presión del sistema conforme este evoluciono
 	\caption{Presión del sistema conforme este evoluciona}
 	\label{Press}
 \end{figure}
+Se aprecia que la presion alcanza un equilibrio rapidamente, de la misma forma que lo hizo la energía.
 
+\subsection*{Desplazamiento cuadrático medio y Coeficiente de difusión dependiente del tiempo}
 
+A diferencia de la simulación Monte Carlo, la Dinamica Browniana tiene la ventaja que podemos hablar de tiempo, lo que nos permite obtener propiedades que dependen de este. Lo que se obtuvó fue lo siguiente:
 
-\subsection*{Código}
-El codigo que se utilizo el fue le siguiente
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{wdt.png}
+	\caption{Despazamiento Cuadrático Medio}
+	\label{wdt}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{diff.png}
+	\caption{Coeficiente de Difusión}
+	\label{ddt}
+\end{figure}
+Todos los archivos de resultados se encuentran el en portafolio, para verificar datos, asi como los codigos que los generan.
+\pagebreak
+\section*{Código}
+El codigo que se utilizo el fue le siguiente:
 \lstinputlisting[caption={Modulo de Variables Globales}]{Mod.f03}
 \lstinputlisting[caption={Código Principal}]{Main.f03}
 \lstinputlisting[caption={Código para generar la configuración Inicial Aleatoria}]{ConfigIni.f03}
@@ -162,6 +179,7 @@ El codigo que se utilizo el fue le siguiente
 \lstinputlisting[caption={Código para el calculo de la G(r)}]{GDR.f03}
 \lstinputlisting[caption={Código del calculo de la W(t) y D(t)}]{WDT.f03}
 \lstinputlisting[caption={Código para generar valores aleatorios con distribución gaussiana}]{RanGauss.f03}
+
 
 \end{document}
 
