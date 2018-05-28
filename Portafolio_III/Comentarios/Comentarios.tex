@@ -1,0 +1,119 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage[spanish, es-tabla, es-nodecimaldot]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage[dvipsnames]{xcolor}
+
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{vmargin}
+\usepackage{setspace}
+\usepackage{geometry}
+
+\usepackage{float}
+\usepackage{array}
+\usepackage{graphicx}
+\graphicspath{{Images/}}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{listings}
+\usepackage{color}
+%\usepackage[usenames,dvipsnames]{color}
+	\definecolor{ocre}{RGB}{42,105,21}
+	\definecolor{ocre2}{RGB}{0,102,0}%47,109,130}
+	\definecolor{gray2}{gray}{0.95}
+	\lstset{
+		language={[03]fortran},
+		backgroundcolor=\color{gray2},
+		basicstyle=\color{black}\small\ttfamily, 
+		breakatwhitespace=false,         
+		breaklines=true,                 
+		captionpos=b,                    
+		columns=flexible,
+		commentstyle=\color{ocre2}\ttfamily, 
+		deletekeywords={...},            
+		escapeinside={\%*}{*)},          
+		extendedchars=true,             
+		frame=single,	                 
+		keepspaces=true,                 
+		keywordstyle=\color{blue}\bfseries,       
+		otherkeywords={*,...},          
+		numbers=left,                    
+		numbersep=5pt,                   
+		numberstyle=\small, 
+		rulecolor=\color{black},         
+		showspaces=false,                
+		showstringspaces=false,          
+		showtabs=false,                  
+		stepnumber=1,                    
+		stringstyle=\normalfont\color{ocre},     
+		tabsize=2,	                     
+		title=\lstname                  
+		}
+\definecolor{labelcolor}{RGB}{100,0,0}
+
+
+
+\setmarginsrb{2.0cm}{1.0cm}{2.0cm}{2.5cm}{0.5cm}{1cm}{1 cm}{1 cm} %{izq}{up}{der}{down}{Encabezado}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Lic. Física}
+%\lhead{\thesection}
+\cfoot{\thepage}
+
+
+\title{ Comentarios, Desarrollos u Observaciones  }
+
+\begin{document}
+
+
+\begin{titlepage}
+	\centering
+    \vspace*{2cm}
+	{\Huge Comentarios, Desarrollos u Observaciones \par}
+	\vfill
+	{\Large Desarrollo Experimental II \par}
+	\vfill
+	{\large\ Docente: Dra. Laura Lorenia Yeomans Reyna \par}
+    \vfill
+    {\large\ \textbf{Portafolio III}:\\ Simulación de Dinámica Browniana \par}
+    \vfill
+    {\large\ Martín Alejandro Paredes Sosa \par}
+	\vfill
+	% Bottom of the page
+	{\large Semestre: 2018-1\par}
+\end{titlepage}
+
+\section*{Tarea VI: Resultados de la implementación de simulación de dinámica browniana}
+
+El sistema que se estudió fue el de un sistema de partículas coloidales cargadas de forma que el potencial de interacción entre ellas es tipo Yukawa. Como base se utilizaron los parametros de Gaylor. 
+
+Lo que se buscó fue conocer la propiedades estructurales del sistema, así como la propiedades que varian con el tiempo como lo son el desplazamiento cuadratico medio y el coeficiente de autodifusión.
+
+
+El codigo que se utilizo el fue le siguiente
+
+
+%\section*{Código Utilizado}
+%A continuación se muestra código que se utilizo. Estos no se utilizaron tal cual en todas las actividades, sino que son la base , es decir, este se adapto según lo que se pedía.
+%\lstinputlisting[caption={Código del Modulo de Variables Globales}]{Mod.f03}
+%\lstinputlisting[caption={Código Principal}]{Main.f03}
+%\lstinputlisting[caption={Código para generar la configuración Inicial Aleatoria}]{ConfigIni.f03}
+%\lstinputlisting[caption={Código para generar la configuración Inicial Regular}]{ConfigIniReg.f03}
+%\lstinputlisting[caption={Código para calculo de Energía de la Configuración de HD}]{EnergyConfigHD.f03}
+%\lstinputlisting[caption={Código para calculo de Energía por partícula de HD}]{EnergyPartHD.f03}
+%\lstinputlisting[caption={Código para el calculo de la G(r)}]{GDR.f03}
+%\lstinputlisting[caption={Código del calculo de presión para HD}]{Calc.f03}
+
+\end{document}
+
