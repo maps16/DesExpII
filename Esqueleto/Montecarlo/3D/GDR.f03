@@ -20,12 +20,9 @@ Subroutine GdrCalc
   Character (len=80) :: err_msg1
   logical :: Ctrl1, Ctrl2
   
-
-  Allocate( Histo(NNN) , STAT = istat1, ERRMSG = err_msg1)
-
-  Histo = 0
-  
   MBin = Int( RCut / delTar )
+  Allocate( Histo(MBin) , STAT = istat1, ERRMSG = err_msg1)
+  Histo = 0
 
   PartiO : Do i = 1, N
      

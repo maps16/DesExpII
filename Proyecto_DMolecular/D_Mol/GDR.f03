@@ -7,7 +7,7 @@ SUBROUTINE GDR(CX,CY,CZ,KI)
   COMMON /VALORES/ DENS,RCUT,BOX,NSTEP
   DIMENSION CX(n,nn2),CY(n,nn2),CZ(n,nn2)
   
-  NP=N
+
 
   NHIST=0
 
@@ -16,9 +16,9 @@ SUBROUTINE GDR(CX,CY,CZ,KI)
   PI=3.141592
   NTMAX=KI
 
-  DO L=1,NP
+  DO L=1,N
 
-     DO M=1,NP
+     DO M=1,N
 
         IF (M /= L) Then
 
