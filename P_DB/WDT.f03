@@ -1,4 +1,3 @@
-
 ! En esta subroutina calculamos las propiedades de autodifusion,
 ! el desplazamiento cuadratico medio
 ! y el coeficiente de difusion dependiente del tiempo
@@ -63,3 +62,4 @@ Subroutine WDT
   Close (56)
 
 End Subroutine WDT
+

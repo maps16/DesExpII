@@ -2,7 +2,7 @@ MODULE cte
 Implicit None
 real :: Ls, RCut, T, ji, eta, ns, tim
 real :: varianza, sigma, Dt, U, U2, Du2
-Integer, Parameter :: Nc = 100, NENER = 10
+Integer, Parameter :: Nc = 512, NENER = 10000
 Real, Parameter    :: Pi = 3.141592
 Real, Parameter    :: Fi = 0.5
   Real, Allocatable, Dimension (:,:) :: CX, CY, CZ

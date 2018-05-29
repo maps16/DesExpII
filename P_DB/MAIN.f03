@@ -39,12 +39,12 @@ PROGRAM DBI
   Integer :: error
 
   Dt      = 0.0004
-  NFREC   = 1000
-  NFREC2  = 1000
-  NSTEP   = 5000
+  NFREC   = 100
+  NFREC2  = 100
+  NSTEP   = 50000
 
-  Ns  = 0.09    !6.0 * FI/PI
-  T = 0.2
+  Ns  = 0.6    !6.0 * FI/PI
+  T = 0.01
   ji = 3.0
   eta = 0.0
   write(*,*) Nstep
@@ -75,7 +75,7 @@ PROGRAM DBI
   Call CONFIGINI
 
   Ls   = ((1.E0 * Nc)/ns)**(1.0/3.0)
-  rcut = Ls/4.E0
+  rcut = Ls/2.E0
   varianza = Sqrt(2.E0 * Dt)
 
   KI   = 0

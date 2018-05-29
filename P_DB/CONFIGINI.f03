@@ -2,49 +2,33 @@ Subroutine CONFIGINI
 
   use cte
 
-Implicit None
+  Implicit None
 
-   Real    :: XRan, YRan, ZRan, xij, yij, zij,  dist
-   Integer :: i, j
+  Real    :: XRan, YRan, ZRan
+  Integer :: i
 
 
-         Ls = (1.E0 * Nc/ns)**(1.E0/3.E0)
+  Ls = (1.0 * Nc/ns)**(1.E0/3.E0)
 
-   Write(*,*) "Tamaño de la Celda:", Ls
-   Open (1, file = "ConfiginiIni.txt")
+  Write(*,*) "LONGITUD DE LA CELDA:", Ls
+  Open (1, file = "ConfigIni.txt")
 
-!Posicion de las particulas
-Do i = 1, Nc
+  !Posicion de las particulas
+  Colocar: Do i = 1, Nc
 
-2  Call Random_Number(XRan)
-   Call Random_Number(YRan)
-   Call Random_Number(ZRan)
+     !GENERANDO VALORES ALEATORIOS PARA LA POSICION
+     Call Random_Number(xRan)                   !VALOR ALEATORIO DE POSICION X \
+     Call Random_Number(yRan)                   !VALOR ALEATORIO DE POSICION Y | TENTATIVO   
+     Call Random_Number(zRan)                   !VALOR ALEATORIO DE POSICION Z /
 
-         X(i) = (XRan - 0.5) * (Ls - 1)
-         Y(i) = (YRan - 0.5) * (Ls - 1)
-         Z(i) = (ZRan - 0.5) * (Ls - 1)
+     X(i) = (xRan-0.5)*(Ls-1)                   !\
+     Y(i) = (yRan-0.5)*(Ls-1)                   !|   [-(Ls-1)/2 , (Ls-1)/2] AJUSTANDO A LA CELDA
+     Z(i) = (zRan-0.5)*(Ls-1)                   !/
 
-     Do j = 1 , i - 1
+     Write(1,*) X(i), Y(i), Z(i) ! GUARDANDO CONFIGURACION INICIAL EN ARCHIVO
 
-        xij = X(i) - X(j)
-        yij = Y(i) - Y(j)
-        zij = Z(i) - Z(j)
+  End Do Colocar
 
-        dist = xij*xij + yij*yij + zij*zij
-
-        !Verificar traslapes
-           If(dist .LE. sigma) then
-
-              Go To 2
-
-           End If
-
-     End Do
-
-     Write(1,*) X(i), Y(i), Z(i)
-
-End Do
-
-Close(1)
+  Close(1)
 
 End Subroutine CONFIGINI

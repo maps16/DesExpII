@@ -31,7 +31,7 @@ Subroutine Fuerzas (L)
         zij = Z(i) - Z(j)
 
         !EFECTO PACMAN
-        xij = zij - Ls*Anint(xij/Ls)
+        xij = xij - Ls*Anint(xij/Ls)
         yij = yij - Ls*Anint(yij/Ls)
         zij = zij - Ls*Anint(zij/Ls)
 
