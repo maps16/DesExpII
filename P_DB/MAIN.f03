@@ -39,33 +39,33 @@ PROGRAM DBI
   Integer :: error
 
   Dt      = 0.0004
-  NFREC   = 100
-  NFREC2  = 100
+  NFREC   = 1000
+  NFREC2  = 1000
   NSTEP   = 50000
 
   Ns  = 0.6    !6.0 * FI/PI
   T = 0.01
   ji = 3.0
   eta = 0.0
-  write(*,*) Nstep
+  !write(*,*) Nstep
   NN2 = (NSTEP-NENER)/NFREC
 
   sigma = 1.E0
 
   Allocate (X(Nc), Y(Nc), Z(Nc), stat= error)
-  Write(*,*) error
+  !Write(*,*) error
 
   Allocate (CXR(Nc, NN2), CYR(Nc, NN2), CZR(Nc, NN2), stat= error)
-  Write(*,*) error
+  !Write(*,*) error
 
   Allocate (FX(Nc), FY(Nc), FZ(Nc), stat= error)
-  Write(*,*) error
+  !Write(*,*) error
 
   Allocate (CX(Nc, NN2), CY(Nc, NN2), CZ(Nc, NN2), stat= error)
-  Write(*,*) error
+  !Write(*,*) error
 
   Allocate (XR(Nc), YR(Nc), ZR(Nc), stat= error)
-  Write(*,*) error
+  !Write(*,*) error
   
   
   
