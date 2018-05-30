@@ -117,7 +117,7 @@ Esta se puede derivarsre como una aplicación de la teoría de perturbaciones de
 	a &= -2\pi \int_{\sigma}^{\infty} u^{(1)}(r)r^2dr \label{Coef_A_1} \\
 	b &= \frac{2\pi\sigma^3}{3} \label{Coef_B_1}
 \end{align}
-donde $\sigma$ es el diametro de la esfera dura y $u^{(1)}(r)$ el potecial de interacción atractivo que se considera como la parate perturbativa del potencial de interacción entre las partículas del sistema. 
+donde $\sigma$ es el diámetro de la esfera dura y $u^{(1)}(r)$ el potencial de interacción atractivo que se considera como la parte perturbativa del potencial de interacción entre las partículas del sistema. 
 
 \begin{equation}
 u(r) = u^{(hs)}(r) + u^{(1)}(r)
@@ -145,7 +145,7 @@ En el contexto del ensemble canónico en la Física Estadística, la ecuación d
 	p = \frac{1}{\beta} \left( \frac{\partial Z_N}{\partial V} \right)_{T}
 	\label{EnsembleP}
 \end{equation}
-Como $g_{hs}(r)$ depende de la concentración, la ecuacion de estado es de la forma:
+Como $g_{hs}(r)$ depende de la concentración, la ecuación de estado es de la forma:
 
 \begin{equation}
 	p = p_{hs} - \rho^2\left[ a(\rho) + rho \left( \frac{\partial a(\rho)}{\partial\rho} \right)_T \right] 
@@ -161,7 +161,7 @@ Como $g_{hs}(r)$ depende de la concentración, la ecuacion de estado es de la fo
 
 \section{Metodología}
 \begin{enumerate}
-\item[I.]\textbf{Potencial Perturbativo:} La teoria de Zwangzig no impone ninguna restricción sobre el potencial perturbativo $u^{(1)}(r)$ con tal de que sea atractivo. Entonces, consideremos  como potencial  perturbativo la parte atrativa del modelo de pozo cuadrado:
+\item[I.]\textbf{Potencial Perturbativo:} La teoría de Zwangzig no impone ninguna restricción sobre el potencial perturbativo $u^{(1)}(r)$ con tal de que sea atractivo. Entonces, consideremos  como potencial  perturbativo la parte atractiva del modelo de pozo cuadrado:
 \begin{equation}
 	u^{(1)}(r) =
 	\left\{
@@ -173,7 +173,7 @@ Como $g_{hs}(r)$ depende de la concentración, la ecuacion de estado es de la fo
 	\label{Pozo}
 \end{equation}
 
-De modo que el potecial de interacción segun la ecuación \eqref{PotInter_Base} queda:
+De modo que el potencial de interacción según la ecuación \eqref{PotInter_Base} queda:
 
 \begin{equation}
 	u(r)=
@@ -187,7 +187,7 @@ De modo que el potecial de interacción segun la ecuación \eqref{PotInter_Base}
 	\label{PotInteracTotal}
 \end{equation}
 
-\item[II.] \textbf{Reducción de variables} Antes de empezar ha realizar calculos, se redujeron las ecuaciones, tomando como longitud caracteristica el diametro $\sigma$ y como energía caracteística la energía térmica $\beta^{-1}$
+\item[II.] \textbf{Reducción de variables} Antes de empezar ha realizar cálculos, se redujeron las ecuaciones, tomando como longitud característica el diámetro $\sigma$ y como energía característica la energía térmica $\beta^{-1}$
 
 Por lo tanto obtenemos las siguientes definiciones:
 \begin{align}
@@ -217,7 +217,7 @@ Utilizando \eqref{rRed}-\eqref{ConsRed} en \eqref{PressHS} obtenemos:
 p^*_{hs} &= n^* \left[ 1 +\frac{2}{3}\pi n^* g_{hs}(1^+) \right] \nonumber \\
 p^*_{hs} &= n^* \left[ 1 + n^*b^*\right] 
 \intertext{Donde:}
-b^* &= \frac{2}{3}\pi g_{hs}(1^+)
+b^* &= \frac{2}{3}\pi g_{hs}(1^+) \label{bstar}
 \end{align}
 Ahora en \eqref{Press} obtenemos:
 
@@ -230,26 +230,102 @@ p^* &= p^*_{hs} - \left[ a^* + n^* \left(\frac{\partial a^*}{\partial n^*}\right
 a^* &= \frac{\beta}{\sigma^3}a(n^*)
 \end{align}
 
-\item[III.] \textbf{Parametro Críticos} 
+\item[III.] \textbf{Parámetro Críticos} 
 La Ecuación de Van Der Waals \eqref{VanDerWaals} tiene una temperatura crítica $T_c$.
-Caundo $T>T_c$ la ecuación de estado es monovaluada y no hay transiciones al estado liquido. Caundo $T<T_c$, como la ecuación es cubica en $V$, tiene dos extremales que se juntan en $T=T_c$.
+Cuando $T>T_c$ la ecuación de estado es monovaluada y no hay transiciones al estado liquido. Cuando $T<T_c$, como la ecuación es cubica en $V$, tiene dos extremales que se juntan en $T=T_c$.
 
-Pensando en la ecuación de Van Der Waals como una fución del volumen a una temperatura dada $P = P(V;T)$, se tienen dos punto críticos donde se cumple   $\left( \partial_V P \right)_T = 0 $. Conforme $T\rightarrow T_c$ se obtiene un punto de inflexión con coordenadas $(P_c, V_c, T_c)$ donde $\left( \partial^2_V P \right)_T=0$
+Pensando en la ecuación de Van Der Waals como una función del volumen a una temperatura dada $P = P(V;T)$, se tienen dos punto críticos donde se cumple   $\left( \partial_V P \right)_T = 0 $. Conforme $T\rightarrow T_c$ se obtiene un punto de inflexión con coordenadas $(P_c, V_c, T_c)$ donde $\left( \partial^2_V P \right)_T=0$
 
 Partiendo de la ecuación \eqref{VanDerWaals}:
 \begin{align}
 	P &= \frac{Nk_B T}{V-Nb} - \frac{N^2}{V^2}a	\label{PresVanDerWaals} \\
-	\pd{P}{V}{T} &= -\frac{Nk_BT}{(V-Nb)^2} + \frac{2N^2a}{V^3} \\
-	\pdd{P}{V}{T} &= \frac{2Nk_BT}{(V-Nb)^3} - \frac{6N^2a}{V^4}
+	\pd{P}{V}{T} &= -\frac{Nk_BT}{(V-Nb)^2} + \frac{2N^2a}{V^3} \label{P_Vdw_Dif} \\
+	\pdd{P}{V}{T} &= \frac{2Nk_BT}{(V-Nb)^3} - \frac{6N^2a}{V^4} \label{P_Vdw_Dif2}
 \end{align}
+Aplicando la condición de punto crítico obtenemos el siguiente sistema de ecuaciones para los coeficientes $a$ y $b$
 
+\begin{align*}
+	 -\frac{Nk_BT_c}{(V_c-Nb)^2} + \frac{2N^2a}{V_c^3} &= 0\\
+	\frac{2Nk_BT_c}{(V_c-Nb)^3} - \frac{6N^2a}{V_c^4}  &= 0
+\end{align*}
+Despejamos $a$ de la primera ecuación
+\begin{align}
+\frac{2N^2a}{V_c^3} &=\frac{Nk_BT_c}{(V_c-Nb)^2} \nonumber \\
+a &= \frac{Nk_B T_c}{(V_c-Nb)^2} \frac{V_c^3}{2N^2} \label{adespejada}
+\end{align}
+Ahora en la segunda ecuación hacemos lo mismo
+
+\begin{align*}
+\frac{2Nk_BT_c}{(V_c-Nb)^3} &= \frac{6N^2a}{V_c^4}  \\
+a &= \frac{2NK_bT_c}{(V_c-Nb)^3} \frac{V_c^4}{6N^2}
+\end{align*}
+Igualando obtenemos
+\begin{align}
+\frac{Nk_B T_c}{(V_c-Nb)^2} \frac{V_c^3}{2N^2} &= \frac{2NK_bT_c}{(V_c-Nb)^3} \frac{V_c^4}{6N^2} \nonumber \\
+\frac{V_c^3}{2} &= \frac{2}{V_c-Nb} \frac{V_c^4}{6}  \nonumber \\
+V_c-Nb &= \frac{V_c}{6} \nonumber\\
+b &= \frac{V_c}{3N} \label{b1}
+\end{align}
+Sustituimos esto en \eqref{adespejada}
+\begin{align}
+ a &= \frac{Nk_B T_c}{(V_c- N \frac{V_c}{3N})^2} \frac{V_c^3}{2N^2}  \nonumber \\
+ a &= \frac{k_B T_c}{(\frac{2V_c}{3})^2} \frac{V_c^3}{2N} \nonumber \\
+ a &= \frac{9k_B T_c}{4V_c^2} \frac{V_c^3}{2N^2} \nonumber \\
+ a &= \frac{9}{8}k_B T_c \frac{V_c}{N} \label{a1}
+\end{align}
+A partir de las ecuaciones \eqref{b1} y \eqref{a1} obtenemos que 
+\begin{align}
+V_c &= 3Nb \label{Vc} \\
+T_c &= \frac{8a}{27k_Bb} \label{Tc}\\
+P_c &= \frac{a}{27b^2} \label{Pc}
+\end{align}
+ Ahora obtendremos las expresiones para las variables termodinámicas criticas de Van Der Waals para el caso de estudio con un potencial perturbativo de pozo cuadrado \eqref{Pozo}. Para esto se utilizamos la ecuación \eqref{Coef_A_1} (pero a la Zwanzig) y el potencial reducido.
+\begin{align}
+ a^* &= -2\pi \int_1^\infty {u^*}^{(1)}(r^*) g_{hs}(r^*) {r^*}^2 dr^* \nonumber \\
+  &=-2\pi  \left[ \int_1^\lambda {u^*}^{(1)}(r^*) g_{hs}(r^*) {r^*}^2 dr^* +\int_\lambda^\infty {u^*}^{(1)}(r^*) g_{hs}(r^*) {r^*}^2 dr^*  \right] \nonumber\\
+  &= -2\pi \int_1^\lambda \frac{-1}{T^*} g_{hs}(r^*){r^*}^2d{r^*} \nonumber \\
+  &= \frac{2\pi}{T^*} \int_1^\lambda g_{hs}(r^*){r^*}^2d{r^*} \nonumber
+\end{align}  
+
+Para el caso Van Der Waals la integral queda:
+\begin{equation}
+a^* = \frac{2\pi}{3} \frac{\lambda^3-1}{T^*}
+\end{equation}
+Para el coeficiente $b^*$ se tiene la ecuación \eqref{bstar}. Utilizando la suposición de Van Der Waals, entonces obtenemos \eqref{Coef_B_1}, que en us forma reducida resulta:
+\begin{equation}
+b^* = \frac{2\pi}{3}
+\end{equation}
+
+Por lo tanto, de \eqref{Vc},\eqref{Tc} y \eqref{Pc} se obtiene
+
+\begin{align}
+V_c^* &= 2\pi N \label{Vcs} \\
+T_c^* &= \frac{8}{27}(\lambda^3 -1) \label{Tcs}\\
+P_c^* &= \frac{\lambda^3-1}{18\pi T^*} \label{Pcs}
+\end{align}
+\begin{itemize}
+\item \textbf{Ejemplo:} Veamos de qué orden son los valores para las variables criticas para un sistema dado. Sea $\lambda=1.25$, resulta:
+\end{itemize}
+\begin{align*}
+V_c^* &= 2\pi N  \\
+T_c^* &= 0.2824 \\
+P_c^* &= \frac{0.0169}{ T^*} 
+\end{align*}
+
+
+\item[IV.]\textbf{Función de Distribución Radial de HS} Ahora utilizamos nuestro código de Monte Carlo, con el cual se realizaron corridas para diferentes concentraciones. A continuación se muestra un gráfico de $g(r)-n^*$ para el modelo de potencial HS solamente.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\linewidth]{GDR.png}
+	\caption{Función g(r) para potencial de Esfera Dura}
+	\label{Fig:GDR_HS}
+\end{figure}
+
+\item[V]\textbf{Ecuación de Presión HS}
 
 
 
 \end{enumerate}
-
-
-
 \pagebreak
 
 
