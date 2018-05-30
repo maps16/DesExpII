@@ -47,3 +47,8 @@
 #Imagenes#
 ##########
 *.png
+*.aux
+*.aux
+*.blg
+*.log
+Proyecto_MC/Reporte/ReporteMC.synctex.gz
