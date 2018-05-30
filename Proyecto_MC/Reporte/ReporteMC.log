@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.1.22)  30 MAY 2018 12:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.1.22)  30 MAY 2018 12:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -409,13 +409,7 @@ Package: multicol 2016/04/07 v1.8p multicolumn formatting (FMi)
 \colbreak@box=\box53
 \mc@col@check@num=\count121
 )
-(/usr/share/texlive/texmf-dist/tex/latex/vmargin/vmargin.sty
-Package: vmargin 2004/07/15 V2.5 set document margins (VK)
-
-Package: vmargin 2004/07/15 V2.5 set document margins (VK)
-\PaperWidth=\dimen126
-\PaperHeight=\dimen127
-) (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
@@ -423,14 +417,14 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 \Gm@cnth=\count122
 \Gm@cntv=\count123
 \c@Gm@tempcnt=\count124
-\Gm@bindingoffset=\dimen128
-\Gm@wd@mp=\dimen129
-\Gm@odd@mp=\dimen130
-\Gm@even@mp=\dimen131
-\Gm@layoutwidth=\dimen132
-\Gm@layoutheight=\dimen133
-\Gm@layouthoffset=\dimen134
-\Gm@layoutvoffset=\dimen135
+\Gm@bindingoffset=\dimen126
+\Gm@wd@mp=\dimen127
+\Gm@odd@mp=\dimen128
+\Gm@even@mp=\dimen129
+\Gm@layoutwidth=\dimen130
+\Gm@layoutheight=\dimen131
+\Gm@layouthoffset=\dimen132
+\Gm@layoutvoffset=\dimen133
 \Gm@dimlist=\toks26
 )
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
@@ -443,8 +437,8 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
-\col@sep=\dimen136
-\extrarowheight=\dimen137
+\col@sep=\dimen134
+\extrarowheight=\dimen135
 \NC@list=\toks29
 \extratabsurround=\skip58
 \backup@length=\skip59
@@ -463,12 +457,12 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 )
-\Gin@req@height=\dimen138
-\Gin@req@width=\dimen139
+\Gin@req@height=\dimen136
+\Gin@req@width=\dimen137
 )
 (/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen140
-\WF@size=\dimen141
+\wrapoverhang=\dimen138
+\WF@size=\dimen139
 \c@WF@wrappedlines=\count126
 \WF@box=\box56
 \WF@everypar=\toks30
@@ -480,13 +474,13 @@ Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen142
-\captionmargin@=\dimen143
-\captionwidth=\dimen144
-\caption@tempdima=\dimen145
-\caption@indent=\dimen146
-\caption@parindent=\dimen147
-\caption@hangindent=\dimen148
+\captionmargin=\dimen140
+\captionmargin@=\dimen141
+\captionwidth=\dimen142
+\caption@tempdima=\dimen143
+\caption@indent=\dimen144
+\caption@parindent=\dimen145
+\caption@hangindent=\dimen146
 )
 \c@ContinuedFloat=\count127
 Package caption Info: float package is loaded.
@@ -510,14 +504,14 @@ LaTeX Info: Redefining \cite on input line 694.
 \lst@gtempboxa=\box57
 \lst@token=\toks31
 \lst@length=\count132
-\lst@currlwidth=\dimen149
+\lst@currlwidth=\dimen147
 \lst@column=\count133
 \lst@pos=\count134
-\lst@lostspace=\dimen150
-\lst@width=\dimen151
+\lst@lostspace=\dimen148
+\lst@width=\dimen149
 \lst@newlines=\count135
 \lst@lineno=\count136
-\lst@maxwidth=\dimen152
+\lst@maxwidth=\dimen150
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
@@ -605,13 +599,13 @@ Package gensymb Info: Using \textmu for \micro on input line 82.
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count140
-\scratchdimen=\dimen153
+\scratchdimen=\dimen151
 \scratchbox=\box60
 \nofMPsegments=\count141
 \nofMParguments=\count142
 \everyMPshowfont=\toks32
 \MPscratchCnt=\count143
-\MPscratchDim=\dimen154
+\MPscratchDim=\dimen152
 \MPnumerator=\count144
 \makeMPintoPDFobject=\count145
 \everyMPtoPDFconversion=\toks33
@@ -644,21 +638,21 @@ e
 * v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=484.33705pt
-* \textheight=675.18394pt
-* \oddsidemargin=56.9055pt
-* \evensidemargin=56.9055pt
-* \topmargin=28.45274pt
-* \headheight=14.22636pt
-* \headsep=28.45274pt
+* \textwidth=430.00462pt
+* \textheight=556.47656pt
+* \oddsidemargin=19.8752pt
+* \evensidemargin=19.8752pt
+* \topmargin=-13.87262pt
+* \headheight=12.0pt
+* \headsep=25.0pt
 * \topskip=12.0pt
-* \footskip=28.45274pt
+* \footskip=30.0pt
 * \marginparwidth=44.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
 * \skip\footins=10.8pt plus 4.0pt minus 2.0pt
-* \hoffset=-72.26999pt
-* \voffset=-72.26999pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
 * \mag=1000
 * \@twocolumnfalse
 * \@twosidefalse
@@ -714,7 +708,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 103.
 
 
-Package Fancyhdr Warning: \headheight is too small (14.22636pt): 
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
@@ -799,56 +793,81 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 162.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 224.
+(babel)             in language append on input line 221.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 224.
+(babel)             in language append on input line 221.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 224.
+(babel)             in language append on input line 221.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 224.
+(babel)             in language append on input line 221.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 224.
+(babel)             in language append on input line 221.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 224.
+(babel)             in language append on input line 221.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 224.
+(babel)             in language append on input line 221.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 224.
+(babel)             in language append on input line 221.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 224.
+(babel)             in language append on input line 221.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 224.
+(babel)             in language append on input line 221.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 224.
+(babel)             in language append on input line 221.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 224.
+(babel)             in language append on input line 221.
  [3]
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 255.
+(babel)             in language append on input line 244.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 255.
+(babel)             in language append on input line 244.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 255.
+(babel)             in language append on input line 244.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 255.
+(babel)             in language append on input line 244.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 255.
+(babel)             in language append on input line 244.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 255.
+(babel)             in language append on input line 244.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 255.
+(babel)             in language append on input line 244.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 255.
+(babel)             in language append on input line 244.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 255.
+(babel)             in language append on input line 244.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 255.
+(babel)             in language append on input line 244.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 255.
+(babel)             in language append on input line 244.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 255.
+(babel)             in language append on input line 244.
  [4]
 Package babel Info: Redefining spanish shorthand <<
+(babel)             in language append on input line 268.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language append on input line 268.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language append on input line 268.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language append on input line 268.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language append on input line 268.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language append on input line 268.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language append on input line 268.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language append on input line 268.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language append on input line 268.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language append on input line 268.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language append on input line 268.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language append on input line 268.
+ [5]
+Package babel Info: Redefining spanish shorthand <<
 (babel)             in language append on input line 288.
 Package babel Info: Redefining spanish shorthand >>
 (babel)             in language append on input line 288.
@@ -872,79 +891,80 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language append on input line 288.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 288.
- [5] <Images/GDR.png, id=109, 782.925pt x 554.07pt>
+ [6] <Images/GDR.png, id=110, 782.925pt x 554.07pt>
 File: Images/GDR.png Graphic file (type png)
 
 <use Images/GDR.png>
 Package pdftex.def Info: Images/GDR.png used on input line 319.
-(pdftex.def)             Requested size: 363.25278pt x 257.07344pt.
+(pdftex.def)             Requested size: 322.50346pt x 228.23543pt.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 323.
+(babel)             in language append on input line 322.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 323.
+(babel)             in language append on input line 322.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 323.
+(babel)             in language append on input line 322.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 323.
+(babel)             in language append on input line 322.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 323.
+(babel)             in language append on input line 322.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 323.
+(babel)             in language append on input line 322.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 323.
+(babel)             in language append on input line 322.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 323.
+(babel)             in language append on input line 322.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 323.
+(babel)             in language append on input line 322.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 323.
+(babel)             in language append on input line 322.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 323.
+(babel)             in language append on input line 322.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 323.
- [6]
-<Images/Comparativo.png, id=124, 803.0pt x 771.88374pt>
+(babel)             in language append on input line 322.
+ [7]
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language append on input line 334.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language append on input line 334.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language append on input line 334.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language append on input line 334.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language append on input line 334.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language append on input line 334.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language append on input line 334.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language append on input line 334.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language append on input line 334.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language append on input line 334.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language append on input line 334.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language append on input line 334.
+ [8 <./Images/GDR.png>]
+<Images/Comparativo.png, id=129, 803.0pt x 771.88374pt>
 File: Images/Comparativo.png Graphic file (type png)
 
 <use Images/Comparativo.png>
 Package pdftex.def Info: Images/Comparativo.png used on input line 338.
-(pdftex.def)             Requested size: 363.25278pt x 349.18184pt.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 342.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 342.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 342.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 342.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 342.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 342.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 342.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 342.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 342.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 342.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 342.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 342.
- [7 <./Images/GDR.png>]
-<Images/a_star.png, id=134, 803.0pt x 771.88374pt>
+(pdftex.def)             Requested size: 322.50346pt x 310.00827pt.
+
+<Images/a_star.png, id=132, 803.0pt x 771.88374pt>
 File: Images/a_star.png Graphic file (type png)
  <use Images/a_star.png>
 Package pdftex.def Info: Images/a_star.png used on input line 347.
-(pdftex.def)             Requested size: 242.16852pt x 232.78003pt.
+(pdftex.def)             Requested size: 215.0023pt x 206.66824pt.
 
-<Images/b_star.png, id=135, 803.0pt x 771.88374pt>
+<Images/b_star.png, id=133, 803.0pt x 771.88374pt>
 File: Images/b_star.png Graphic file (type png)
  <use Images/b_star.png>
 Package pdftex.def Info: Images/b_star.png used on input line 353.
-(pdftex.def)             Requested size: 242.16852pt x 232.78003pt.
+(pdftex.def)             Requested size: 215.0023pt x 206.66824pt.
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language append on input line 356.
 Package babel Info: Redefining spanish shorthand >>
@@ -970,124 +990,112 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 356.
 
-[8 <./Images/Comparativo.png>]
+[9 <./Images/Comparativo.png>]
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 368.
+(babel)             in language append on input line 363.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 368.
+(babel)             in language append on input line 363.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 368.
+(babel)             in language append on input line 363.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 368.
+(babel)             in language append on input line 363.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 368.
+(babel)             in language append on input line 363.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 368.
+(babel)             in language append on input line 363.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 368.
+(babel)             in language append on input line 363.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 368.
+(babel)             in language append on input line 363.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 368.
+(babel)             in language append on input line 363.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 368.
+(babel)             in language append on input line 363.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 368.
+(babel)             in language append on input line 363.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 368.
- [9 <./Images/a_star.png> <./Images/b_star.png>]
-<Images/ajusteT1.png, id=147, 803.0pt x 771.88374pt>
+(babel)             in language append on input line 363.
+ [10 <./Images/a_star.png> <./Images/b_star.png>] <Images/ajusteT1.png, id=147,
+ 803.0pt x 771.88374pt>
 File: Images/ajusteT1.png Graphic file (type png)
- <use Images/ajusteT1.png>
+
+<use Images/ajusteT1.png>
 Package pdftex.def Info: Images/ajusteT1.png used on input line 371.
-(pdftex.def)             Requested size: 237.3278pt x 228.12773pt.
+(pdftex.def)             Requested size: 210.70462pt x 202.53418pt.
 
 <Images/ajusteT74.png, id=148, 803.0pt x 771.88374pt>
 File: Images/ajusteT74.png Graphic file (type png)
 
 <use Images/ajusteT74.png>
 Package pdftex.def Info: Images/ajusteT74.png used on input line 372.
-(pdftex.def)             Requested size: 237.3278pt x 228.12773pt.
+(pdftex.def)             Requested size: 210.70462pt x 202.53418pt.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 387.
+(babel)             in language append on input line 392.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 387.
+(babel)             in language append on input line 392.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 387.
+(babel)             in language append on input line 392.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 387.
+(babel)             in language append on input line 392.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 387.
+(babel)             in language append on input line 392.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 387.
+(babel)             in language append on input line 392.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 387.
+(babel)             in language append on input line 392.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 387.
+(babel)             in language append on input line 392.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 387.
+(babel)             in language append on input line 392.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 387.
+(babel)             in language append on input line 392.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 387.
+(babel)             in language append on input line 392.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 387.
- [10 <./Images/ajusteT1.png> <./Images/ajusteT74.png>]
+(babel)             in language append on input line 392.
+ [11 <./Images/ajusteT1.png> <./Images/ajusteT74.png>] (./ReporteMC.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 400.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 389.
+(babel)             in language append on input line 400.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 389.
+(babel)             in language append on input line 400.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 389.
+(babel)             in language append on input line 400.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 389.
+(babel)             in language append on input line 400.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 389.
+(babel)             in language append on input line 400.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 389.
- (./ReporteMC.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 401.
+(babel)             in language append on input line 400.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 401.
+(babel)             in language append on input line 400.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 401.
+(babel)             in language append on input line 400.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 401.
+(babel)             in language append on input line 400.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 401.
+(babel)             in language append on input line 400.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 401.
+(babel)             in language append on input line 400.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 401.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 401.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 401.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 401.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 401.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 401.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 401.
- [11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 401.
+(babel)             in language append on input line 400.
+ [12]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 400.
  (./ReporteMC.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 401.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 401.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 400.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 400.
 Package rerunfilecheck Info: File `ReporteMC.out' has not changed.
-(rerunfilecheck)             Checksum: 1856BD760673BFF559E95932568B0099;180.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 401.
+(rerunfilecheck)             Checksum: 9F7C86DB9041C69D6262D94FF1A97E1F;142.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 400.
  ) 
 Here is how much of TeX's memory you used:
- 12000 strings out of 494842
- 173203 string characters out of 6178079
- 322466 words of memory out of 5000000
- 15090 multiletter control sequences out of 15000+600000
+ 11926 strings out of 494842
+ 172321 string characters out of 6178079
+ 320641 words of memory out of 5000000
+ 15020 multiletter control sequences out of 15000+600000
  10276 words of font info for 36 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
  39i,13n,58p,471b,567s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1103,10 +1111,10 @@ sfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on ReporteMC.pdf (12 pages, 262052 bytes).
+Output written on ReporteMC.pdf (13 pages, 262140 bytes).
 PDF statistics:
- 217 PDF objects out of 1000 (max. 8388607)
+ 218 PDF objects out of 1000 (max. 8388607)
  182 compressed objects within 2 object streams
  60 named destinations out of 1000 (max. 500000)
- 63 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 55 words of extra memory for PDF output out of 10000 (max. 10000000)
 
