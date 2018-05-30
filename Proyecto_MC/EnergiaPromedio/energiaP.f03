@@ -18,7 +18,7 @@ Program EnergiaPromedio
      u1 = -dens1 * a1
      u74 = -dens74 * a74
 
-     If((state10 == 0) .OR.( State11 ==0)) Exit 
+     If((state10 .LT. 0) .OR.( State11 .LT. 0)) Exit 
      Write(12,*) dens1, u1, u74
      Write(*,*) dens1, u1, u74
      
