@@ -13,7 +13,7 @@
 \usepackage{parskip}
 \usepackage{fancyhdr}
 \usepackage{multicol}
-%\usepackage{vmargin}
+\usepackage{vmargin}
 \usepackage{setspace}
 \usepackage{geometry}
 
@@ -64,7 +64,7 @@
 
 
 
-%setmarginsrb{2.0cm}{1.0cm}{2.0cm}{2.5cm}{0.5cm}{1cm}{1 cm}{1 cm} %{izq}{up}{der}{down}{Encabezado}
+\setmarginsrb{2.0cm}{1.0cm}{2.0cm}{2.5cm}{0.5cm}{1cm}{1 cm}{1 cm} %{izq}{up}{der}{down}{Encabezado}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -92,7 +92,7 @@
 	{\large\ Docente:\\ Dra. Laura Lorenia Yeomans Reyna \par}
     \vfill
     {\large\ \textbf{Simulación de Monte Carlo:}\\ 
-    \emph{Exploración de la Ecuación de Van der Waals}\par}
+    \emph{Exploración de la Ecuación de Van Der Waals}\par}
     \vfill
     {\large\ Alumno:\\ Martín Alejandro Paredes Sosa \par}
 	\vfill
@@ -291,7 +291,7 @@ Para el caso Van Der Waals la integral queda:
 \begin{equation}
 a^* = \frac{2\pi}{3} \frac{\lambda^3-1}{T^*}
 \end{equation}
-Para el coeficiente $b^*$ se tiene la ecuación \eqref{bstar}. Utilizando la suposición de Van Der Waals, entonces obtenemos \eqref{Coef_B_1}, que en us forma reducida resulta:
+Para el coeficiente $b^*$ se tiene la ecuación \eqref{bstar}. Utilizando la suposición de Van Der Waals, entonces obtenemos \eqref{Coef_B_1}, que en es forma reducida resulta:
 \begin{equation}
 b^* = \frac{2\pi}{3}
 \end{equation}
@@ -326,13 +326,13 @@ P_c^* &= \frac{0.0169}{ T^*}
 
 \item[V]\textbf{Ecuación de Presión HS}
 
-En la termodinamica, suele usar la ecaución de de estado de presión contra volumen. Dicho esto, nuestro analisis es $P^*-n^*$ dado la relación que hay entre la concentyración y el volumen. Para el estudio de Esferas duras, ya conocemos la ecuación \eqref{PressHS_Red}, junto con \eqref{bstar}. Como $n^*$ es un parametro conocido de la simulación, basta con conocer el el valor del punto de contacto $g_{hs}(1^+)$
+En la termodinámica, suele usar la ecuación de de estado de presión contra volumen. Dicho esto, nuestro análisis es $P^*-n^*$ dado la relación que hay entre la concentración y el volumen. Para el estudio de Esferas duras, ya conocemos la ecuación \eqref{PressHS_Red}, junto con \eqref{bstar}. Como $n^*$ es un parámetro conocido de la simulación, basta con conocer el el valor del punto de contacto $g_{hs}(1^+)$
 
 La ecuación de estado de Carnahan-Starling para un sistema de esferas duras está dada por:
 \begin{equation}
 P^*(n^*) = n^* \frac{1+\phi+\phi^2-\phi^3}{(1-\phi)^3}, \qquad \phi=\frac{\pi}{6} n^*
 \end{equation}
-En la figura \ref{Fig:EcEstado}, se muestra una comparación entre los datos simulados y las ecuanciones de estado de Gas Ideal y la de Carnahan-Starling.
+En la figura \ref{Fig:EcEstado}, se muestra una comparación entre los datos simulados y las ecuaciones de estado de Gas Ideal y la de Carnahan-Starling.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.75\linewidth]{Comparativo.png}
@@ -341,21 +341,18 @@ En la figura \ref{Fig:EcEstado}, se muestra una comparación entre los datos sim
 \end{figure}
 
 \item[VI.]\textbf{Calculo de los coeficiente $a^*(n^*)$ y $b^*(n^*)$:}
-Con la informción estructural que calculamos de las simulaciones (las $g(r^*)$) y p de las ecuaciones \eqref{bstar} y \eqref{a_star_Integral}, se procedió a calcular los coeficientes.
+Con la información estructural que calculamos de las simulaciones (las $g(r^*)$) y p de las ecuaciones \eqref{bstar} y \eqref{a_star_Integral}, se procedió a calcular los coeficientes.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\linewidth]{a_star.png}
+	\includegraphics[width=0.65\linewidth]{a_star.png}
 	\caption{Coeficiente $a^*$ a $T=1.0$ y $T=0.74$}
 	\label{Fig:A_Star}
-\end{figure}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\linewidth]{b_star.png}
-	\caption{Coeficiente $b^*$}
+	\includegraphics[width=0.65\linewidth]{b_star.png}
+		\caption{Coeficiente $b^*$}
 	\label{Fig:B_Star}
 \end{figure}
  \item[VII.] \textbf{Ajuste de $a^*$ }
-De los resultados que obtivimos de $a^*$, podemos opservar una ligera curvatura. Mediante el uso del programa Origin, procedimos a ajustar una curva, que en este caso resulto un polinomio de segundo orden.
+De los resultados que obtuvimos de $a^*$, podemos observar una ligera curvatura. Mediante el uso del programa Origin, procedimos a ajustar una curva, que en este caso resulto un polinomio de segundo orden.
 Para el caso de $T^*=1.0$ se ajusto lo siguiente:
 \begin{align*}
 	a^*(n^*) &= 1.47 + 2.48n^* - 0.16 {n^*}^2\\
@@ -380,7 +377,47 @@ Como ya conocemos la forma de las $a^*$, podemos calcular la ecuación de la pre
 \end{equation*}
 
 
-Se procedió a calcular la presión usuando los dos casos de $T^*$.
+Se procedió a calcular la presión usando los dos casos de $T^*$. Lo que se obtuvo fue lo siguiente:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\linewidth]{Isotermas.png}
+	\caption{Isotermas de la presión de Zwanzig}
+\end{figure}
+Como escenario comparativo, se incluyeron las ecuaciones de Van Der Waals, Gas Ideal, Esferas Duras, junto a la de Teoría de Perturbaciones de Zwanzig. Se realizó para el caso de $T^*=0.74$
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|}
+\hline 
+Modelo & Ecuación de Presión \\ \hline 
+Gas Ideal & $n^*$ \\ \hline 
+Esfera Dura (HS) & $n^* \left[  1+\frac{2\pi}{3} n^* g_{hs}(1^+) \right] $\\ \hline 
+Van Der Waals &  $\frac{n^*}{1-n^*b^*} - {n^*}^2a^*$ \\ \hline 
+Zwanzig & $ p^*_{hs} - \left[ a^* + n^* \left(\frac{\partial a^*}{\partial n^*}\right)_{T^*} \right] {n^*}^2 $ \\ \hline 
+\end{tabular} 
+\caption{Ecuación de presión de diferentes modelos}
+\end{table}
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width = 0.75\linewidth]{Comparar.png}
+	\caption{Ecuaciones de Estados para el caso de $T^*=0.74$}
+	\label{Fig:EcEst_Compara}
+\end{figure}
+
+\item[IX.]\textbf{Energía potencial promedio}
+
+De la física estadística, con la teoría de Zwanzig para la función de partición es posible obtener una expresión para la energía media.
+\begin{equation}
+	Z_N \approx \left( V-Nb\right)^N e^{-\beta N a^*n^*}
+\end{equation}
+Siendo la energía promedio por partícula:
+\begin{align}
+	\overline{u} &= \frac{1}{N} \pd{\ln Z_n}{\beta}{} \nonumber\\
+	&= \frac{1}{Z_N N} \pd{Z_n}{\beta}{} \nonumber \\
+	&= \frac{ \left( V-Nb\right)^N e^{-\beta N a^*n^*} \left(-Nn^*a^*\right)  }{\left( V-Nb\right)^N e^{-\beta N a^*n^*} N}  \nonumber \\
+	\overline{u} &= -a^*n^*
+\end{align}
+	
+
 
 
 
