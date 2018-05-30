@@ -376,9 +376,8 @@ Y para el caso de $T^*=0.74$
 \item[VIII.] \textbf{Ecuación de Presión con Teoría de Perturbaciones de Zwanzig}
 Como ya conocemos la forma de las $a^*$, podemos calcular la ecuación de la presión a partir de la ecuación \eqref{Press_Red}.
 \begin{equation*}
-	p^* = n^* \left[ 1 + n^*b^*\right] - \left[ a^* + n^* \left(\frac{\partial a^*}{\partial n^*}\right)_{T^*} \right] {n^*}^2 
+	p^* = p^*_{hs} - \left[ a^* + n^* \left(\frac{\partial a^*}{\partial n^*}\right)_{T^*} \right] {n^*}^2 
 \end{equation*}
-
 
 \end{enumerate}
 \pagebreak
