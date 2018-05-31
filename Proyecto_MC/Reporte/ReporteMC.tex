@@ -424,17 +424,43 @@ Siendo la energía promedio por partícula:
 	\label{Fig:EnergiaPromedio}
 \end{figure}
 
-\item[X.] \textbf{Validación de Modelos Teóricos}
+\item[X.] \textbf{Validación de Modelos Teóricos} Ahora se implemento en el código de Monte Carlo el potencial de pozo cuadrado, con el cual se busca obtener la energía  y la presión en función de la concentración para las Isotermas que se obtuvieron. Se utilizo una $\lambda = 1.25$. Los resultados fueron los siguientes:
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.49\linewidth]{PresionT10.png}
+	\includegraphics[width=0.49\linewidth]{PresionT74.png}
+	\caption{Presión en función de la $n^*$ de las Isotermas }
+\end{figure}
 
-
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.49\linewidth]{EnergiaT10.png}
+	\includegraphics[width=0.49\linewidth]{EnergiaT74.png}
+	\caption{Energía en función de la $n^*$ de las Isotermas }
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.49\linewidth]{gdr10.png}
+	\includegraphics[width=0.49\linewidth]{gdr74.png}
+	\caption{G(r) de las Isotermas para varias concentraciones }
+\end{figure}
 
 \end{enumerate}
 
-\pagebreak
+%\pagebreak
 
-
-
+\section{Código Base}
+El siguiente código fue con lo que se corrió Monte Carlo
+\lstinputlisting{Mod.f03}
+\lstinputlisting{Main.f03}
+\lstinputlisting{ConfigIni.f03}
+\lstinputlisting{ConfigIniReg.f03}
+\lstinputlisting{EnergyPartHS.f03}
+\lstinputlisting{EnergyConfigHS.f03}
+\lstinputlisting{EnergyPartSW.f03}
+\lstinputlisting{EnergyConfigSW.f03}
+\lstinputlisting{GDR.f03}
 
 \bibliographystyle{plain}
 \bibliography{biblio}
