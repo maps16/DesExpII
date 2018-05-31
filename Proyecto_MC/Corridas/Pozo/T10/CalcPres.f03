@@ -40,12 +40,10 @@ Program CalcPresion
      Write(*,*) i
      FindG1 : Do j = 1 ,i
 
-        If( r(j) .GE. 1.0) Then
-           g1 = gdr(j+1)
-           Exit
-        End If
-
+        If( r(j) .GE. 1.0)  Exit
+        
      End Do FindG1
+     g1 = gdr(j)
      Write(*,*) g1
 
 
