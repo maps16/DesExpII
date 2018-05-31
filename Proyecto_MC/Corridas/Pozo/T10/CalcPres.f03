@@ -31,10 +31,10 @@ Program CalcPresion
 
      Allocate( r(i), gdr(i) )
 
-     Save: Do j=1, i+1
+     Save: Do j=1, i
         
         Read(3,*, iostat=state) r(j) , gdr(j)
-        If ( state .LT. 0 ) Exit
+        !If ( state .LT. 0 ) Exit
         
      End Do Save
 
