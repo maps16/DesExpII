@@ -46,7 +46,7 @@ Program CalcEne
         
      End Do Suma
 
-     N= Ceq-i
+     N= i-ceq
      VMedia = Vpot / N
 
      Write(15,*) Dens, VMedia
