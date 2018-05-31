@@ -28,7 +28,9 @@ Program CalcPresion
         
      End Do ReadSize
      !Write(*,*) i
+
      Rewind(3)
+     
      Allocate( r(i), gdr(i) )
 
      Save: Do j=1, i
@@ -37,15 +39,22 @@ Program CalcPresion
         !If ( state .LT. 0 ) Exit
         
      End Do Save
-     Write(*,*) i
+     
      FindG1 : Do j = 1 ,i
         k = j
-        If( r(j) .GT. 1.0)  Exit
+        If( r(j) .GE. 1.0)  Exit
         
      End Do FindG1
      g1 = gdr(k)
-     Write(*,*)k, r(k), g1
-
+     
+     FindGl : Do j = 1 ,i
+        k = j
+        If( r(j) .GE. lamda  )  Exit
+        
+     End Do FindGl
+     glmin = gdr(k-1)
+     glplu = gdr(k)
+     Write(*,*) r(k-1), r(k)
 
 
 
