@@ -5,6 +5,7 @@ Program CalcPresion
   Real, Parameter :: lamda = 1.25
   Real :: Dens
   Real, allocatable, Dimension(:) :: r, gdr
+  Real :: g1, glmin, glplu
   Integer :: Den, State
   Integer :: i ,j
   Character (len=11) :: Filename, Cons
@@ -24,11 +25,38 @@ Program CalcPresion
         Read(3,*, iostat=state)
         If ( state .LT. 0 ) Exit
         i=i+1
+        
      End Do ReadSize
-     Write(*,*) i
+     !     Write(*,*) i
+
+     Allocate( r(i),gdr(i) )
+
+     Save: Do j=1, i+1
+        
+        Read(3,*, iostat=state) r(j) , gdr(j)
+        If ( state .LT. 0 ) Exit
+        
+     End Do Save
+
+     FindG1 : Do j = 1 ,i
+
+        If( r(j) .GE. 1.0) Then
+           g1 = gdr(j)
+           Write(*,*) g1
+           Exit
+        End If
+        
+     End Do FindG1
 
 
 
+
+
+
+
+
+
+     
 
      Close(3)
 
