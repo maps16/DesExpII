@@ -111,10 +111,10 @@ Program Main
         NewX = NewX - BoxL*Anint(NewX/BoxL)
         NewY = NewY - BoxL*Anint(NewY/BoxL)
         NewZ = NewZ - BoxL*Anint(NewZ/BoxL)
- Write(*,*) istep, i
+
         !CALCULAR LA ENERGIA DE LA PARTICULA EN LA NUEVA POSICION
         Call EnergyPart(NewX, NewY, NewZ, i, VNew)
- Write(*,*) istep, i
+
         !MONTECARLO (CRITERIO DE ACEPTACION O RECHAZO DE MOV)
         DV = VNew - VOld
         Call Random_Number(Dummy) !PARA CRITERIO ENTRE 0.0 Y 75.0

@@ -5,7 +5,7 @@
 ! Autor: Martin Alejandro Paredes Sosa
 !============================================================================
 
-Subroutine EnergyPart(Rx1, Ry1, i, V)
+Subroutine EnergyPart(Rx1, Ry1, Rz1, i, V)
   Use cte
   Implicit None
   Real :: V, VNew, Dist, Rx1, Rxd, Ry1, Rz1, Rzd, Ryd
