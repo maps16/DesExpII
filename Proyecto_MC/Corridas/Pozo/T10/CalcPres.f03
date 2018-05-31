@@ -33,8 +33,8 @@ Program CalcPresion
 
      Save: Do j=1, i
         
-        Read(3,*, iostat=state) r(j) , gdr(j)
-        If ( state .LT. 0 ) Exit
+        Read(3,*) r(j) , gdr(j)
+        !If ( state .LT. 0 ) Exit
         
      End Do Save
      Write(*,*) i
