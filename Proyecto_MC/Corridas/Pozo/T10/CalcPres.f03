@@ -60,7 +60,7 @@ Program CalcPresion
      !Write(*,*) g1 , glmin, glplu
      
      P = dens + (2*Pi/3)*dens*dens * ( g1 + lamda*lamda*lamda*( glplu - glmin )  )
-     Write(15*,*) P
+     Write(15,*) P
 
 
      Close(3)
