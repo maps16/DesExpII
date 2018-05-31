@@ -9,6 +9,7 @@ Program CalcPresion
   
   
   CONC: Do Den=1 , 10
+     Write(*,256) Den
      Write(Cons,256) Den
      Filename = "gdr"//trim(Cons)//".dat"
      Write(*,*) "Archivo: ",Filename
