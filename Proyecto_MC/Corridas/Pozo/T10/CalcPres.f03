@@ -5,7 +5,7 @@ Program CalcPresion
   Real, Parameter :: lamda = 1.25
   Real :: Dens
   Integer :: Den
-  Character :: Filename, cons
+  Character :: Filename, Cons
   
   
   CONC: Do Den=1 , 10
