@@ -56,7 +56,7 @@ Program CalcPresion
      glmin = gdr(k-1)
      glplu = gdr(k)
 
-     Write(*,*) glmin, glplu
+     Write(*,*) g1 , glmin, glplu
      
      P = dens + (2*Pi/3)*dens * ( g1 + lamda*lamda*lamda*( glplu - glmin )  )
      Write(*,*) P
