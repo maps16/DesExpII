@@ -87,9 +87,9 @@ Program Main
   !MOVIMIENTO DE PARTICULAS ALEATORIA
 
   Configuracion: Do iStep = 1, NStep
- Write(*,*) istep
-     Particula: Do i = 1, N
 
+     Particula: Do i = 1, N
+ Write(*,*) istep, i Write(*,*) istep
         OldX = X(i)
         OldY = Y(i)
         OldZ = Z(i)
