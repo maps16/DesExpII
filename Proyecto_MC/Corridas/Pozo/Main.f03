@@ -77,17 +77,17 @@ Program Main
   !ABRIENDO ARCHIVOS PARA GUARDAR INFO DEL SISTEMA
   Open(2, File="ConCeq.dat")
   
-  Write(chardens,4321) int( 10.0 * dens+1.0 )
+  Write(chardens,4321) int( 10.0 * dens )
   Filename = "Terma"//Trim(chardens)//".dat"
   Open(3, File=Trim(Filename) )
-  Write(*,*) "Archivo", trim(Filename)
+  Write(*,*) "Archivo ", trim(Filename)
  Write(*,*) "============================================================================="
   Write(*,*) "|CONFIG||ENERGIA PARTICULA||RATIO||DR|"
 
   !MOVIMIENTO DE PARTICULAS ALEATORIA
 
   Configuracion: Do iStep = 1, NStep
-
+ Write(*,*) istep
      Particula: Do i = 1, N
 
         OldX = X(i)
