@@ -7,7 +7,7 @@ Program CalcPresion
   Real, allocatable, Dimension(:) :: r, gdr
   Real :: g1, glmin, glplu
   Integer :: Den, State
-  Integer :: i ,j
+  Integer :: i ,j,k
   Character (len=11) :: Filename, Cons
   
   
