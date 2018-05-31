@@ -11,6 +11,7 @@ Program CalcPresion
   Integer :: i ,j, k
   Character (len=11) :: Filename, Cons
   
+  Open(15, file="Presion.dat")
   
   CONC: Do Den=1 , 10
 
@@ -56,17 +57,11 @@ Program CalcPresion
      glmin = gdr(k-1)
      glplu = gdr(k)
 
-     Write(*,*) g1 , glmin, glplu
+     !Write(*,*) g1 , glmin, glplu
      
      P = dens + (2*Pi/3)*dens*dens * ( g1 + lamda*lamda*lamda*( glplu - glmin )  )
-     Write(*,*) P
+     Write(15*,*) P
 
-
-
-
-
-
-     
 
      Close(3)
 
