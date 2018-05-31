@@ -27,17 +27,17 @@ Program CalcPresion
         i=i+1
         
      End Do ReadSize
-          Write(*,*) i
+     !Write(*,*) i
 
      Allocate( r(i), gdr(i) )
 
      Save: Do j=1, i
         
         Read(3,*, iostat=state) r(j) , gdr(j)
-        !If ( state .LT. 0 ) Exit
+        If ( state .LT. 0 ) Exit
         
      End Do Save
-
+     Write(*,*) i
      FindG1 : Do j = 1 ,i
 
         If( r(j) .GE. 1.0) Then
