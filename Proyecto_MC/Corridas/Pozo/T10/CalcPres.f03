@@ -28,7 +28,7 @@ Program CalcPresion
         
      End Do ReadSize
      !Write(*,*) i
-
+     Rewind(3)
      Allocate( r(i), gdr(i) )
 
      Save: Do j=1, i
