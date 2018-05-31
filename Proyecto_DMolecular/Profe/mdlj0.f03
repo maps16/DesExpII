@@ -454,7 +454,7 @@ SUBROUTINE CONFIGINI (BOX,RX,RY,RZ)
 
         IF (RO.LE.1.0) THEN
 
-           WRITE(*,*)'traslape',I,J
+           !WRITE(*,*)'traslape',I,J
            GO TO 2
 
         ENDIF
