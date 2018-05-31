@@ -20,9 +20,10 @@ Program CalcPresion
      Open(3, file=filename, status="old", action="read")
      i=0
      ReadSize: Do
+
         Read(3,*, iostat=state)
-        i=i+1
         If ( state .LT. 0 ) Exit
+        i=i+1
      End Do ReadSize
      Write(*,*) i
 
