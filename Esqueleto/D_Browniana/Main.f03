@@ -69,8 +69,8 @@ Program Main
   !CALCULO/PARAMETROS PARA INICIALIZAR
   RCut = BoxL / 2.0
   Var = sqrt(2.0*dt)
-  k2 = 0                                                                  !G(r)
-  ki = 0                                                                  !W(t), D(t)
+  k2 = 0                                                           !G(r)
+  ki = 0                                                           !W(t), D(t)
  
 
   !CALCULO DE FUERZAS DE LA CONFIGURACION INICIAL
