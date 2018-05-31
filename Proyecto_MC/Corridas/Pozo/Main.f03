@@ -89,7 +89,7 @@ Program Main
   Configuracion: Do iStep = 1, NStep
 
      Particula: Do i = 1, N
- Write(*,*) istep, i Write(*,*) istep
+ Write(*,*) istep, i
         OldX = X(i)
         OldY = Y(i)
         OldZ = Z(i)
