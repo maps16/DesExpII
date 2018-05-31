@@ -93,7 +93,7 @@ Program Main
         OldX = X(i)
         OldY = Y(i)
         OldZ = Z(i)
- Write(*,*) istep, i
+
         !CALCULAR LA ENERGIA DE LA i-PARTICULA
         Call EnergyPart(OldX, OldY, OldZ, i, VOld)
 
@@ -114,7 +114,7 @@ Program Main
 
         !CALCULAR LA ENERGIA DE LA PARTICULA EN LA NUEVA POSICION
         Call EnergyPart(NewX, NewY, NewZ, i, VNew)
-
+ Write(*,*) istep, i
         !MONTECARLO (CRITERIO DE ACEPTACION O RECHAZO DE MOV)
         DV = VNew - VOld
         Call Random_Number(Dummy) !PARA CRITERIO ENTRE 0.0 Y 75.0
