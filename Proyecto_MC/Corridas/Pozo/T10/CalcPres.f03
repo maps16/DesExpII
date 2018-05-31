@@ -8,7 +8,7 @@ Program CalcPresion
   
   Dens = 0.1
   CONC: Do while (Dens .LE. 1.0)
-     Write(Cons,256) Int( Dens * 10)
+     Write(Cons,256) Int( Dens * 10 +1)
      Filename = "gdr"//trim(Cons)//".dat"
      Write(*,*) "Archivo: ",Filename
 
