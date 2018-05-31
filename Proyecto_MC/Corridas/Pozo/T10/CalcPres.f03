@@ -60,6 +60,7 @@ Program CalcPresion
 
      Close(3)
 
+     Deallocate(r,gdr)
      
   End Do CONC
   
