@@ -18,7 +18,7 @@ Program CalcPresion
      Write(*,*) "Archivo: ",Filename
      Dens = Den * 0.1
 
-     Open(3, file=filename, status="old", action="read")
+     Open(3, file=filename)
      i=0
      ReadSize: Do
 
@@ -39,12 +39,12 @@ Program CalcPresion
      End Do Save
      Write(*,*) i
      FindG1 : Do j = 1 ,i
-
+        k = j
         If( r(j) .GE. 1.0)  Exit
         
      End Do FindG1
-     g1 = gdr(j)
-     Write(*,*) r(j)
+     g1 = gdr(k)
+     Write(*,*) r(k), g1
 
 
 
