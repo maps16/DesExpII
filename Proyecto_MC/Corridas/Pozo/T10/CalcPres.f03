@@ -27,7 +27,7 @@ Program CalcPresion
         i=i+1
         
      End Do ReadSize
-     !     Write(*,*) i
+          Write(*,*) i
 
      Allocate( r(i), gdr(i) )
 
