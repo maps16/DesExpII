@@ -41,7 +41,7 @@ Program CalcPresion
      FindG1 : Do j = 1 ,i
 
         If( r(j) .GE. 1.0) Then
-           g1 = gdr(j)
+           g1 = gdr(j+1)
            Exit
         End If
 
