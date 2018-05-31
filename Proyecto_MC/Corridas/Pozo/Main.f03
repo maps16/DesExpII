@@ -72,8 +72,7 @@ Program Main
   VI = V + VLRC
   Write(*,*) "ENERGIA DE LA CONFIGURACION INICIAL:",  VI
 
-  Write(*,*) "============================================================================="
-  Write(*,*) "|CONFIG||ENERGIA PARTICULA||RATIO||DR|"
+ 
 
   !ABRIENDO ARCHIVOS PARA GUARDAR INFO DEL SISTEMA
   Open(2, File="ConCeq.dat")
@@ -81,7 +80,9 @@ Program Main
   Write(chardens,4321) int( 10.0 * dens+1.0 )
   Filename = "Terma"//Trim(chardens)//".dat"
   Open(3, File=Trim(Filename) )
-
+  Write(*,*) "Archivo", trim(Filename)
+ Write(*,*) "============================================================================="
+  Write(*,*) "|CONFIG||ENERGIA PARTICULA||RATIO||DR|"
 
   !MOVIMIENTO DE PARTICULAS ALEATORIA
 
