@@ -6,6 +6,7 @@ Program CalcPresion
   Real :: Dens
   Real, allocatable, Dimension(:) :: r, gdr
   Real :: g1, glmin, glplu
+  Real :: P
   Integer :: Den, State
   Integer :: i ,j, k
   Character (len=11) :: Filename, Cons
@@ -54,8 +55,9 @@ Program CalcPresion
      End Do FindGl
      glmin = gdr(k-1)
      glplu = gdr(k)
-     Write(*,*) r(k-1), r(k)
 
+     P = dens + (2*Pi/3)*dens * ( g1 + lamda*lamda*lamda*( glplu - glmin )  )
+     Write(*,*) P
 
 
 
