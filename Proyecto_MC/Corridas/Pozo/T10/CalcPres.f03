@@ -7,7 +7,7 @@ Program CalcPresion
   Real, allocatable, Dimension(:) :: r, gdr
   Real :: g1, glmin, glplu
   Integer :: Den, State
-  Integer :: i ,j,k
+  Integer :: i ,j, k
   Character (len=11) :: Filename, Cons
   
   
@@ -40,7 +40,7 @@ Program CalcPresion
      Write(*,*) i
      FindG1 : Do j = 1 ,i
         k = j
-        If( r(j) .GE. 1.0)  Exit
+        If( r(j) .GT. 1.0)  Exit
         
      End Do FindG1
      g1 = gdr(k)
