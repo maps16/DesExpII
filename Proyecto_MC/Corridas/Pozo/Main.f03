@@ -89,11 +89,11 @@ Program Main
   Configuracion: Do iStep = 1, NStep
 
      Particula: Do i = 1, N
- Write(*,*) istep, i
+
         OldX = X(i)
         OldY = Y(i)
         OldZ = Z(i)
-
+ Write(*,*) istep, i
         !CALCULAR LA ENERGIA DE LA i-PARTICULA
         Call EnergyPart(OldX, OldY, OldZ, i, VOld)
 
