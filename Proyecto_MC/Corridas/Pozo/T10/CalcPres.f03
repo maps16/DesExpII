@@ -44,7 +44,7 @@ Program CalcPresion
         
      End Do FindG1
      g1 = gdr(j)
-     Write(*,*) g1
+     Write(*,*) r(j)
 
 
 
