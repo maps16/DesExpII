@@ -405,7 +405,7 @@ SUBROUTINE COMVEL ( TEMP )
   SUMZ = SUMZ / REAL ( N )
 
   !DESVIACION DE LA MEDIA
-  DO 300 I = 1, N
+  DO  I = 1, N
      VX(I) = VX(I) - SUMX
      VY(I) = VY(I) - SUMY
      VZ(I) = VZ(I) - SUMZ
@@ -493,13 +493,13 @@ SUBROUTINE GDR(CX,CY,CZ,KI)
   PI=3.141592
   NTMAX=KI !NUMERO DE CONFIGURACIONES
 
-  DO 20 L=1,NP
+  DO L=1,NP
      
-     DO 25 M=1,NP
+     DO M=1,NP
         
-        IF (M.EQ.L) GOTO 25
+        IF (M /= L) then
 
-        DO 40 J=1,NTMAX
+        DO J=1,NTMAX
 
            !CONFIGURACIONES
            XL0=CX(L,J)
@@ -526,6 +526,7 @@ SUBROUTINE GDR(CX,CY,CZ,KI)
            ENDIF
 
         End Do
+     End IF
      End Do
   End DO
 
@@ -533,7 +534,7 @@ SUBROUTINE GDR(CX,CY,CZ,KI)
 
   OPEN(60,FILE='grdm0.dat',STATUS='UNKNOWN')
 
-  DO 30 NBIN=1,MAXBIN
+  DO NBIN=1,MAXBIN
      
      RL=REAL(NBIN-1)*DELTAR !CINTA INFERIOR
      RU=RL+DELTAR           !SUPERIOR
