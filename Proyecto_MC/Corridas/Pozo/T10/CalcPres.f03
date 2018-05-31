@@ -18,5 +18,5 @@ Program CalcPresion
   
 
   
-
+256 Format (I2.2)
 End Program CalcPresion
